@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create new account</title>
+    <link rel="stylesheet" href="./cna.css" />
+  </head>
+
+  <body>
+    <a href="/index.html" target="_blank">home</a>
+    <a href="/product.html" target="_blank">product</a>
+    <a href="/create new account.html" target="_blank">sign up</a>
+    <a href="/login.html" target="_blank">login</a>
+    <br />
+    <h1 class="signup">Sign up</h1>
+    <div id="cnewa">
+      <form action="" class="signupform" id="myForm">
+        <!-- NAME -->
+        <strong><label for="NAME"> FIRSTNAME:</label></strong>
+        <input type="text" id="NAME" placeholder=" NAME" required />
+        <br />
+        <!-- SURNAME -->
+        <strong><label for="SURNAME"> LAST NAME:</label></strong>
+        <input type="text" id="SURNAME" placeholder="SURNAME" />
+        <br />
+        <!-- MOBILE NUMBER -->
+        <strong><label for="mobile number">CONTACT NO:</label></strong>
+        <input
+          type="number"
+          id="mobile number"
+          placeholder=" NUMBER"
+          required
+          min="1000000000"
+          max="9999999999"
+        />
+        <br />
+        <strong
+          ><label for="alternative number"
+            >ALTERNATIVE CONTACT NUMBER</label
+          ></strong
+        >
+        <input
+          type="number"
+          id="alternative number"
+          placeholder="ALTERNATIVE NUMBER"
+          required
+          min="1000000000"
+          max="9999999999"
+        />
+        <br />
+        <!-- A.MOBILE NUMBER -->
+        <strong><label for="email">EMAIL</label></strong>
+        <input type="email" id="email" placeholder="email" required />
+        <br />
+        <!-- ADDRESS -->
+        <strong><label for="adress" id="saddress">SHIPPING ADDRESS</label></strong>
+        <input type="text" id="adress" placeholder="line 1" required /><br />
+        <input type="text" id="adress" placeholder="line 2" /><br />
+        <input type="text" id="adress" placeholder="line 3" /><br />
+        <!-- LANDMARK -->
+        <strong><label for="landmark">LANDMARK</label></strong>
+        <input type="text" id="landmark" />
+        <br /><!-- PINCODE -->
+        <strong><label for="pincode">PINCODE</label></strong>
+        <input type="number" id="pincode" required />
+        <br />
+        <!-- CITY -->
+        <strong><label for="city">CITY</label></strong>
+        <input type="text" id="city" required />
+        <br /><!-- STATE -->
+        <strong><label for="state" required>STATE</label></strong>
+        <input type="text" id="state" required />
+        <br />
+        <strong><label for="password">CREATE YOUR PASSWORD</label></strong>
+        <input type="password" id="password" placeholder="PASSWORD" required />
+        <br />
+        <strong><label for="rpassword">RETYPE YOUR PASSWORD</label></strong>
+        <input
+          type="password"
+          id="rpassword"
+          placeholder="RETYPE YOUR PASSWORD"
+          required
+        />
+        <br />
+        <input type="reset" value="reset"/>
+        <input type="submit" value="submit" id="downloadBtn" />
+      </form>
+    </div>
+    <div class="ahalp">
+      <label for="1">ALREADY HAVE AN ACCOUNT</label>
+      <a href="/login.html" id="1">login</a>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+  <script src="./index.js"></script>
+</html>

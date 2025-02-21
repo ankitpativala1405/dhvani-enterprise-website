@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    overflow-x: hidden;
+    font-family: "Poppins", serif;
+}
+
+.checkout {
+
+    font-size: 15px;
+    margin-top: 10px;
+    color: black;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    box-sizing: border-box;
+    border-color: #DDD !important;
+    border-style: solid !important;
+    border-width: 0 0 2px 0 !important;
+    background-image: url(./PHOTO/1.jpg);
+    height: auto;
+    background-position-y: -13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.start {
+    margin-left: 160px;
+}
+
+.centered {
+    margin-left: 250px;
+    text-align: center;
+}
+
+.address {
+    -webkit-text-stroke-width: 100%;
+    font-size: 15px;
+
+
+    color: black;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    border-color: #DDD !important;
+    border-style: solid !important;
+    border-width: 0 0 2px 0 !important;
+    background-image: url(./PHOTO/1.jpg);
+    height: auto;
+    background-position-y: -13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.deliveryaddress {
+    margin-left: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.a-letter-space {
+    margin-right: 200px;
+}
+.bcaddress{
+    margin-right: 100px;
+    border-radius: 10px;
+}
+.btda{
+    border-radius: 10px;
+}
+.daddress{
+    margin-left: 510px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bhnumber,
+.bsociety {
+  margin-bottom: 5px;
+}
+
+.paymentoptions{
+    -webkit-text-stroke-width: 100%;
+    font-size: 15px;
+
+
+    color: black;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    border-color: #DDD !important;
+    border-style: solid !important;
+    border-width: 0 0 2px 0 !important;
+    background-image: url(./PHOTO/1.jpg);
+    height: auto;
+    background-position-y: -13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.cpoption {
+    margin-left: 160px;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,108 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+body{
+    background-color: rgba(206, 187, 148, 0.24);
+}
+.signup {
+    background: #E2DDDD;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+/* Centering the login form */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-left:600px;
+    background: #E2DDDD;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Link styling for navigation links */
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Label Styles */
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Input Fields */
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Links Styling */
+label + a {
+    font-size: 12px;
+    color: #666;
+}
+
+label + a:hover {
+    color: #007BFF;
+}
