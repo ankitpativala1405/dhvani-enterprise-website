@@ -240,12 +240,12 @@ let data = [
         }
     },
 
-
 ]
+
 let temp = "";
 for (let i = 0; i < data.length; i++) {
     temp += `
-     <div class="box">
+     <div class="box" id="box" onclick=productdetail()>
         <img src="${data[i].image}" alt="" class="img">
         <h3 class="title">${data[i].title}</h3>
         <p class="price">PRICE:${data[i].price}</p>
@@ -253,18 +253,13 @@ for (let i = 0; i < data.length; i++) {
     
         <button onclick=atc() class="add-to-cart">add to cart</button>
         <button onclick=buyn() class="buy-now">Buy now</button> 
-
-    </div>`
-   
-    
+    </div>`  
 }
 
 document.getElementById("container").innerHTML = temp;
 
+const buyn=()=>{ window.open('./buynow.html');}
 
-function buyn() {
-    window.open('./buynow.html');
-}
-function atc() {
-    alert("add your cart page here")
-}
+const atc=()=>{ alert("add your cart page here")}
+
+const productdetail=()=>{window.open('./productdetail.html')}

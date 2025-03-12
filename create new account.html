@@ -44,77 +44,77 @@
     <br>
     <h1 class="signup">Sign up</h1>
     <div id="cnewa" class="ahalp">
-      <form action="" class="signupform" id="myForm">
-        <!-- NAME -->
-        <strong><label for="NAME"> FIRSTNAME:</label></strong>
-        <input type="text" id="NAME" placeholder=" NAME" required />
-        <br />
-        <!-- SURNAME -->
-        <strong><label for="SURNAME"> LAST NAME:</label></strong>
-        <input type="text" id="SURNAME" placeholder="SURNAME" />
-        <br />
-        <!-- MOBILE NUMBER -->
-        <strong><label for="mobile number">CONTACT NO:</label></strong>
-        <input
-          type="number"
-          id="mobile number"
-          placeholder=" NUMBER"
-          required
-          min="1000000000"
-          max="9999999999"
-        />
-        <br />
-        <strong
-          ><label for="alternative number"
-            >ALTERNATIVE CONTACT NUMBER</label
-          ></strong
-        >
-        <input
-          type="number"
-          id="alternative number"
-          placeholder="ALTERNATIVE NUMBER"
-          required
-          min="1000000000"
-          max="9999999999"
-        />
-        <br />
-        <!-- A.MOBILE NUMBER -->
-        <strong><label for="email">EMAIL</label></strong>
-        <input type="email" id="email" placeholder="email" required />
-        <br />
-        <!-- ADDRESS -->
-        <strong><label for="ad1" id="saddress">SHIPPING ADDRESS</label></strong>
-        <input type="text" id="ad1" placeholder="line 1" required /><br />
-        <input type="text" id="ad2" placeholder="line 2" /><br />
-        <input type="text" id="ad3" placeholder="line 3" /><br />
-        <!-- LANDMARK -->
-        <strong><label for="landmark">LANDMARK</label></strong>
-        <input type="text" id="landmark" />
-        <br /><!-- PINCODE -->
-        <strong><label for="pincode">PINCODE</label></strong>
-        <input type="number" id="pincode" required />
-        <br />
-        <!-- CITY -->
-        <strong><label for="city">CITY</label></strong>
-        <input type="text" id="city" required />
-        <br /><!-- STATE -->
-        <strong><label for="state" required>STATE</label></strong>
-        <input type="text" id="state" required />
-        <br />
-        <strong><label for="password">CREATE YOUR PASSWORD</label></strong>
-        <input type="password" id="password" placeholder="PASSWORD" required />
-        <br />
-        <strong><label for="rpassword">RETYPE YOUR PASSWORD</label></strong>
-        <input
-          type="password"
-          id="rpassword"
-          placeholder="RETYPE YOUR PASSWORD"
-          required
-        />
-        <br />
-        <input type="reset" value="reset"/>
-        <input type="submit" value="submit" />
-      </form>
+      <body>
+        <form action="" class="signupform" id="myForm">
+          <div id="errorname">
+            <strong><label for="name"> FIRSTNAME:</label></strong>
+            <input type="text" id="name" placeholder=" NAME" />
+          </div>
+          <br />
+          <div id="errorsurname">
+            <strong><label for="surname"> LAST NAME:</label></strong>
+            <input type="text" id="surname" placeholder="SURNAME" />
+          </div>
+          <br />
+          <div id="errorcontact">
+            <strong><label for="mobile number">CONTACT NO:</label></strong>
+            <input type="number" id="mobile number" placeholder=" NUMBER" />
+          </div>
+          <br />
+          <div id="erroralternative">
+            <strong><label for="alternative number">ALTERNATIVE CONTACT NO:</label></strong>
+              <input  type="number"  id="alternative number" placeholder="ALTERNATIVE NUMBER"/>
+          </div>
+          <br />
+          <div id="erroremail">
+            <strong><label for="email">EMAIL</label></strong>
+            <input type="email" id="email" placeholder="email" />
+          </div>
+          <br />
+          <div>
+            <strong><label for="adress" id="saddress">SHIPPING ADDRESS</label></strong>
+            <input type="text" id="adress1" placeholder="line 1" /><br />
+            <input type="text" id="adress2" placeholder="line 2" /><br />
+            <input type="text" id="adress3" placeholder="line 3" /><br />
+            <br />
+          </div>
+    
+          <div>
+            <strong><label for="landmark">LANDMARK</label></strong>
+            <input type="text" id="landmark" />
+          </div>
+          <br />
+          <div id="errorpincode">
+            <strong><label for="pincode">PINCODE</label></strong>
+            <input type="number" id="pincode" />
+          </div>
+          <br />
+    
+          <div id="errorcity">
+            <strong><label for="city">CITY</label></strong>
+            <input type="text" id="city" />
+          </div>
+          <br />
+          <div id="errorstate">
+            <strong><label for="state">STATE</label></strong>
+            <input type="text" id="state" />
+          </div>
+          <br />
+          <div id="errorpassword">
+            <strong><label for="password">CREATE YOUR PASSWORD</label></strong>
+            <input type="password" id="password" placeholder="PASSWORD" />
+          </div>
+          <br />
+          <div id="errorretype">
+            <strong><label for="rpassword">RETYPE YOUR PASSWORD</label></strong>
+            <input  type="password"  id="rpassword"  placeholder="RETYPE YOUR PASSWORD"/>
+          </div>
+          <br />
+          <div id="buttons">
+            <input type="reset" value="reset" />
+            <input type="submit" value="submit" id="downloadBtn"/>
+          </div>
+        </form>
     <!-- </div>
     <div class="ahalp"> -->
       <br>
@@ -123,4 +123,6 @@
     </div>
   </body>
   <script src="./index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+
 </html>

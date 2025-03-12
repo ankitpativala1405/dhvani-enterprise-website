@@ -6,7 +6,6 @@ body {
     background-color: #fff;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -341,4 +340,11 @@ input[type="reset"]:hover {
  
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background:  #E2DDDD;
+}
+
+.passed{
+  border: 2px solid green !important;
+}
+.failed{
+  border: 2px solid red !important;
 }
