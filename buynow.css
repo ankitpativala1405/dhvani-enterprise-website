@@ -1,118 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body {
-    overflow-x: hidden;
-    font-family: "Poppins", serif;
-}
-
-.checkout {
-
-    font-size: 15px;
-    margin-top: 10px;
-    color: black;
-    font-family: "Amazon Ember", Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    border-color: #DDD !important;
-    border-style: solid !important;
-    border-width: 0 0 2px 0 !important;
-    background-image: url(./PHOTO/1.jpg);
-    height: auto;
-    background-position-y: -13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    border-radius: 15px;
-}
+  }
 
-.start {
-    margin-left: 160px;
-}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
 
-.centered {
-    margin-left: 250px;
+  .checkout {
     text-align: center;
-}
+    background-color: #2d3e50;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .checkout h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .checkout .start {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  .checkout .centered {
+    display: block;
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
 
-.address {
-    -webkit-text-stroke-width: 100%;
-    font-size: 15px;
+  .address {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .deliveryaddress {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .a-letter-space {
+    margin-right: 5px;
+  }
+  
+  .daddress {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  .bhnumber,
+  .bsociety,
+  .blandmark,
+  .bspincode {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
 
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
 
-    color: black;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    border-color: #DDD !important;
-    border-style: solid !important;
-    border-width: 0 0 2px 0 !important;
-    background-image: url(./PHOTO/1.jpg);
-    height: auto;
-    background-position-y: -13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    margin: 20px;
+  select {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #fff;
+  }
+  
+  select:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+
+
+
+.creditCardForm {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
 }
 
-.deliveryaddress {
-    margin-left: 160px;
-    display: flex;
-    align-items: center;
+.heading h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.a-letter-space {
-    margin-right: 200px;
+.form-group {
+  margin-bottom: 15px;
 }
-.bcaddress{
-    margin-right: 100px;
-    border-radius: 10px;
-}
-.btda{
-    border-radius: 10px;
-}
-.daddress{
-    margin-left: 510px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.bhnumber,
-.bsociety {
+
+label {
+  display: block;
+  font-weight: bold;
   margin-bottom: 5px;
+  color: #555;
 }
 
-.paymentoptions{
-    -webkit-text-stroke-width: 100%;
-    font-size: 15px;
-
-
-    color: black;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    border-color: #DDD !important;
-    border-style: solid !important;
-    border-width: 0 0 2px 0 !important;
-    background-image: url(./PHOTO/1.jpg);
-    height: auto;
-    background-position-y: -13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
 }
-.cpoption {
-    margin-left: 160px;
-    display: flex;
-    align-items: center;
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color: #20c997;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #17a2b8;
+}
+
+#credit_cards {
+  text-align: center;
+  margin: 15px 0;
+}
+
+#credit_cards img {
+  width: 40px; 
+  margin: 0 5px;
+}
+
+
+#upidiv {
+  background-color: #f9f9f9; /* Light background for contrast */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Spacing inside the div */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 400px; /* Limit the width */
+  margin: 20px auto; /* Center the div */
+}
+
+select, input[type="text"], button {
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Spacing inside inputs */
+  margin: 10px 0; /* Spacing between elements */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 16px; /* Font size for readability */
+}
+
+select:focus, input[type="text"]:focus {
+  outline: none; /* Remove default outline */
+}
+
+button {
+  color: white; /* Text color for button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+p {
+  font-size: 14px; /* Font size for paragraphs */
+  color: #555; /* Darker text color for better readability */
+}
+
+#errorupi {
+  color: red; /* Error message color */
+  font-weight: bold; /* Bold for emphasis */
 }

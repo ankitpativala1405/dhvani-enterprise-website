@@ -16,7 +16,7 @@ body {
   }
   
   nav {
-    background: #e2dddd;
+    background: #e2dddd;;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +69,7 @@ body {
     margin: auto;
     color: #1f1919;
     font-size: 16px;
-    background: #e2dddd;
+    background: #e2dddd;;
   }
 
 
@@ -197,7 +197,7 @@ body{
     background-color: #fff;
 }
 .signup {
-    background: #E2DDDD;
+    background: #e2dddd;;
     border: none;
     display: flex;
     flex-direction: column;
@@ -216,7 +216,7 @@ form {
     width: 300px;
     text-align: center;
     margin-left:600px;
-    background: #E2DDDD;
+    background: #e2dddd;;
 }
 
 /* Heading styles */

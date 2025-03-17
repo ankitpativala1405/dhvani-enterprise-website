@@ -16,7 +16,7 @@ body {
 }
 
 .box {
-    background: #e2dddd;
+    background: #e2dddd;;
     border: none;
     display: flex;
     flex-direction: column;
@@ -62,7 +62,7 @@ button {
 }
 
 .pheadcenter{
-    background-color: #e2dddd;
+    background-color: #e2dddd;;
    display: flex;
    flex-direction:column ;
    justify-content: center;
@@ -81,7 +81,7 @@ button {
   }
   
   nav {
-    background: #e2dddd;
+    background: #e2dddd;;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,7 +134,7 @@ button {
     margin: auto;
     color: #1f1919;
     font-size: 16px;
-    background: #e2dddd;
+    background: #e2dddd;;
   }
 
 

@@ -7,16 +7,9 @@
     <link rel="stylesheet" href="./buynow.css" />
   </head>
   <body>
-    <!-- <a href="/index.html" target="_blank">home</a>
-    <a href="/product.html" target="_blank">product</a>
-    <a href="/create new account.html" target="_blank">sign up</a>
-    <a href="/login.html" target="_blank">login</a> -->
-    <div id="bn"></div>
-
     <div class="checkout">
       <h1>
         <span class="start">DHVANI ENTERPRISE</span>
-        <span class="centered">checkout</span>
       </h1>
     </div>
     <div class="address">
@@ -35,18 +28,163 @@
     </div>
     </div>
     <div class="address">
-      <h3 class="deliveryaddress">
-        <span class="a-letter-space">Choose payment option</span>
-      </h3>
-     <div class="daddress">
-      <span class="bhnumber">PLOT NO 209-210,</span>
-      <span class="bsociety"> SHRI KRUSHNA NAGAR HOUSING SOCIETY,</span>
-      <span class="blandmark">SINGANPOR CHAR RASTA,VED ROAD, Surat,</span>
-      <span class="bspincode"> GUJARAT 395004</span>
-      <button class="btda">deliver this address</button>
-    </div>
+      <h3 class="deliveryaddress"> Choose payment option </h3>
+      <select id="payment">
+        <option value="dhvani enterprise wallet">dhvani enterprise wallet</option>
+        <option value="net banking">net banking</option>
+        <option value="upi">upi</option>
+        <option value="credit card">credit card</option>
+        <option value="debit card">debit card</option>
+        <option value="bank transfer">bank transfer</option>
+        <option value="cash on delivery">cash on delivery</option>
+      </select>
     </div>
 
+    <div id="walletdiv" class="payment-method-details" style="display: none;">
+      <p>dhvani enterprise wallet selected.</p>
+    </div>
+    <div id="cashdiv" class="payment-method-details" style="display: none;">
+      <p>Cash on delivery selected.</p>
+    </div>
+    <div id="bankdiv" class="payment-method-details" style="display: none;">
+      <p>Bank transfer selected.</p>
+    </div>
+    <div id="creditdiv" class="payment-method-details" style="display: none;">
+      <div class="creditCardForm">
+        <div class="heading">
+            <h1>Confirm Purchase</h1>
+        </div>
+        <div class="payment">
+            <form>
+                <div class="form-group owner">
+                    <label for="owner">Owner</label>
+                    <input type="text" class="form-control" id="owner">
+                </div>
+                <div class="form-group CVV">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv">
+                </div>
+                <div class="form-group" id="card-number-field">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber">
+                </div>
+                <div class="form-group" id="expiration-date">
+                    <label>Expiration Date</label>
+                    <select>
+                        <option value="01">January</option>
+                        <option value="02">February </option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select>
+                        <option value="16"> 2025 </option>
+                        <option value="17"> 2026 </option>
+                        <option value="18"> 2027 </option>
+                        <option value="19"> 2028 </option>
+                        <option value="20"> 2029 </option>
+                        <option value="21"> 2030 </option>
+                        <option value="22"> 2031 </option>
+                        <option value="23"> 2032 </option>
+                        <option value="24"> 2033 </option>
+                        <option value="25"> 2034 </option>
+                    </select>
+                </div>
+                <div class="form-group" id="credit_cards">
+                    <img src="/PHOTO/visa.png" id="visa">
+                    <img src="/PHOTO/mastercard.png" id="mastercard">
+                </div>
+                <div class="form-group" id="pay-now">
+                    <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div id="debitdiv" class="payment-method-details" style="display: none;">
+      <div class="creditCardForm">
+        <div class="heading">
+            <h1>Confirm Purchase</h1>
+        </div>
+        <div class="payment">
+            <form>
+                <div class="form-group owner">
+                    <label for="owner">Owner</label>
+                    <input type="text" class="form-control" id="owner">
+                </div>
+                <div class="form-group CVV">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv">
+                </div>
+                <div class="form-group" id="card-number-field">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber">
+                </div>
+                <div class="form-group" id="expiration-date">
+                    <label>Expiration Date</label>
+                    <select>
+                        <option value="01">January</option>
+                        <option value="02">February </option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select>
+                        <option value="16"> 2025 </option>
+                        <option value="17"> 2026 </option>
+                        <option value="18"> 2027 </option>
+                        <option value="19"> 2028 </option>
+                        <option value="20"> 2029 </option>
+                        <option value="21"> 2030 </option>
+                        <option value="22"> 2031 </option>
+                        <option value="23"> 2032 </option>
+                        <option value="24"> 2033 </option>
+                        <option value="25"> 2034 </option>
+                    </select>
+                </div>
+                <div class="form-group" id="credit_cards">
+                    <img src="/PHOTO/visa.png" id="visa">
+                    <img src="/PHOTO/mastercard.png" id="mastercard">
+                </div>
+                <div class="form-group" id="pay-now">
+                    <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div id="netdiv" class="payment-method-details" style="display: none;">
+      <p>NET BANKING selected.</p>
+    </div>
+    <div id="upidiv" class="payment-method-details" style="display: none;">
+      <select id="upioption">
+        <option value="google pay">google pay</option>
+        <option value="paytm">paytm</option>
+        <option value="phonepe">phonepe</option>
+        <option value="BHIM UPI">BHIM UPI</option>
+      </select>
+      <p>Please enter your UPI ID</p>
+      <input type="text" id="upi-id"  placeholder="example@upi">
+      <button id="upi-submit">verify</button>
+      <!-- <p>Note: The UPI ID should be in the format of name/phone number@bankname</p> -->
+      <p>The UPI ID is in the format of name/phone number@bankname</p>
+      <p id="errorupi"></p>
+    </div>
   </body>
-  <script src="./index.js"></script>
+  <script src="./buynow.js"></script>
+
 </html>
