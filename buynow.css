@@ -217,3 +217,23 @@ p {
   color: red; /* Error message color */
   font-weight: bold; /* Bold for emphasis */
 }
+
+
+.options {
+  margin: auto ;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width:40%;
+}
+
+.netbankingclass{
+  margin: auto ;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width:40%;
+ 
+}

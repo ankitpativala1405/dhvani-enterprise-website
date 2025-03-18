@@ -27,7 +27,8 @@
       <button class="btda">deliver this address</button>
     </div>
     </div>
-    <div class="address">
+    <div id="paymentoptiondiv">
+    <div class="options">
       <h3 class="deliveryaddress"> Choose payment option </h3>
       <select id="payment">
         <option value="dhvani enterprise wallet">dhvani enterprise wallet</option>
@@ -57,7 +58,7 @@
         <div class="payment">
             <form>
                 <div class="form-group owner">
-                    <label for="owner">Owner</label>
+                    <label for="owner">Owner name</label>
                     <input type="text" class="form-control" id="owner">
                 </div>
                 <div class="form-group CVV">
@@ -100,6 +101,10 @@
                 <div class="form-group" id="credit_cards">
                     <img src="/PHOTO/visa.png" id="visa">
                     <img src="/PHOTO/mastercard.png" id="mastercard">
+                    <img src="/PHOTO/amex.png"  id="amex">
+                    <img src="/PHOTO/mestro.png" id="mestro">
+                    <img src="/PHOTO/bajaj.jpg" id="bajaj">
+                    <img src="/PHOTO/rupay.png" id="rupay">
                 </div>
                 <div class="form-group" id="pay-now">
                     <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
@@ -116,7 +121,7 @@
         <div class="payment">
             <form>
                 <div class="form-group owner">
-                    <label for="owner">Owner</label>
+                    <label for="owner">Owner name</label>
                     <input type="text" class="form-control" id="owner">
                 </div>
                 <div class="form-group CVV">
@@ -157,9 +162,13 @@
                     </select>
                 </div>
                 <div class="form-group" id="credit_cards">
-                    <img src="/PHOTO/visa.png" id="visa">
-                    <img src="/PHOTO/mastercard.png" id="mastercard">
-                </div>
+                  <img src="/PHOTO/visa.png" id="visa">
+                  <img src="/PHOTO/mastercard.png" id="mastercard">
+                  <img src="/PHOTO/amex.png"  id="amex">
+                  <img src="/PHOTO/mestro.png" id="mestro">
+                  <img src="/PHOTO/bajaj.jpg" id="bajaj">
+                  <img src="/PHOTO/rupay.png" id="rupay">
+              </div>
                 <div class="form-group" id="pay-now">
                     <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
                 </div>
@@ -168,8 +177,34 @@
     </div>
     </div>
     <div id="netdiv" class="payment-method-details" style="display: none;">
-      <p>NET BANKING selected.</p>
+      <div class="netbankingclass">
+        <p><h3>Net banking</h3></p>
+      <select id="netbanking">
+        <option value="">Choose an Option</option>
+        <option value="Airtel Payments Bank">Airtel Payments Bank</option>
+        <option value="State Bank of India">State Bank of India</option>
+        <option value="Axis Bank">Axis Bank</option>
+        <option value="HDFC Bank">HDFC Bank</option>
+        <option value="ICICI Bank">ICICI Bank</option>
+        <option value="Kotak Bank">Kotak Bank</option>
+        <option value="Allahabad Bank">Allahabad Bank</option>
+        <option value="Andhra Bank">Andhra Bank</option>
+        <option value="Bank of India">Bank of India</option>
+        <option value="Bank of Maharashtra">Bank of Maharashtra</option>
+        <option value="Canara Bank">Canara Bank</option>
+        <option value="Central Bank of India">Central Bank of India</option>
+        <option value="City Union Bank">City Union Bank</option>
+        <option value="Federal Bank">Federal Bank</option>
+        <option value="IDBI Bank">IDBI Bank</option>
+        <option value="IDFC FIRST Bank">IDFC FIRST Bank</option>
+        <option value="Indian bank">Indian bank</option>
+        <option value="Indian Overseas Bank">Indian Overseas Bank</option>
+        <option value="Indusind Bank">Indusind Bank</option>
+        <option value="Punjab National Bank">Punjab National Bank</option>
+        <option value="Yes Bank Ltd">Yes Bank Ltd</option>
+      </select>
     </div>
+  </div>
     <div id="upidiv" class="payment-method-details" style="display: none;">
       <select id="upioption">
         <option value="google pay">google pay</option>
@@ -184,7 +219,10 @@
       <p>The UPI ID is in the format of name/phone number@bankname</p>
       <p id="errorupi"></p>
     </div>
+  </div>
   </body>
   <script src="./buynow.js"></script>
 
 </html>
+
+
