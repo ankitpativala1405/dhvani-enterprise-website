@@ -106,18 +106,7 @@ button {
   nav a.active {
     color: #f39c12; 
   }
-  
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column; 
-    }
-  
-    nav a {
-      margin: 10px 0; 
-      font-size: 18px; 
-    }
-  }
-  
+   
   
   .index{
     -webkit-tap-highlight-color: transparent;

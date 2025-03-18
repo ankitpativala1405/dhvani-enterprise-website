@@ -1,28 +1,47 @@
+document.getElementById("changeaddress").addEventListener("click", function() {
+  document.getElementById("changedhomeaddress").style.display = 'block';
+});
+
+document.getElementById("deliver-btn").addEventListener("click", function() {
+  alert("Thank you for submitting address.now please select your payment option")
+  document.getElementById("paymentoptiondiv").style.display = 'block';
+});
+
+document.getElementById("gotoorder").addEventListener("click",()=>{
+  document.getElementById("placeorder").style.display = 'block';
+})
+
+document.getElementById("placeorder").addEventListener("click",()=>{
+  alert("Thank you for submitting place order.")
+})
+
 let paymentSelect = document.getElementById("payment"); 
 let walletdiv= document.getElementById("walletdiv")
 let netdiv = document.getElementById("netdiv");
 let upidiv = document.getElementById("upidiv");
 let creditdiv = document.getElementById("creditdiv");
 let debitdiv = document.getElementById("debitdiv");
-let bankdiv = document.getElementById("bankdiv");
 let cashdiv = document.getElementById("cashdiv");
 
 paymentSelect.addEventListener("change", function() {
   const selectedPaymentOption = paymentSelect.value;
 
   cashdiv.style.display = "none";
-  bankdiv.style.display = "none";
   creditdiv.style.display = "none";
   debitdiv.style.display = "none";
   netdiv.style.display = "none";
   upidiv.style.display = "none";
   walletdiv.style.display = "none";
 
+  if(selectedPaymentOption === "choose any option"){
+    document.getElementById("usethismethod").style.display = "none";
+  
+  }else{
+    document.getElementById("usethismethod").style.display = 'block';
+  
   if (selectedPaymentOption === "cash on delivery") {
     cashdiv.style.display = "block";
-  } else if (selectedPaymentOption === "bank transfer") {
-    bankdiv.style.display = "block";
-  } else if (selectedPaymentOption === "credit card") {
+  }  else if (selectedPaymentOption === "credit card") {
     creditdiv.style.display = "block";
   } else if (selectedPaymentOption === "debit card") {
     debitdiv.style.display = "block";
@@ -34,9 +53,58 @@ paymentSelect.addEventListener("change", function() {
     walletdiv.style.display = "block";
   } else {
     alert("please enter valid options")
-  }
+     document.getElementById("usethismethod").style.display = "none";
+  }}
 
   alert("You selected:" + selectedPaymentOption);
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("changeadd").addEventListener("click", function customer(e) {
+    e.preventDefault();
+
+    document.getElementById("bname").innerHTML = "";
+    document.getElementById("bhnumber").innerHTML = "";
+    document.getElementById("bsociety").innerHTML = "";
+    document.getElementById("bstreet").innerHTML = "";
+    document.getElementById("blandmark").innerHTML = "";
+    document.getElementById("bcity").innerHTML = "";
+    document.getElementById("bstate").innerHTML = "";
+    document.getElementById("bspincode").innerHTML = "";
+
+    let name = document.getElementById("buyername").value;
+    let homenumber = document.getElementById("homenumber").value;
+    let society = document.getElementById("societyname").value;
+    let street = document.getElementById("streetname").value;
+    let landmark = document.getElementById("landmark").value;
+    let city = document.getElementById("cityname").value;
+    let state = document.getElementById("statename").value;
+    let pincode = document.getElementById("pincode").value;
+
+    document.getElementById("bname").innerHTML = name;
+    document.getElementById("bhnumber").innerHTML = homenumber;
+    document.getElementById("bsociety").innerHTML = society;
+    document.getElementById("bstreet").innerHTML = street;
+    document.getElementById("blandmark").innerHTML = landmark;
+    document.getElementById("bcity").innerHTML = city;
+    document.getElementById("bstate").innerHTML = state;
+    document.getElementById("bspincode").innerHTML = pincode;
+
+    document.getElementById("changedhomeaddress").style.display = "none";
+  });
+});
+
+
+
+let netbankingSelect = document.getElementById("netbanking"); 
+netbankingSelect.addEventListener("change", function() {
+  let selectednetbankigOption = netbankingSelect.value;
+
+
+  if (selectednetbankigOption === "Airtel Payments Bank") {
+    window.open("https://www.airtel.in/personal/payments");  
+  } else if (selectednetbankigOption === "State Bank of India") {
+    window.open("https://merchant.onlinesbi.sbi/merchant/merchantprelogin.htm");
+  }
+})

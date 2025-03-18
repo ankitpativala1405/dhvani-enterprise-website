@@ -15,28 +15,32 @@
     <div class="address">
       <h3 class="deliveryaddress">
         <span class="a-letter-space"> 1.Delivery address</span>
-        <span>
-          <strong>ANKITKUMAR JAGADISHBHAI PATIVALA</strong></span>
-          <button class="bcaddress">change address</button>
-      </h3>
+          <button class="bcaddress" id="changeaddress">change address</button>
+           </h3>
      <div class="daddress">
-      <span class="bhnumber">PLOT NO 209-210,</span>
-      <span class="bsociety"> SHRI KRUSHNA NAGAR HOUSING SOCIETY,</span>
-      <span class="blandmark">SINGANPOR CHAR RASTA,VED ROAD, Surat,</span>
-      <span class="bspincode"> GUJARAT 395004</span>
-      <button class="btda">deliver this address</button>
+      
+      <h4 id="bname">ANKITKUMAR JAGADISHBHAI PATIVALA</h4>
+      <p id="bhnumber">PLOT NO 209-210</p>
+      <p id="bsociety">SHRI KRUSHNA NAGAR HOUSING SOCIETY,</p>
+      <p id="bstreet">VED ROAD,</p>
+      <p id="blandmark">SINGANPOR CHAR RASTA,</p>
+      <p id="bcity">Surat,</p>
+      <p id="bstate">GUJARAT</p>
+      <p id="bspincode">395004</p>
+      <button class="btda" id="deliver-btn">deliver this address</button>
+
     </div>
     </div>
-    <div id="paymentoptiondiv">
+    <div id="paymentoptiondiv" style="display: none;">
     <div class="options">
       <h3 class="deliveryaddress"> Choose payment option </h3>
       <select id="payment">
+        <option value="choose any option">choose any option</option>
         <option value="dhvani enterprise wallet">dhvani enterprise wallet</option>
         <option value="net banking">net banking</option>
         <option value="upi">upi</option>
         <option value="credit card">credit card</option>
         <option value="debit card">debit card</option>
-        <option value="bank transfer">bank transfer</option>
         <option value="cash on delivery">cash on delivery</option>
       </select>
     </div>
@@ -45,10 +49,10 @@
       <p>dhvani enterprise wallet selected.</p>
     </div>
     <div id="cashdiv" class="payment-method-details" style="display: none;">
-      <p>Cash on delivery selected.</p>
+      <div id="cashondelivery">
+        <h1>Cash on delivery selected.</h1>
+      </div>
     </div>
-    <div id="bankdiv" class="payment-method-details" style="display: none;">
-      <p>Bank transfer selected.</p>
     </div>
     <div id="creditdiv" class="payment-method-details" style="display: none;">
       <div class="creditCardForm">
@@ -219,6 +223,61 @@
       <p>The UPI ID is in the format of name/phone number@bankname</p>
       <p id="errorupi"></p>
     </div>
+  </div>
+
+  <div id="changedhomeaddress" style="display: none;">
+    <strong><label for="adress" id="saddress">SHIPPING ADDRESS</label></strong>
+    <h5><label for="buyername">name</label></h5>
+    <input type="text" id="buyername" placeholder="Enter your name" /><br />
+
+   <h5><label for="homenumber">House No.\Flat no.</label></h5>
+    <input type="text" id="homenumber" placeholder="enter your home number" /><br />
+
+    <h5><label for="societyname">society/apartment/tenament name</label></h5>
+    <input type="text" id="societyname" placeholder="society/apartment/tenament name" /><br />
+
+    <h5><label for="streetname">street name</label></h5>
+    <input type="text" id="streetname" placeholder="street name" /><br />
+
+    <h5><label for="landmark">landmark</label></h5>
+    <input type="text" id="landmark" placeholder="landmark" /><br />
+
+    <h5><label for="cityname">city name</label></h5>
+    <input type="text" id="cityname" placeholder="city" /><br />
+
+    <h5><label for="statename">state name</label></h5>
+    <input type="text" id="statename" placeholder="state" /><br />
+
+    <h5><label for="pincode">pincode</label></h5>
+    <input type="text" id="pincode" placeholder="pincode" /><br />
+
+    <button class="btda" id="changeadd">change address</button>
+  </div>
+
+  <div id="usethismethod" style="display: none;">
+    <button id="gotoorder">USE THIS PAYMENT METHOD</button>
+    <p>Choose a payment method to continue checking out. You will still have a chance to review and edit your order before it is final.</p>
+  </div>
+  <div id="placeorder" style="display: none;">
+    <h3>Order summary</h3>
+    <div class="itemprise">
+      <p>items price:</p>
+      <p ></p>
+    </div>
+   <div class="shipping fee"> 
+      <p>shipping fee:</p>
+      <p ></p>
+   </div>
+   <hr>
+   <div class="totalprice">
+    <h3>total price:</h3>
+    <h3 ></h3>
+   </div>
+    <hr>
+    <p>Please note that the order will not be processed until you click the "PLACE ORDER" button. You will be redirected to the payment gateway for payment.</p>
+    <p>If you have any questions or concerns, please contact our customer support team at <a href="ankitj1405@gmail.com">ankitj1405@gmail.com</a> or call us <a href="+91 9723665181">+91 9723665181</a>
+    </p>
+    <button id="placeorder">PLACE ORDER</button>
   </div>
   </body>
   <script src="./buynow.js"></script>
