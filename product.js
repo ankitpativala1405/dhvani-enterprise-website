@@ -1,18 +1,50 @@
 let data = [
-    {
-        "id": 1,
-        "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
-        "price": "₹ 199",
-        "category": "usb sealer machine",
-        "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/1.jpg",
-      },{
-        "id": 2,
-        "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
-        "price": "�� 199",
-        "category": "usb sealer machine",
-        "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/2.jpg",
-      }
-        
+  {
+    "id": 1,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "₹ 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/1.jpg",
+  },{
+    "id": 2,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "�� 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/2.jpg",
+  }, {
+    "id": 1,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "₹ 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/1.jpg",
+  },{
+    "id": 2,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "�� 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/2.jpg",
+  },{
+    "id": 2,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "�� 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/2.jpg",
+  }, {
+    "id": 1,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "₹ 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/1.jpg",
+  },{
+    "id": 2,
+    "title": "Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
+    "price": "�� 199",
+    "category": "usb sealer machine",
+    "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/2.jpg",
+  }
+
+    
+       
 ]
 
 let temp = "";

@@ -3,41 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product you want to buy</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>Product You Want to Buy</title>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <link rel="stylesheet" href="./product.css">
 </head>
 <body>
+    <!-- Welcome Message -->
     <p class="index">
-        <strong> Welcome to our online store !! <span> Express delivery </span></strong>
-       </p>
-       <div>
-         <div id="clogo">
-           <div id="companycontact">
-           <img src="./PHOTO/contact-us.png" alt="" height="30px" />
-           <h3>call us</h3>
-           <p>+91 9723665181</p>
-         </div>
-           <div id="companylogo"><img src="./PHOTO/logo5-removebg-preview.png" alt="DHVANI ENTERPRISE LOGO" class="companylogo" ></div>
-           <div id="searchbar">
-             <img src="./PHOTO/searchicon.png" alt="" height="30px" width="30px">
-             <input type="search">
-           </div>
-           
-         </div>
-       </div>
-       <nav>
-         <a href="/index.html" target="_blank">home</a>
-         <a href="/product.html" target="_blank">product</a>
-         <a href="/create new account.html" target="_blank">sign up</a>
-         <a href="/login.html" target="_blank">login</a>
-         <a href="/myorder.html" target="_blank">my order</a>
-       </nav>
+        <strong>Welcome to our online store !! <span>Express delivery</span></strong>
+    </p>
+    
+    <!-- Company Logo, Contact & Search Section -->
+    <div>
+        <div id="clogo">
+            <!-- Company Contact Info -->
+            <div id="companycontact">
+                <img src="./PHOTO/contact-us.png" alt="" height="30px" />
+                <h3>Call Us</h3>
+                <p>+91 9723665181</p>
+            </div>
+            <!-- Company Logo -->
+            <div id="companylogo">
+                <img src="./PHOTO/logo5-removebg-preview.png" alt="DHVANI ENTERPRISE LOGO" class="companylogo">
+            </div>
+            <!-- Search Bar -->
+            <div id="searchbar">
+                <img src="./PHOTO/searchicon.png" alt="" height="30px" width="30px">
+                <input type="search" placeholder="Search...">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/index.html" target="_blank">Home</a>
+        <a href="/product.html" target="_blank">Product</a>
+        <a href="/create new account.html" target="_blank">Sign Up</a>
+        <a href="/login.html" target="_blank">Login</a>
+        <a href="/myorder.html" target="_blank">My Order</a>
+    </nav>
 
+    <!-- Main Heading -->
     <h1 class="pheadcenter">PRODUCTS YOU NEED TO BUY</h1>
 
-    </div> 
-    <div id="container"></div>
-    
+    <!-- Main Container with Filter Bar -->
+    <div id="main-container">
+        <!-- Filter Bar -->
+        <div id="filterbar">
+            <h3>Filters</h3>
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home Appliances</option>
+            </select>
+
+            <label for="price">Price Range</label>
+            <input type="range" id="price" name="price" min="0" max="1000" step="10">
+
+            <label for="brand">Brand</label>
+            <select id="brand">
+                <option value="brand1">Brand 1</option>
+                <option value="brand2">Brand 2</option>
+                <option value="brand3">Brand 3</option>
+            </select>
+        </div>
+        <!-- Container for Products -->
+      <div id="container">
+        <!-- Products will go here -->
+    </div>
+    </div>
 </body>
 <script src="./product.js"></script>
 </html>

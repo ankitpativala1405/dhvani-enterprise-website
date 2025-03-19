@@ -1,0 +1,159 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.index {
+    position: fixed;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    background-color: #e2dddd;
+    color: #212121;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.index span {
+    color: #d32f2f;
+}
+
+#clogo {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#companycontact {
+    display: flex;
+    align-items: center;
+}
+
+#companycontact img {
+    margin-right: 10px;
+}
+
+#companycontact h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#companycontact p {
+    font-size: 16px;
+    margin: 0;
+}
+
+#companylogo img {
+    height: 80px;
+}
+
+#searchbar {
+    display: flex;
+    align-items: center;
+}
+
+#searchbar img {
+    margin-right: 10px;
+}
+
+#searchbar input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+nav {
+    position: fixed;
+    top: 140px;
+   
+    left: 0;
+    width: 100%;
+    background-color: #e2dddd;
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 998;
+}
+
+nav a {
+    color:#333;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f39c12; 
+}
+
+.pheadcenter {
+    position: fixed;
+    background-color: #e2dddd;
+    top: 180px;
+    /* Adjust this based on the nav and previous fixed elements */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #212121;
+    z-index: 997;
+}
+
+#main-container {
+    margin-top: 270px;
+    /* Adjust to avoid overlap with fixed header and nav */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#filterbar {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 996;
+}
+
+#filterbar h3 {
+    font-size: 22px;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+
+#filterbar label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#filterbar select,
+#filterbar input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#filterbar input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
