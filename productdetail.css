@@ -143,3 +143,140 @@ footer a:hover {
   .product-detail .info {
     max-width: 500px;
   }
+
+
+
+
+
+  /* General Layout */
+#product-detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Product Images */
+#product-images {
+  flex: 1;
+  margin-right: 20px;
+  text-align: center;
+}
+
+#main-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#thumbnails {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#thumbnails img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#thumbnails img:hover {
+  transform: scale(1.1);
+}
+
+/* Product Info Section */
+#product-info {
+  flex: 2;
+}
+
+#product-info h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+#product-price {
+  font-size: 20px;
+  color: #B12704;
+  margin: 15px 0;
+}
+
+#product-rating {
+  font-size: 16px;
+  color: #FF9900;
+  margin-bottom: 20px;
+}
+
+#product-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+#product-description h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+#product-actions {
+  margin-top: 30px;
+}
+
+.add-to-cart, .buy-now {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart {
+  background-color: #FF9900;
+  color: white;
+}
+
+.buy-now {
+  background-color: #0073e6;
+  color: white;
+}
+
+.add-to-cart:hover {
+  background-color: #e68900;
+}
+
+.buy-now:hover {
+  background-color: #005bb5;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  #product-detail {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #product-images {
+      margin-right: 0;
+  }
+
+  #thumbnails {
+      justify-content: flex-start;
+      margin-top: 10px;
+  }
+
+  .add-to-cart, .buy-now {
+      width: 100%;
+      margin-top: 15px;
+  }
+}
