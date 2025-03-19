@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  /* Your existing styles */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
     overflow-x: hidden;
@@ -6,7 +8,7 @@ body {
     background-color: #fff;
 }
   nav {
-    background: #e2dddd;;
+    background: #e2dddd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +46,7 @@ body {
     margin: auto;
     color: #1f1919;
     font-size: 16px;
-    background: #e2dddd;;
+    background: #e2dddd;
   }
 * {
   margin: 0;
@@ -129,26 +131,20 @@ footer a:hover {
   text-decoration: underline;
 }
 
-
-
-
+/* Product Layout */
 .product-detail {
     display: flex;
     padding: 20px;
-  }
-  .product-detail img {
+}
+.product-detail img {
     max-width: 300px;
     margin-right: 20px;
-  }
-  .product-detail .info {
+}
+.product-detail .info {
     max-width: 500px;
-  }
+}
 
-
-
-
-
-  /* General Layout */
+/* General Layout */
 #product-detail {
   display: flex;
   justify-content: space-between;
@@ -226,11 +222,6 @@ footer a:hover {
   margin-bottom: 10px;
 }
 
-/* Buttons */
-#product-actions {
-  margin-top: 30px;
-}
-
 .add-to-cart, .buy-now {
   padding: 12px 25px;
   font-size: 16px;
@@ -259,24 +250,40 @@ footer a:hover {
   background-color: #005bb5;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  #product-detail {
-      flex-direction: column;
-      align-items: center;
-  }
+/* Product Actions Section */
+#product-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
 
-  #product-images {
-      margin-right: 0;
-  }
+#product-actions button {
+  background-color: #20c997 !important;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 180px;
+  font-weight: bold;
+}
 
-  #thumbnails {
-      justify-content: flex-start;
-      margin-top: 10px;
-  }
+#product-actions button:hover {
+  background-color: #e68900; 
+  transform: translateY(-2px);
+}
 
-  .add-to-cart, .buy-now {
-      width: 100%;
-      margin-top: 15px;
-  }
+#product-actions button:active {
+  transform: translateY(0); 
+}
+
+#product-actions button:nth-child(2) {
+  background-color: #00A859; 
+}
+
+#product-actions button:nth-child(2):hover {
+  background-color: #007a40; 
 }
