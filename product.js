@@ -42,8 +42,7 @@ let data = [
     "category": "usb sealer machine",
     "image": "/PHOTO/product photo/2-in-1-Usb-Sealer-Machine/2.jpg",
   }
-
-    
+ 
        
 ]
 
