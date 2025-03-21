@@ -53,3 +53,11 @@ const productdetail = (productId) => {
     window.open('./productdetail.html')
 };
 
+
+let priceRange = document.getElementById('price');
+let priceValue = document.getElementById('price-value');
+
+priceRange.addEventListener('input', function() {
+    priceValue.textContent = priceRange.value;
+});
+

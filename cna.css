@@ -1,163 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
-    overflow-x: hidden;
-    font-family: "Poppins", serif;
-    background-color: #fff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  nav {
-    background:  #e2dddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  nav a {
-    color: black; 
-    text-decoration: none; 
-    margin: 0 20px; 
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #f39c12; 
-    transform: scale(1.1);
-  }
-  
-  nav a.active {
-    color: #f39c12; 
-  }
-  
-  .index{
-    -webkit-tap-highlight-color: transparent;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: inherit;
-    border: 0px;
-    font: inherit;
-    vertical-align: baseline;
-    padding: 0;
-    line-height:40px;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #1f1919;
-    font-size: 16px;
-    background: #e2dddd;;
-  }
-
-
-* {
+body,html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+  font-family: Arial, sans-serif;}
 
-
-#index {
+.index {
+  position: fixed;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  background-color: #e2dddd;
+  color: #212121;
+  font-size: 18px;
   text-align: center;
-  font-size: 1.5em;
-  padding: 20px;
-  background-color: #fff;
-
-}
-
-#index span {
+  padding: 10px;
   font-weight: bold;
-  color: #28a745;
+  z-index: 1000;
 }
+
+.index span { color: #d32f2f;}
 
 #clogo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
- background-color: #fff;
-
+position: fixed;
+top: 42px;
+left: 0;
+right: 0;
+padding: 10px 20px;
+z-index: 999;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%; /* Ensure full width */
 }
 
+#companycontact {
+margin-left: 200px;
+display: flex;
+align-items: center;
+}
+
+#companycontact img { margin-right: 10px;}
+
 #companycontact h3 {
-  font-size: 1.1em;
-  color: #333;
+font-size: 18px;
+margin-left: 50px;
+margin-top: -30px;
 }
 
 #companycontact p {
-  font-size: 1em;
-  color: #555;
+font-size: 16px;
+margin-left: -100px;
+margin-top: 55px;
 }
 
-#companylogo img {
-  height: 120px;
-  width: 360px;
+#companylogo img {  
+height: 80px;
 }
 
 #searchbar {
-  display: flex;
-  align-items: center;
-  background-color: #f1f1f1;
-  padding: 5px 10px;
-  border-radius: 20px;
+margin-right: 150px;
+display: flex;
+align-items: center;
+background-color: #e2dddd;
+padding: 5px 10px;
+border-radius: 10px;
 }
 
-#searchbar img {
-  margin-right: 10px;
-}
+#searchbar img { margin-right: 10px;}
 
 #searchbar input {
-  border: none;
-  outline: none;
-  padding: 10px;
-  border-radius: 20px;
-  font-size: 1em;
-  width: 200px;
+padding: 8px;
+font-size: 16px;
+border-radius: 5px;
+border: 1px solid #ccc;
+width: 200px; /* Ensure the input box is not too small */}
+
+nav {
+position: fixed;
+top: 140px;
+left: 0;
+width: 100%;
+background-color: #e2dddd;
+color: #333;
+padding: 10px 0;
+text-align: center;
+z-index: 998;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 30px;
+nav a {
+color: #333;
+text-decoration: none;
+margin: 0 15px;
+font-size: 16px;
+font-weight: bold;
 }
 
-footer p {
-  font-size: 0.9em;
-}
-
-footer a {
-  color: #28a745;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
+nav a:hover { color: #f39c12;}
 
 
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
-}
 
 .signup {
     background: #e2dddd;;
@@ -167,11 +106,13 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    padding: 30px;
+    padding: 10px;
     font-size: 2em;
     font-weight: bold;
     color: #333;
     margin-bottom: 30px;
+    margin-top: 170px;
+    height: 40px;
 }
 
 
@@ -187,6 +128,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto;
+    margin-top: -20px;
 }
 
 
@@ -275,4 +217,18 @@ input[type="reset"]:hover {
 }
 .failed{
   border: 2px solid red !important;
+}
+
+#buttons{
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+#buttons input[type="reset"]{
+  margin-left: 150px;
+}
+
+#buttons input[type="submit"]{
+  margin-right: 150px;
 }

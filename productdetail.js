@@ -9,7 +9,8 @@ let detaildata = [
     "title": "DHVANI ENTERPRISE Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
     "price": "199",
     "MRP": "406",
-    "category":"usb sealer machine",
+    "category":" home ware",
+    "subcategory":"usb machine",
     "image1": "./PHOTO/product photo/0/1.jpg",
     "image2": "./PHOTO/product photo/0/2.jpg", 
     "image3": "./PHOTO/product photo/0/3.jpg", 
@@ -43,7 +44,8 @@ let detaildata = [
     "title": "DHVANI ENTERPRISE Women's Faux Georgette Stitched Top With Unstitched Santoon Bottom and Dupatta Full Sleeve Embroidered Anarkali Gown", 
     "price": "599", 
     "MRP": "2199", 
-    "category": "Anarkali Gown", 
+    "category": "clothig", 
+    "subcategory": "Anarkali Gown", 
     "image1": "./PHOTO/product photo/1/1.jpg", 
     "image2": "./PHOTO/product photo/1/2.jpg", 
     "image3": "./PHOTO/product photo/1/3.jpg", 
@@ -57,9 +59,9 @@ let detaildata = [
     "bullet3": "💖 Dupatta: Heavy Butterfly Net With Embroidery Work With Latkan, Size: 2.20 MTR, Sleeve; Faux Georgette With Embroidered Work", 
     "bullet4": "💖 Type: Semi Stitched, Wash Care: First Time Dry Clean; Package Contain:Top, Bottom and Dupatta", 
     "bullet5": "💖 Closure Type: Zipper; Occasion Type: Ceremony; Item Length Description: Floor Length; Sleeve Type: Long Sleeve", 
-    "bullet6": "💖 ", 
-    "bullet7": "💖 ", 
-    "bullet8": "💖 ", 
+    "bullet6": "", 
+    "bullet7": "", 
+    "bullet8": "", 
     "Descrip1": "DHVANI ENTERPRISE provides you gHeavy Faux Georgette With Embroidered Work With Sequence ( Semi-Stitched ), Size: Max Up To 48 Inches, Length: Max Up To 52 Inches, Flair: 2.70 MTR.", 
     "Descrip2": "Traditional Indian wear Anarkali gowns and suits for women. This Anarkali gown sophisticated look and enhances the beauty of the women. Which can be worn for functions, festivals, parties, and even weddings also.", 
     "Descrip3": "You will be a center of attraction in the event once you ware it. DHVANI ENTERPRISE brings to you this Anarkali suit. Which are available in pink, wine, brown, Rama, green, white, and black shades of attractive colors and are made from georgette fabric.", 
@@ -104,6 +106,7 @@ let productsdata = `
         <div id="product-info">
             <h1>${temporary.title}</h1>
             <h4>Category: ${temporary.category}</h4>
+            <h4>sub-Category: ${temporary.subcategory}</h4>
             <div class="priceanddiscount">
                 <h1 id="product-price">₹${temporary.price}</h1>
                 <h2>${ Math.round(((parseFloat(temporary.price)*100)/parseFloat(temporary.MRP))-100)}</h2>
@@ -123,8 +126,21 @@ let productsdata = `
                 <h4>${temporary.bullet3}</h4>
                 <h4>${temporary.bullet4}</h4>
                 <h4>${temporary.bullet5}</h4>
+                <h4>${temporary.bullet6}</h4>
+                <h4>${temporary.bullet7}</h4>
+                <h4>${temporary.bullet8}</h4>
                 <p>${temporary.Descrip1}</p>
                 <p>${temporary.Descrip2}</p>
+                <p>${temporary.Descrip3}</p>
+                <p>${temporary.Descrip4}</p>
+                <p>${temporary.Descrip5}</p>
+                <p>${temporary.Descrip6}</p>
+                <p>${temporary.Descrip7}</p>
+                <p>${temporary.Descrip8}</p>
+                <p>${temporary.Descrip9}</p>
+                <p>${temporary.Descrip10}</p>
+                <p>${temporary.Descrip11}</p>
+                <p>${temporary.Descrip12}</p>
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product You Want to Buy</title>
     <link rel="stylesheet" href="./product.css">
+    <style></style>
 </head>
 
 <body>
@@ -55,13 +56,20 @@
             <h3>Filters</h3>
             <label for="category">Category</label>
             <select id="category">
+                <option value="electronics">All</option>
                 <option value="electronics">Electronics</option>
                 <option value="clothing">Clothing</option>
                 <option value="home">Home Appliances</option>
             </select>
-
+            <label for="subcategory">sub-category</label>
+            <select id="subcategory">
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home Appliances</option>
+            </select>
             <label for="price">Price Range</label>
-            <input type="range" id="price" name="price" min="0" max="1000" step="10">
+    <input type="range" id="price" name="price" min="0" max="10000" step="1000" value="5000">
+    <span id="price-value">5000</span>
 
             <label for="brand">Brand</label>
             <select id="brand">

@@ -3,6 +3,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .index {
@@ -137,6 +138,10 @@ nav a:hover {
     border-radius: 10px;
     z-index: 996;
     margin-top: -60px !important;
+    width: 100%; 
+    max-width:180px; 
+    overflow: hidden; /* Prevent overflow */
+    margin-left: -12px;
 }
 
 #filterbar h3 {
@@ -163,8 +168,9 @@ nav a:hover {
 }
 
 #filterbar input[type="range"] {
-    width: 100%;
+    width: 100%; 
     margin: 10px 0;
+    margin-left: -10px;
 }
 
 
@@ -230,4 +236,9 @@ button {
     font-weight: 700;
     color: antiquewhite;
     border-radius: 500px;
+}
+#price-value {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #007BFF;
 }

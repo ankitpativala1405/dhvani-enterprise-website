@@ -162,10 +162,6 @@ nav a:hover {
   border-radius: 8px;
 }
 
-#main-image img:hover {
-  transform: scale(1.1);
-}
-
 #thumbnails {
   margin-top: 15px;
   display: flex;
