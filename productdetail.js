@@ -3,8 +3,6 @@ const buynow = () => { window.open('./buynow.html'); }
 const addtocart = () => { alert("add your cart page here") }
 
 let details = localStorage.getItem("productId");
-console.log("details", details);
-
 
 let detaildata = [
     { "id": 0,
@@ -77,10 +75,12 @@ let detaildata = [
     }
 ];
 
+
+
 let temporary = null;
 
 if (details == 0) {
-    temporary = detaildata[0];  
+    temporary = detaildata[0]; 
 } else if (details == 1) {
     temporary = detaildata[1]; 
 }
@@ -106,7 +106,7 @@ let productsdata = `
             <h4>Category: ${temporary.category}</h4>
             <div class="priceanddiscount">
                 <h1 id="product-price">₹${temporary.price}</h1>
-                <h2>- 51%</h2>
+                <h2>${ Math.round(((parseFloat(temporary.price)*100)/parseFloat(temporary.MRP))-100)}</h2>
             </div>
             <p>M.R.P: ₹${temporary.MRP}</p>
             <p id="product-rating">
