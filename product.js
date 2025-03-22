@@ -3,8 +3,8 @@ let data = [
     "title": "DHVANI ENTERPRISE Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
     "price": "199",
     "MRP": "406",
-    "category":" home ware",
-    "subcategory":"usb machine",
+    "category":"Home & Living & kitchenware",
+    "subcategory":"kitchenware",
     "image1": "./PHOTO/product photo/0/1.jpg",
     "image2": "./PHOTO/product photo/0/2.jpg", 
     "image3": "./PHOTO/product photo/0/3.jpg", 
@@ -38,8 +38,8 @@ let data = [
     "title": "DHVANI ENTERPRISE Women's Faux Georgette Stitched Top With Unstitched Santoon Bottom and Dupatta Full Sleeve Embroidered Anarkali Gown", 
     "price": "599", 
     "MRP": "2199", 
-    "category": "clothig", 
-    "subcategory": "Anarkali Gown", 
+    "category": "clothing", 
+    "subcategory": "gown", 
     "image1": "./PHOTO/product photo/1/1.jpg", 
     "image2": "./PHOTO/product photo/1/2.jpg", 
     "image3": "./PHOTO/product photo/1/3.jpg", 
@@ -71,9 +71,6 @@ let data = [
     }
       
 ]
-
-
-
 
 sortDropdown.addEventListener('click', function() {
   let sortValue =  document.getElementById('sortDropdown').value;
@@ -124,3 +121,48 @@ priceRange.addEventListener('input', function() {
     priceValue.textContent = `upto ${priceRange.value}`
 });
 
+
+let getvalues=(id)=>{ 
+  return document.getElementById(id);
+}
+
+
+
+const subcategories = {
+  "electronics": ["smartphones", "computers", "TVs", "audio equipment", "accessories"],
+  "clothing":["gown","kurtis","kurtas","tunic","kurta set","kurti set","saree"],
+  "Fashion & Apparel": ["footwear", "accessories for men", "accessories for women", "accessories for kids","accessories for children"],
+  "Food & Beverages": ["groceries", "snacks", "drinks", "other consumables"],
+  "Home & Living & kitchenware": ["furniture", "home decor", "appliances", "other items","kitchenware"],
+  "Beauty & Personal Care": ["makeup", "skincare", "hair care","cosmetics", "personal care","body care", "fragrances","perfumes","fragrances for women", "fragrances for kids","fragrances for children","fragrances for men","fragrances for teenagers","fragrances for adults","make for women","make for men","makeup products",],
+  "Toys & Hobbies": ["toys", "games", "collectibles", "hobby-related"],
+  "Services": ["software subscriptions", "online courses", "non-physical products"],
+  "DIY and Hardware": ["tools", "home repairs", "construction"],
+  "Media": ["books", "music", "movies", "other media"]
+};
+
+const categorySelect = document.getElementById("category");
+const subcategorySelect = document.getElementById("subcategory");
+
+categorySelect.addEventListener("change", function () {
+    const selectedCategory = categorySelect.value;
+
+    subcategorySelect.innerHTML = '<option value="">Please select a category first</option>';
+    
+    if (selectedCategory === "all") {
+        subcategorySelect.style.display = "none";  
+    } else {
+        subcategorySelect.style.display = "block"; 
+
+        
+        const options = subcategories[selectedCategory];
+
+        options.forEach(function (sub) {
+            const option = document.createElement("option");
+            option.value = sub;
+            option.textContent = sub;
+            subcategorySelect.appendChild(option);
+        });
+        renderProducts();
+    }
+});

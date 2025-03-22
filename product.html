@@ -1,100 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product You Want to Buy</title>
-    <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="./product.css" />
     <style></style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Welcome Message -->
     <p class="index">
-        <strong>Welcome to our online store !! <span>Express delivery</span></strong>
+      <strong
+        >Welcome to our online store !! <span>Express delivery</span></strong
+      >
     </p>
 
     <!-- Company Logo, Contact & Search Section -->
     <div>
-        <div id="clogo">
-            <!-- Company Contact Info -->
-            <div id="companycontact">
-                <div id="callphoto">
-                <img src="./PHOTO/contact-us.png" alt="" height="30px" />
-                <h3>Call Us</h3></div>
-                <p>+91 9723665181</p>
-            </div>
-            <!-- Company Logo -->
-            <div id="companylogo">
-                <img src="./PHOTO/logo5-removebg-preview.png" alt="DHVANI ENTERPRISE LOGO" class="companylogo">
-            </div>
-            <!-- Search Bar -->
-            <div id="searchbar">
-                <img src="./PHOTO/searchicon.png" alt="" height="30px" width="30px">
-                <input type="search" placeholder="Search...">
-            </div>
+      <div id="clogo">
+        <!-- Company Contact Info -->
+        <div id="companycontact">
+          <div id="callphoto">
+            <img src="./PHOTO/contact-us.png" alt="" height="30px" />
+            <h3>Call Us</h3>
+          </div>
+          <p>+91 9723665181</p>
         </div>
+        <!-- Company Logo -->
+        <div id="companylogo">
+          <img
+            src="./PHOTO/logo5-removebg-preview.png"
+            alt="DHVANI ENTERPRISE LOGO"
+            class="companylogo"
+          />
+        </div>
+        <!-- Search Bar -->
+        <div id="searchbar">
+          <img src="./PHOTO/searchicon.png" alt="" height="30px" width="30px" />
+          <input type="search" placeholder="Search..." />
+        </div>
+      </div>
     </div>
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="/index.html" target="_blank">HOME</a>
-        <a href="/product.html" target="_blank">PRODUCT</a>
-        <a href="/create new account.html" target="_blank">SIGN UP</a>
-        <a href="/login.html" target="_blank">LOGIN</a>
-        <div class="order-link">
-          <a href="/myorder.html" target="_blank">MY ORDER</a>
-          <div class="dropdown">
-            <a href="/cart.html">your Cart</a>
-            <a href="/order-history.html">my Order</a>
-          </div>
+      <a href="/index.html" target="_blank">HOME</a>
+      <a href="/product.html" target="_blank">PRODUCT</a>
+      <a href="/create new account.html" target="_blank">SIGN UP</a>
+      <a href="/login.html" target="_blank">LOGIN</a>
+      <div class="order-link">
+        <a href="/myorder.html" target="_blank">MY ORDER</a>
+        <div class="dropdown">
+          <a href="/cart.html">your Cart</a>
+          <a href="/order-history.html">my Order</a>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <!-- Main Heading -->
     <h1 class="pheadcenter">PRODUCTS YOU NEED TO BUY</h1>
 
     <!-- Main Container with Filter Bar -->
     <div id="main-container">
-        <!-- Filter Bar -->
-        <div id="filterbar">
-            <h3>Filters</h3>
-            <label for="category">Category</label>
-            <select id="category">
-                <option value="electronics">All</option>
-                <option value="electronics">Electronics</option>
-                <option value="clothing">Clothing</option>
-                <option value="home">Home Appliances</option>
-            </select>
-            <label for="subcategory">sub-category</label>
-            <select id="subcategory">
-                <option value="electronics">Electronics</option>
-                <option value="clothing">Clothing</option>
-                <option value="home">Home Appliances</option>
-            </select>
-            <label for="price">Price Range</label>
-            <input type="range" id="price" name="price" min="0" max="5000" step="100" value="5000" oninput="updatePriceValue()">
-    <span id="price-value">upto 5000</span>
+      <!-- Filter Bar -->
+      <div id="filterbar">
+        <h3>Filters</h3>
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="all">chhose any option</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">clothing</option>
+          <option value="Fashion & Apparel">Fashion & Apparel</option>
+          <option value="Food & Beverages">Food & Beverages</option>
+          <option value="Home & Living & kitchenware"> Home & Living & kitchenware </option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Toys & Hobbies">Toys & Hobbies</option>
+          <option value="Services">Services</option>
+          <option value="DIY and Hardware">DIY and Hardware</option>
+          <option value="Media">Media</option>
+        </select>
 
-      <label for="sortDropdown">Sort By</label>
-    <select id="sortDropdown">
-        <option value="asc" id="asc">Price Low to High</option>
-        <option value="desc" id="desc">Price High to Low</option>
-      </select>
+        <label for="subcategory">Sub-category</label>
+        <select id="subcategory" style="display: none">
+          <option value="">Please select a category first</option>
+        </select>
 
-            <label for="brand">Brand</label>
-            <select id="brand">
-                <option value="brand1">Brand 1</option>
-                <option value="brand2">Brand 2</option>
-                <option value="brand3">Brand 3</option>
-            </select>
-        </div>
-        <!-- Container for Products -->
-        <div id="container">
-            <!-- Products will go here -->
-        </div>
+        <label for="price">Price Range</label>
+        <input type="range" id="price" name="price" min="0" max="5000" step="100" value="5000" oninput="updatePriceValue()"/>
+        <span id="price-value">upto 5000</span>
+
+        <label for="sortDropdown">Sort By</label>
+        <select id="sortDropdown">
+          <option value="asc" id="asc">Price Low to High</option>
+          <option value="desc" id="desc">Price High to Low</option>
+        </select>
+
+        <label for="brand">Brand</label>
+        <select id="brand">
+          <option value="brand1">Brand 1</option>
+          <option value="brand2">Brand 2</option>
+          <option value="brand3">Brand 3</option>
+        </select>
+      </div>
+      <div id="container">
+        <!-- Products will go here -->
+      </div>
     </div>
-</body>
-<script src="./product.js"></script>
+  </body>
+  <script src="./product.js"></script>
+  <script></script>
 </html>
