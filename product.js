@@ -72,6 +72,21 @@ let data = [
       
 ]
 
+
+
+
+sortDropdown.addEventListener('click', function() {
+  let sortValue =  document.getElementById('sortDropdown').value;
+
+  if (sortValue === "asc") {
+    data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));//low to high
+  } else if (sortValue === "desc") {
+    data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));//high to low
+  }
+  renderProducts();
+});
+
+function renderProducts() {
 let temp = "";
 for (let i = 0; i < data.length; i++) {
     temp += `
@@ -85,9 +100,10 @@ for (let i = 0; i < data.length; i++) {
         </div>
     </div>`  
 }
-
 document.getElementById("container").innerHTML = temp;
+}
 
+renderProducts() 
 const buyn=()=>{ window.open('./buynow.html');}
 
 const atc=()=>{ 
@@ -95,16 +111,16 @@ const atc=()=>{
   window.open('./cart.html')}
 
 
-const productdetail = (productId) => {
-  const product = data.find(item => item.id === productId); // Find the product by its ID
-  localStorage.setItem('productDetails', JSON.stringify(product)); // Store the whole product object
-  window.open('./productdetail.html'); // Open the product detail page
+const productdetail = (id) => {
+  const product = data.find(item => item.id === id); 
+  localStorage.setItem('productDetails', JSON.stringify(product)); 
+  window.open('./productdetail.html'); 
 };
 
 let priceRange = document.getElementById('price');
 let priceValue = document.getElementById('price-value');
 
 priceRange.addEventListener('input', function() {
-    priceValue.textContent = priceRange.value;
+    priceValue.textContent = `upto ${priceRange.value}`
 });
 

@@ -74,8 +74,14 @@
                 <option value="home">Home Appliances</option>
             </select>
             <label for="price">Price Range</label>
-    <input type="range" id="price" name="price" min="0" max="10000" step="1000" value="5000">
-    <span id="price-value">5000</span>
+            <input type="range" id="price" name="price" min="0" max="5000" step="100" value="5000" oninput="updatePriceValue()">
+    <span id="price-value">upto 5000</span>
+
+      <label for="sortDropdown">Sort By</label>
+    <select id="sortDropdown">
+        <option value="asc" id="asc">Price Low to High</option>
+        <option value="desc" id="desc">Price High to Low</option>
+      </select>
 
             <label for="brand">Brand</label>
             <select id="brand">
