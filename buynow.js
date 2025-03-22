@@ -11,7 +11,7 @@ document.getElementById("gotoorder").addEventListener("click",()=>{
   document.getElementById("placeorder").style.display = 'block';
 })
 
-document.getElementById("placeorder").addEventListener("click",()=>{
+document.getElementById("placeorderbutton").addEventListener("click",()=>{
   alert("Thank you for submitting place order.")
 })
 
@@ -97,14 +97,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-let netbankingSelect = document.getElementById("netbanking"); 
-netbankingSelect.addEventListener("change", function() {
-  let selectednetbankigOption = netbankingSelect.value;
-
-
-  if (selectednetbankigOption === "Airtel Payments Bank") {
-    window.open("https://www.airtel.in/personal/payments");  
-  } else if (selectednetbankigOption === "State Bank of India") {
-    window.open("https://merchant.onlinesbi.sbi/merchant/merchantprelogin.htm");
-  }
-})

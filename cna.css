@@ -35,16 +35,14 @@ width: 100%; /* Ensure full width */
 #companycontact {
 margin-left: 200px;
 display: flex;
-align-items: center;
-}
+align-items: center;}
 
 #companycontact img { margin-right: 10px;}
 
 #companycontact h3 {
 font-size: 18px;
 margin-left: 50px;
-margin-top: -30px;
-}
+margin-top: -30px;}
 
 #companycontact p {
 font-size: 16px;
@@ -52,9 +50,7 @@ margin-left: -100px;
 margin-top: 55px;
 }
 
-#companylogo img {  
-height: 80px;
-}
+#companylogo img {   height: 80px;}
 
 #searchbar {
 margin-right: 150px;
@@ -96,7 +92,36 @@ font-weight: bold;
 
 nav a:hover { color: #f39c12;}
 
+.order-link {
+position: relative;
+display: inline-block;
+}
 
+.dropdown {
+display: none;
+position: absolute;
+/* background-color: #f1f1f1; */
+min-width: 160px;
+z-index: 1;
+top: 100%; /* Position dropdown below the link */
+left: 0;
+}
+
+.order-link:hover .dropdown {
+display: block;
+}
+
+.dropdown a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown a:hover {
+background-color: #e2dddd;
+border-radius: 10px;
+}
 
 .signup {
     background: #e2dddd;;
