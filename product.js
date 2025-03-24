@@ -5,6 +5,7 @@ let data = [
     "MRP": "406",
     "category":"Home & Living & kitchenware",
     "subcategory":"kitchenware",
+    "sku":"usb sealer machine",
     "image1": "./PHOTO/product photo/0/1.jpg",
     "image2": "./PHOTO/product photo/0/2.jpg", 
     "image3": "./PHOTO/product photo/0/3.jpg", 
@@ -40,6 +41,7 @@ let data = [
     "MRP": "2199", 
     "category": "clothing", 
     "subcategory": "gown", 
+    "sku":"Anarkali gown(parrot green)",
     "image1": "./PHOTO/product photo/1/1.jpg", 
     "image2": "./PHOTO/product photo/1/2.jpg", 
     "image3": "./PHOTO/product photo/1/3.jpg", 
@@ -83,29 +85,41 @@ sortDropdown.addEventListener('click', function() {
   renderProducts();
 });
 
-function renderProducts() {
-let temp = "";
-for (let i = 0; i < data.length; i++) {
-    temp += `
-     <div class="box" id="box" onclick="productdetail(${data[i].id})">
-        <img src="${data[i].image1}" alt="" class="img">
-        <h3 class="title">${data[i].title}</h3>
-        <p class="price">PRICE:  ₹${data[i].price}</p>
-        <div id="bothbuttons">
-        <button onclick=atc() class="add-to-cart">add to cart</button>
-        <button onclick=buyn() class="buy-now">Buy now</button> 
-        </div>
-    </div>`  
+function renderProducts(filteredData = data) {
+  let temp = "";
+  for (let i = 0; i < filteredData.length; i++) {
+      temp += `
+      <div class="box" id="box" onclick="productdetail(${filteredData[i].id})">
+          <img src="${filteredData[i].image1}" alt="" class="img">
+          <h3 class="title">${filteredData[i].title}</h3>
+          <p class="price">PRICE:  ₹${filteredData[i].price}</p>
+          <div id="bothbuttons">
+        <button onclick="atc(${filteredData[i].id}); event.stopPropagation();" class="add-to-cart">add to cart</button>
+          <button onclick="buyn()" class="buy-now">Buy now</button> 
+          </div>
+      </div>`  
+  }
+  document.getElementById("container").innerHTML = temp;
 }
-document.getElementById("container").innerHTML = temp;
-}
+
 
 renderProducts() 
 const buyn=()=>{ window.open('./buynow.html');}
 
-const atc=()=>{ 
-  alert("product has been added to cart")
-  window.open('./cart.html')}
+
+
+const atc = (id) => {
+
+  const product = data.find((ele) => ele.id === id);
+  
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+  cart.push(product);
+  
+  localStorage.setItem("cart", JSON.stringify(cart));
+  
+  alert("Product has been added to your cart!");
+};
 
 
 const productdetail = (id) => {
@@ -126,7 +140,6 @@ let getvalues=(id)=>{
   return document.getElementById(id);
 }
 
-
 const subcategories = {
   "electronics": ["smartphones", "computers", "TVs", "audio equipment", "accessories"],
   "clothing":["gown","kurtis","kurtas","tunic","kurta set","kurti set","saree"],
@@ -144,24 +157,33 @@ let categorySelect = document.getElementById("category");
 let subcategorySelect = document.getElementById("subcategory");
 
 categorySelect.addEventListener("change", function () {
-    let selectedCategory = categorySelect.value;
+  let selectedCategory = categorySelect.value;
 
-    subcategorySelect.innerHTML = '<option value="">Please select a category first</option>';
+  subcategorySelect.innerHTML = '<option value="">Select Subcategory</option>';
 
-        subcategorySelect.style.display = "block"; 
+  if (selectedCategory) {
+      let options = subcategories[selectedCategory] || [];
+      
+      subcategorySelect.style.display = "block"; 
 
-        
-        let options = subcategories[selectedCategory];
+      for (let i = 0; i < options.length; i++) {
+        let option = document.createElement("option");
+        option.value = options[i]; 
+        option.textContent = options[i]; 
+        subcategorySelect.appendChild(option);
+    }
 
-        options.forEach(function (sub) {
-            const option = document.createElement("option");
-            option.value = sub;
-            option.textContent = sub;
-            subcategorySelect.appendChild(option);
-        });
-        renderProducts();
-
+      filterByCategory(selectedCategory);
+  } else {
+      subcategorySelect.style.display = "none"; 
+      renderProducts(); 
+  }
 });
+
+function filterByCategory(category) {
+  let filteredData = data.filter(product => product.category === category);
+  renderProducts(filteredData);
+}
 
 const filterbysubcategory = () => {
   let selectedSubcategory = subcategorySelect.value;

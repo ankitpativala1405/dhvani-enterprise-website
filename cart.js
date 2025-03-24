@@ -1,17 +1,5 @@
-const cartItems = [
-    {
-        id: 1,
-        name: "Laptop",
-        price: 999.99,
-        quantity: 1,
-    },
-    {
-        id: 2,
-        name: "Smartphone",
-        price: 499.99,
-        quantity: 2,
-    }
-];
+
+let cartItems=JSON.parse(localStorage.getItem("productDetails"))
 
 function updateCart() {
     const cartTableBody = document.querySelector('#cart-table tbody');
@@ -24,7 +12,7 @@ function updateCart() {
     cartItems.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${item.name}</td>
+            <td>${item.sku}</td>
             <td>₹${item.price.toFixed(2)}</td>
             <td><input type="number" value="${item.quantity}" min="1" data-id="${item.id}" class="quantity-input"></td>
             <td>₹${(item.price * item.quantity).toFixed(2)}</td>
@@ -74,3 +62,40 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open('./buynow.html');
     });
 });
+
+
+function renderCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    if (cart.length === 0) {
+      document.getElementById("cart-container").innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      let cartHTML = "";
+      
+      for (let i = 0; i < cart.length; i++) {
+        let product = cart[i];
+        cartHTML += `
+          <div class="cart-item">
+            <img src="${product.image1}" alt="${product.title}" class="img">
+            <h3 class="title">${product.title}</h3>
+            <p class="price">₹${product.price}</p>
+            <button onclick="removeFromCart(${product.id})" class="remove-btn">Remove</button>
+          </div>
+        `;
+      }
+  
+      document.getElementById("cart-container").innerHTML = cartHTML;
+    }
+  }
+  
+  renderCart();
+  
+
+
+  function removeFromCart(productId) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter(product => product.id !== productId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+  

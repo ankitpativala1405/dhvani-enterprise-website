@@ -23,8 +23,8 @@ let productsdata = `
         </div>
         <div id="product-info">
             <h1>${details.title}</h1>
-            <h4>Category: ${details.category}</h4>
-            <h4>sub-Category: ${details.subcategory}</h4>
+            <h4>Category: ${details.category} || sub-Category: ${details.subcategory}</h4>
+            <h4>sku: ${details.sku}</h4>
             <div class="priceanddiscount">
                 <h1 id="product-price">₹${details.price}</h1>
                 <h2>${ Math.round(((parseFloat(details.price)*100)/parseFloat(details.MRP))-100)}%</h2>
