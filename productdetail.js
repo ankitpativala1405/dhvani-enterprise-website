@@ -27,7 +27,7 @@ let productsdata = `
             <h4>sub-Category: ${details.subcategory}</h4>
             <div class="priceanddiscount">
                 <h1 id="product-price">₹${details.price}</h1>
-                <h2>${ Math.round(((parseFloat(details.price)*100)/parseFloat(details.MRP))-100)}</h2>
+                <h2>${ Math.round(((parseFloat(details.price)*100)/parseFloat(details.MRP))-100)}%</h2>
             </div>
             <p>M.R.P: ₹${details.MRP}</p>
             <p id="product-rating">

@@ -90,7 +90,7 @@ for (let i = 0; i < data.length; i++) {
      <div class="box" id="box" onclick="productdetail(${data[i].id})">
         <img src="${data[i].image1}" alt="" class="img">
         <h3 class="title">${data[i].title}</h3>
-        <p class="price">PRICE:${data[i].price}</p>
+        <p class="price">PRICE:  ₹${data[i].price}</p>
         <div id="bothbuttons">
         <button onclick=atc() class="add-to-cart">add to cart</button>
         <button onclick=buyn() class="buy-now">Buy now</button> 
@@ -127,7 +127,6 @@ let getvalues=(id)=>{
 }
 
 
-
 const subcategories = {
   "electronics": ["smartphones", "computers", "TVs", "audio equipment", "accessories"],
   "clothing":["gown","kurtis","kurtas","tunic","kurta set","kurti set","saree"],
@@ -141,21 +140,18 @@ const subcategories = {
   "Media": ["books", "music", "movies", "other media"]
 };
 
-const categorySelect = document.getElementById("category");
-const subcategorySelect = document.getElementById("subcategory");
+let categorySelect = document.getElementById("category");
+let subcategorySelect = document.getElementById("subcategory");
 
 categorySelect.addEventListener("change", function () {
-    const selectedCategory = categorySelect.value;
+    let selectedCategory = categorySelect.value;
 
     subcategorySelect.innerHTML = '<option value="">Please select a category first</option>';
-    
-    if (selectedCategory === "all") {
-        subcategorySelect.style.display = "none";  
-    } else {
+
         subcategorySelect.style.display = "block"; 
 
         
-        const options = subcategories[selectedCategory];
+        let options = subcategories[selectedCategory];
 
         options.forEach(function (sub) {
             const option = document.createElement("option");
@@ -164,5 +160,91 @@ categorySelect.addEventListener("change", function () {
             subcategorySelect.appendChild(option);
         });
         renderProducts();
-    }
+
+});
+
+const filterbysubcategory = () => {
+  let selectedSubcategory = subcategorySelect.value;
+
+  if (selectedSubcategory === "") {
+      renderProducts(); 
+  } else {
+      let filteredData = data.filter((ele) => ele.subcategory === selectedSubcategory);
+      renderProducts(filteredData);
+  }
+};
+document.getElementById("subcategory").addEventListener("change", filterbysubcategory);
+
+function renderProducts(filteredData = data) {
+  let temp = "";
+  for (let i = 0; i < filteredData.length; i++) {
+      temp += `
+      <div class="box" id="box" onclick="productdetail(${filteredData[i].id})">
+          <img src="${filteredData[i].image1}" alt="" class="img">
+          <h3 class="title">${filteredData[i].title}</h3>
+          <p class="price">PRICE:  ₹${filteredData[i].price}</p>
+          <div id="bothbuttons">
+          <button onclick=atc() class="add-to-cart">add to cart</button>
+          <button onclick=buyn() class="buy-now">Buy now</button> 
+          </div>
+      </div>`  
+  }
+  document.getElementById("container").innerHTML = temp;
+}
+
+const filterbyprice = () => {
+  let priceOffilteredData = parseFloat(document.getElementById("price").value); 
+
+  let filteredData = data.filter((ele) => parseFloat(ele.price) <= priceOffilteredData);
+
+  renderProducts(filteredData);
+};
+priceRange.addEventListener('input', filterbyprice);
+
+
+function getSelectedFilters() {
+  let selectedRanges = [];
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  checkboxes.forEach(checkbox => {
+      selectedRanges.push(checkbox.nextSibling.textContent.trim());
+  });
+  return selectedRanges;
+}
+
+document.getElementById("checkbox-submit").addEventListener('click', function () {
+  let selectedRanges = getSelectedFilters();  
+  let filteredData = data;
+
+  if (selectedRanges.length > 0) {
+    filteredData = data.filter(product => {
+      return selectedRanges.some(range => {
+        switch (range) {
+          case '0-200 ₹':
+            return parseFloat(product.price) >= 0 && parseFloat(product.price) <= 200;
+          case '201-500 ₹':
+            return parseFloat(product.price) > 200 && parseFloat(product.price) <= 500;
+          case '501-1000 ₹':
+            return parseFloat(product.price) > 500 && parseFloat(product.price) <= 1000;
+          case '1001-1500 ₹':
+            return parseFloat(product.price) > 1000 && parseFloat(product.price) <= 1500;
+          case '1501-2000 ₹':
+            return parseFloat(product.price) > 1500 && parseFloat(product.price) <= 2000;
+          case 'Above 2000 ₹':
+            return parseFloat(product.price) > 2000;
+          default:
+            return false;
+        }
+      });
+    });
+  }
+  renderProducts(filteredData);
+});
+
+
+document.getElementById("checkbox-reset").addEventListener('click', function () {
+
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => checkbox.checked = false);
+
+  renderProducts(data);
 });

@@ -58,9 +58,6 @@
       </div>
     </nav>
 
-    <!-- Main Heading -->
-    <h1 class="pheadcenter">PRODUCTS YOU NEED TO BUY</h1>
-
     <!-- Main Container with Filter Bar -->
     <div id="main-container">
       <!-- Filter Bar -->
@@ -86,22 +83,34 @@
           <option value="">Please select a category first</option>
         </select>
 
-        <label for="price">Price Range</label>
-        <input type="range" id="price" name="price" min="0" max="5000" step="100" value="5000" oninput="updatePriceValue()"/>
+        <label for="price">Price Slider</label>
+        <input type="range" id="price" name="price" min="0" max="5000" step="10" value="5000" />
         <span id="price-value">upto 5000</span>
 
-        <label for="sortDropdown">Sort By</label>
+        <label for="sortDropdown" id="sortby">Sort By</label>
         <select id="sortDropdown">
           <option value="asc" id="asc">Price Low to High</option>
           <option value="desc" id="desc">Price High to Low</option>
         </select>
 
-        <label for="brand">Brand</label>
-        <select id="brand">
-          <option value="brand1">Brand 1</option>
-          <option value="brand2">Brand 2</option>
-          <option value="brand3">Brand 3</option>
-        </select>
+        <div class="filter-container">
+          <label for="">Price Range</label><br>
+          <input type="checkbox" id="price-0-200"> 0-200 ₹<br>
+          <input type="checkbox" id="price-201-500"> 201-500 ₹<br>
+          <input type="checkbox" id="price-501-1000"> 501-1000 ₹<br>
+          <input type="checkbox" id="price-1001-1500"> 1001-1500 ₹<br>
+          <input type="checkbox" id="price-1501-2000"> 1501-2000 ₹<br>
+          <input type="checkbox" id="price-above-2000"> Above 2000 ₹<br>
+  
+          <div id="srofcheckbox">
+              <input type="submit" value="Apply Filters" id="checkbox-submit">
+              <input type="reset" value="Reset" id="checkbox-reset">
+          </div>
+          
+          <div id="selected-filters"></div>
+      </div>
+
+        
       </div>
       <div id="container">
         <!-- Products will go here -->
