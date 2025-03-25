@@ -1,3 +1,8 @@
+let detai = JSON.parse(localStorage.getItem("buyNowProduct"));
+let price =  Number(detai.price);
+document.getElementById("productprice").innerHTML = `₹${price}`;
+document.getElementById("product-total-price").innerHTML = `₹${price + 100}`;
+
 document.getElementById("changeaddress").addEventListener("click", function() {
   document.getElementById("changedhomeaddress").style.display = 'block';
 });
@@ -24,7 +29,7 @@ let debitdiv = document.getElementById("debitdiv");
 let cashdiv = document.getElementById("cashdiv");
 
 paymentSelect.addEventListener("change", function() {
-  const selectedPaymentOption = paymentSelect.value;
+  let selectedPaymentOption = paymentSelect.value;
 
   cashdiv.style.display = "none";
   creditdiv.style.display = "none";
