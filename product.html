@@ -67,21 +67,21 @@
         <select id="category">
           <option value="all" id="All">All category</option>
           <option value="electronics" id="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
-          <option value="Fashion & Apparel">Fashion & Apparel</option>
-          <option value="Food & Beverages">Food & Beverages</option>
-          <option value="Home & Living & kitchenware">Home & Living & kitchenware</option>
-          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
-          <option value="Toys & Hobbies">Toys & Hobbies</option>
-          <option value="Services">Services</option>
-          <option value="DIY and Hardware">DIY and Hardware</option>
-          <option value="Media" id="media"><button onclick="alert()">media</button></option>
+          <option value="clothing" id="clothig">Clothing</option>
+          <option value="Fashion & Apparel" id="fashion">Fashion & Apparel</option>
+          <option value="Food & Beverages" id="food">Food & Beverages</option>
+          <option value="Home & Living & kitchenware" id="home">Home & Living & kitchenware</option>
+          <option value="Beauty & Personal Care" id="beauty">Beauty & Personal Care</option>
+          <option value="Toys & Hobbies" id="toys">Toys & Hobbies</option>
+          <option value="Services" id="Services">Services</option>
+          <option value="DIY and Hardware" id="hardware">DIY and Hardware</option>
+          <option value="Media" id="media">media</option>
         </select>
 
 
         
         <label for="subcategory">Sub-category</label>
-        <select id="electronics" style="display: none">
+        <select id="electronics" style="display: none" class="subcategory">
           <option value="">choose any one</option>
           <option value="smartphones">smartphones</option>
           <option value="computers">computers</option>
@@ -89,7 +89,7 @@
           <option value="audio equipment">audio equipment</option>
           <option value="accessories">accessories</option>
         </select>
-        <select  id="clothing" style="display: none"> 
+        <select  id="clothing" style="display: none" class="subcategory"> 
           <option value="">choose any one</option>
           <option value="gown">gown</option>
           <option value="kurtis">kurtis</option>
@@ -99,21 +99,21 @@
           <option value="kurti set">kurti set</option>
           <option value="saree">saree</option>
         </select>
-      <select  id="Fashion & Apparel" style="display: none">
+      <select  id="Fashion & Apparel" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="footwear">footwear</option>
         <option value="accessories for men">accessories for men</option>
         <option value="accessories for women">accessories for women</option>
         <option value="accessories for kids">accessories for kids</option>
       </select>
-      <select  id="Food & Beverages" style="display: none">
+      <select  id="Food & Beverages" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="groceries">groceries</option>
         <option value="snacks">snacks</option>
         <option value="drinks">drinks</option>
         <option value="other consumables">other consumables</option>
       </select>
-      <select  id="Home & Living & kitchenware" style="display: none">
+      <select  id="Home & Living & kitchenware" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="furniture">furniture</option>
         <option value="home decor">home decor</option>
@@ -121,7 +121,7 @@
         <option value="kitchenware">kitchenware</option>
         <option value="other items">other items</option>
       </select>
-      <select  id="Beauty & Personal Care" style="display: none">
+      <select  id="Beauty & Personal Care" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="makeup">makeup</option>
         <option value="skincare">skincare</option>
@@ -135,27 +135,27 @@
         <option value="make for men">make for men</option>
         <option value="other makeup products">other makeup products</option>
       </select>
-      <select  id="Toys & Hobbies" style="display: none">
+      <select  id="Toys & Hobbies" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="toys">toys</option>
         <option value="games">games</option>
         <option value="collectibles">collectibles</option>
         <option value="hobby-related">hobby-related</option>
       </select>
-      <select  id="Services" style="display: none">
+      <select  id="Services" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="software subscriptions">software subscriptions</option>
         <option value="online courses">online courses</option>
         <option value="non-physical products">non-physical products</option>
       </select>
-      <select  id="DIY and Hardware" style="display: none">
+      <select  id="DIY and Hardware" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="tools">tools</option>
         <option value="home repairs">home repairs</option>
         <option value="construction">construction</option>
         <option value=""></option>
       </select>
-      <select  id="Media" style="display: none">
+      <select  id="Media" style="display: none" class="subcategory">
         <option value="">choose any one</option>
         <option value="books">books</option>
         <option value="music">music</option>
@@ -175,12 +175,13 @@
 
         <div class="filter-container">
           <label for="">Price Range</label><br>
-          <input type="checkbox" id="price-0-200"> 0-200 ₹<br>
-          <input type="checkbox" id="price-201-500"> 201-500 ₹<br>
-          <input type="checkbox" id="price-501-1000"> 501-1000 ₹<br>
-          <input type="checkbox" id="price-1001-1500"> 1001-1500 ₹<br>
-          <input type="checkbox" id="price-1501-2000"> 1501-2000 ₹<br>
-          <input type="checkbox" id="price-above-2000"> Above 2000 ₹<br>
+         <input type="checkbox" id="price-0-200"> 0-200 ₹<br>
+         <input type="checkbox" id="price-201-500"> 201-500 ₹<br>
+         <input type="checkbox" id="price-501-1000"> 501-1000 ₹<br>
+         <input type="checkbox" id="price-1001-1500"> 1001-1500 ₹<br>
+         <input type="checkbox" id="price-1501-2000"> 1501-2000 ₹<br>
+         <input type="checkbox" id="price-above-2000"> Above 2000 ₹<br>
+
   
           <div id="srofcheckbox">
               <input type="submit" value="Apply Filters" id="checkbox-submit">

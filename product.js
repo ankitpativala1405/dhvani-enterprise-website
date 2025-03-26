@@ -108,7 +108,6 @@ const uimaker=(data)=> {
     buynow.innerHTML = "Buy Now";
     buynow.setAttribute("class", "buy-now");
     buynow.addEventListener('click', () => {
-     
       localStorage.setItem('buyNowProduct', JSON.stringify(data[i])); 
       window.location.href = './buynow.html';  
     });
@@ -117,6 +116,11 @@ const uimaker=(data)=> {
     div.setAttribute("class", "box");
     div.setAttribute("id", "box");
     div.append(Image, title, price, atcbutton, buynow);
+  div.addEventListener("click", ()=>{
+    // let product = data.find(item => item.id === id); 
+    localStorage.setItem('productDetails', JSON.stringify(data[i])); 
+    window.open('./productdetail.html'); 
+  })
 
     document.getElementById('container').append(div);
   }
@@ -154,10 +158,16 @@ const buyn=()=>{
       alert("Product has been added to your cart!");
     }
   };
+
+
+  // const productdetail = (id) => {
+  //   let product = data.find(item => item.id === id); 
+  //   localStorage.setItem('productDetails', JSON.stringify(product)); 
+  //   window.open('./productdetail.html'); 
+  // };
   
   //sorting 
-  //high to low
-  //low to high
+  //high to low & low to high
 sortDropdown.addEventListener('click', function() {
   let sortValue =  document.getElementById('sortDropdown').value;
 
@@ -167,11 +177,6 @@ sortDropdown.addEventListener('click', function() {
     data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));//high to low
   }
   uimaker(data);
-});
-
-//slider of filterbar
-document.getElementById("price").addEventListener("input", function() {
-  document.getElementById("price-value").textContent = `upto ${document.getElementById("price").value}`
 });
 
 
@@ -194,10 +199,11 @@ let Servicesselect=getvalues("Services")
 let hardwareselect=getvalues("DIY and Hardware")
 let mediaselect=getvalues("Media")
 
+
 categoryselect.addEventListener("change", () => {
   let selectedcategory = categoryselect.value;
   
- 
+
   electronicsselect.style.display = "none";
   clothingselect.style.display = "none";
   fashionselect.style.display = "none";
@@ -254,3 +260,112 @@ document.getElementById("category").addEventListener("input", () => {
   let category=document.getElementById("category").value
   console.log(category)
   filterbycategory(category)});
+
+
+  // Filter by Subcategory
+
+  const filterbysubcategory = (subcategory) => {
+    let selectedCategory = document.getElementById('category').value;
+    
+    if (subcategory === "" || subcategory === "all") {
+      if (selectedCategory === "all") {
+        uimaker(data); 
+      } else 
+      {    let temp = data.filter((ele) => ele.category === selectedCategory); 
+        uimaker(temp);
+      }
+    } else {
+      let temp = data.filter((ele) => ele.category === selectedCategory && ele.subcategory === subcategory);
+      uimaker(temp);
+    }
+  };
+
+  electronicsselect.addEventListener("input", () => {
+    let selectedSubcategory = electronicsselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  clothingselect.addEventListener("input", () => {
+    let selectedSubcategory = clothingselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  fashionselect.addEventListener("input", () => {
+    let selectedSubcategory = fashionselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  foodselect.addEventListener("input", () => {
+    let selectedSubcategory = foodselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  homeselect.addEventListener("input", () => {
+    let selectedSubcategory = homeselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  beautyselect.addEventListener("input", () => {
+    let selectedSubcategory = beautyselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  toysselect.addEventListener("input", () => {
+    let selectedSubcategory = toysselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  Servicesselect.addEventListener("input", () => {
+    let selectedSubcategory = Servicesselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  hardwareselect.addEventListener("input", () => {
+    let selectedSubcategory = hardwareselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+  mediaselect.addEventListener("input", () => {
+    let selectedSubcategory = mediaselect.value;
+    filterbysubcategory(selectedSubcategory);
+  });
+  
+
+  //slider of filterbar
+document.getElementById("price").addEventListener("input", function() {
+  let Price = document.getElementById("price").value;
+  document.getElementById("price-value").innerHTML = `upto ₹${Price}`;
+
+  let temp = data.filter((product) => parseFloat(product.price) <= parseFloat(Price));
+  uimaker(temp); 
+});
+
+
+const filterBycheckbox=()=> {
+  let filteredData = [];
+
+  if (document.getElementById("price-0-200").checked) {
+    filteredData = data.filter((ele) => parseFloat(ele.price) <= 200);
+  }
+  if (document.getElementById("price-201-500").checked) {
+    filteredData = data.filter((ele) => parseFloat(ele.price) > 200 && parseFloat(ele.price) <= 500);
+  }
+  if (document.getElementById("price-501-1000").checked) {
+    filteredData = data.filter((ele) => parseFloat(ele.price) > 500 && parseFloat(ele.price) <= 1000);
+  }
+  if (document.getElementById("price-1001-1500").checked) {
+    filteredData = data.filter((ele) => parseFloat(ele.price) > 1000 && parseFloat(ele.price) <= 1500);
+  }
+  if (document.getElementById("price-1501-2000").checked) {
+    filteredData = data.filter((ele) => parseFloat(ele.price) > 1500 && parseFloat(ele.price) <= 2000);
+  }
+  if (document.getElementById("price-above-2000").checked) {
+    filteredData = data.filter((ele) => parseFloat(ele.price) > 2000);
+  }
+
+  uimaker(filteredData);
+}
+
+document.getElementById("checkbox-submit").addEventListener("click", filterBycheckbox);
+
+
