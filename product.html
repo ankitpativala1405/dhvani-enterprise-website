@@ -65,8 +65,8 @@
         <h3>Filters</h3>
         <label for="category">Category</label>
         <select id="category">
-          <option value="all">Choose any option</option>
-          <option value="electronics">Electronics</option>
+          <option value="all" id="All">All category</option>
+          <option value="electronics" id="electronics">Electronics</option>
           <option value="clothing">Clothing</option>
           <option value="Fashion & Apparel">Fashion & Apparel</option>
           <option value="Food & Beverages">Food & Beverages</option>
@@ -75,7 +75,7 @@
           <option value="Toys & Hobbies">Toys & Hobbies</option>
           <option value="Services">Services</option>
           <option value="DIY and Hardware">DIY and Hardware</option>
-          <option value="Media">Media</option>
+          <option value="Media" id="media"><button onclick="alert()">media</button></option>
         </select>
 
 
@@ -195,6 +195,7 @@
       <div id="container">
         <!-- Products will go here -->
       </div>
+      
     </div>
   </body>
   <script src="./product.js"></script>

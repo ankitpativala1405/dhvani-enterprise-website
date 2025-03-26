@@ -75,8 +75,9 @@ let data = [
 ]
 
 
+
 //dispaly show detail
-const uimaker=()=> {
+const uimaker=(data)=> {
   document.getElementById('container').innerHTML = ''; 
 
   for (let i = 0; i < data.length; i++) {
@@ -121,7 +122,7 @@ const uimaker=()=> {
   }
 }
 
-uimaker() 
+uimaker(data) 
 
 //buy now product
 const buyn=()=>{ 
@@ -165,7 +166,7 @@ sortDropdown.addEventListener('click', function() {
   } else if (sortValue === "htl") {
     data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));//high to low
   }
-  uimaker();
+  uimaker(data);
 });
 
 //slider of filterbar
@@ -174,10 +175,11 @@ document.getElementById("price").addEventListener("input", function() {
 });
 
 
+//showing subcategory
+
 let getvalues=(id)=>{ 
   return document.getElementById(id);
 }
-
 
 let categoryselect=getvalues("category")
 let allcategories=getvalues("all")  
@@ -192,54 +194,63 @@ let Servicesselect=getvalues("Services")
 let hardwareselect=getvalues("DIY and Hardware")
 let mediaselect=getvalues("Media")
 
-
-categoryselect.addEventListener("change",()=>{
+categoryselect.addEventListener("change", () => {
   let selectedcategory = categoryselect.value;
+  
  
-   electronicsselect.style.display = "none";
-   clothingselect.style.display = "none";
-   fashionselect.style.display = "none";
-   foodselect.style.display = "none";
-   homeselect.style.display = "none";
-   beautyselect.style.display = "none";
-   toysselect.style.display = "none";
-   Servicesselect.style.display = "none";
-   hardwareselect.style.display = "none";
-   mediaselect.style.display = "none";
+  electronicsselect.style.display = "none";
+  clothingselect.style.display = "none";
+  fashionselect.style.display = "none";
+  foodselect.style.display = "none";
+  homeselect.style.display = "none";
+  beautyselect.style.display = "none";
+  toysselect.style.display = "none";
+  Servicesselect.style.display = "none";
+  hardwareselect.style.display = "none";
+  mediaselect.style.display = "none";
 
-   if(selectedcategory == "all"){
-     uimaker();
-   }else{
+  
+  if (selectedcategory == "all") {
+    uimaker(data); 
+  } else {
+    if (selectedcategory == "electronics") {
+      electronicsselect.style.display = "block";
+    } else if (selectedcategory == "clothing") {
+      clothingselect.style.display = "block";
+    } else if (selectedcategory == "Fashion & Apparel") {
+      fashionselect.style.display = "block";
+    } else if (selectedcategory == "Food & Beverages") {
+      foodselect.style.display = "block";
+    } else if (selectedcategory == "Home & Living & kitchenware") {
+      homeselect.style.display = "block";
+    } else if (selectedcategory == "Beauty & Personal Care") {
+      beautyselect.style.display = "block";
+    } else if (selectedcategory == "Toys & Hobbies") {
+      toysselect.style.display = "block";
+    } else if (selectedcategory == "Services") {
+      Servicesselect.style.display = "block";
+    } else if (selectedcategory == "DIY and Hardware") {
+      hardwareselect.style.display = "block";
+    } else if (selectedcategory == "Media") {
+      mediaselect.style.display = "block";
+    }
+  }
+});
 
-  if(selectedcategory == "Electronics"){
-     electronicsselect.style.display = "block";
+
+// filter category
+const filterbycategory = (category) => {
+  if (category == "all") {
+    uimaker(data);
+  } else {
+    let temp = data.filter((ele) => ele.category == category);
+    console.log(temp);
+    
+    uimaker(temp);
   }
-  else if(selectedcategory == "clothing"){
-    clothingselect.style.display= "block";
-  }
-  else if(selectedcategory == "Fashion & Apparel"){
-    fashionselect.style.display= "block";
-  }
-  else if(selectedcategory == "Food & Beverages"){
-     foodselect.style.display= "block";
-  }
-  else if(selectedcategory == "Home & Living & kitchenware"){
-    homeselect.style.display= "block";
-  }
-  else if(selectedcategory == "Beauty & Personal Care"){
-    beautyselect.style.display= "block";
-  }
-  else if(selectedcategory == "Toys & Hobbies"){
-    toysselect.style.display= "block";
-  }
-  else if(selectedcategory == "Services"){
-    Servicesselect.style.display= "block";
-  }
-  else if(selectedcategory == "DIY and Hardware"){
-    hardwareselect.style.display= "block";
-  }
-  else if(selectedcategory == "Media"){
-    mediaselect.style.display= "block";
-  }
-}
-})
+};
+
+document.getElementById("category").addEventListener("input", () => { 
+  let category=document.getElementById("category").value
+  console.log(category)
+  filterbycategory(category)});
