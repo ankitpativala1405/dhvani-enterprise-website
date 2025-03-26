@@ -75,7 +75,6 @@ let data = [
 ]
 
 
-
 //dispaly show detail
 const uimaker=(data)=> {
   document.getElementById('container').innerHTML = ''; 
@@ -84,6 +83,27 @@ const uimaker=(data)=> {
     let Image = document.createElement("img");
     Image.src = data[i].image1;
     Image.setAttribute("class", "img");  
+
+    let icon = document.createElement("img");
+    icon.src = "./PHOTO/wishlist.png";
+    icon.setAttribute("class", "icon");
+    icon.addEventListener("click", (event) => {
+        event.stopPropagation();
+     icon.src = "./PHOTO/wishlist-swaping.png"; 
+
+  if (data && data[i]) {
+  
+    let wishlist = JSON.parse(localStorage.getItem('wishlisted')) || [];
+
+    // Add the new item (data[i]) to the wishlist array if it’s not already there
+    if (!wishlist.includes(data[i])) {
+      wishlist.push(data[i]);
+    }
+    
+    localStorage.setItem('wishlisted', JSON.stringify(wishlist));
+  } 
+});
+
 
     let title = document.createElement("h3"); 
     title.innerHTML = data[i].title;
@@ -100,7 +120,8 @@ const uimaker=(data)=> {
     let atcbutton = document.createElement("button");
     atcbutton.innerHTML = "Add to Cart";
     atcbutton.setAttribute("class", "add-to-cart");
-    atcbutton.addEventListener('click', () => {
+    atcbutton.addEventListener('click', (event) => {
+      event.stopPropagation();
       atc(data[i].id); 
     });
 
@@ -112,12 +133,15 @@ const uimaker=(data)=> {
       window.location.href = './buynow.html';  
     });
 
+    let div2=document.createElement("div")
+    div2.append(atcbutton,buynow)
+    div2.setAttribute("class","div2")
+
     let div = document.createElement('div');
     div.setAttribute("class", "box");
     div.setAttribute("id", "box");
-    div.append(Image, title, price, atcbutton, buynow);
+    div.append(Image, title, price, div2,icon);
   div.addEventListener("click", ()=>{
-    // let product = data.find(item => item.id === id); 
     localStorage.setItem('productDetails', JSON.stringify(data[i])); 
     window.open('./productdetail.html'); 
   })
@@ -159,13 +183,6 @@ const buyn=()=>{
     }
   };
 
-
-  // const productdetail = (id) => {
-  //   let product = data.find(item => item.id === id); 
-  //   localStorage.setItem('productDetails', JSON.stringify(product)); 
-  //   window.open('./productdetail.html'); 
-  // };
-  
   //sorting 
   //high to low & low to high
 sortDropdown.addEventListener('click', function() {
@@ -341,26 +358,34 @@ document.getElementById("price").addEventListener("input", function() {
 });
 
 
-const filterBycheckbox=()=> {
-  let filteredData = [];
+const filterBycheckbox = () => {
+  let filteredData = data; 
+
+  let priceRanges = [];
 
   if (document.getElementById("price-0-200").checked) {
-    filteredData = data.filter((ele) => parseFloat(ele.price) <= 200);
+    priceRanges.push((ele) => parseFloat(ele.price) <= 200);
   }
   if (document.getElementById("price-201-500").checked) {
-    filteredData = data.filter((ele) => parseFloat(ele.price) > 200 && parseFloat(ele.price) <= 500);
+    priceRanges.push((ele) => parseFloat(ele.price) > 200 && parseFloat(ele.price) <= 500);
   }
   if (document.getElementById("price-501-1000").checked) {
-    filteredData = data.filter((ele) => parseFloat(ele.price) > 500 && parseFloat(ele.price) <= 1000);
+    priceRanges.push((ele) => parseFloat(ele.price) > 500 && parseFloat(ele.price) <= 1000);
   }
   if (document.getElementById("price-1001-1500").checked) {
-    filteredData = data.filter((ele) => parseFloat(ele.price) > 1000 && parseFloat(ele.price) <= 1500);
+    priceRanges.push((ele) => parseFloat(ele.price) > 1000 && parseFloat(ele.price) <= 1500);
   }
   if (document.getElementById("price-1501-2000").checked) {
-    filteredData = data.filter((ele) => parseFloat(ele.price) > 1500 && parseFloat(ele.price) <= 2000);
+    priceRanges.push((ele) => parseFloat(ele.price) > 1500 && parseFloat(ele.price) <= 2000);
   }
   if (document.getElementById("price-above-2000").checked) {
-    filteredData = data.filter((ele) => parseFloat(ele.price) > 2000);
+    priceRanges.push((ele) => parseFloat(ele.price) > 2000);
+  }
+
+  if (priceRanges.length > 0) {
+    filteredData = filteredData.filter((ele) => 
+      priceRanges.some((range) => range(ele))
+    );
   }
 
   uimaker(filteredData);
@@ -369,3 +394,14 @@ const filterBycheckbox=()=> {
 document.getElementById("checkbox-submit").addEventListener("click", filterBycheckbox);
 
 
+const search = (value) => {
+  let temp = data.filter((ele) =>
+    ele.title.toLowerCase().includes(value.toLowerCase())
+  );
+  uimaker(temp);
+};
+
+document.getElementById("search").addEventListener("input", () => {
+  let value = document.getElementById("search").value;
+  search(value);
+});

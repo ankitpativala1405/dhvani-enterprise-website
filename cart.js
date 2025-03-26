@@ -6,7 +6,6 @@ function updateCart() {
   let subtotal = 0;
 
   for (let i = 0; i < cartItems.length; i++) {
-
     let product = document.createElement("td");
     product.innerHTML = cartItems[i].sku;
 
@@ -33,11 +32,25 @@ function updateCart() {
     document.getElementById("cart-body").append(tr);
 
     subtotal += cartItems[i].price * quantityValue;
+    
+    tr.querySelector('.quantity-input').addEventListener('input', (e) => {
+    let newQuantity = e.target.value;
+
+  if (+newQuantity <= 0 || newQuantity.trim() === '') {
+    e.target.value = 1;
   }
 
-   document.getElementById("subtotal").innerHTML =`₹${subtotal}`;
-   document.getElementById("total").innerHTML = `₹${Number(subtotal)+100}`;
- 
+  cartItems[i].quantity = +e.target.value;  
+  total.innerHTML = `₹${cartItems[i].price * cartItems[i].quantity}`;
+
+  updateCart()
+});
+
+  }
+
+  document.getElementById("subtotal").innerHTML = `₹${subtotal}`;
+  document.getElementById("total").innerHTML = `₹${Number(subtotal) + 100}`;
+
   localStorage.setItem("cart", JSON.stringify(cartItems));
 }
 
