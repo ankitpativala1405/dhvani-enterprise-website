@@ -122,3 +122,62 @@ nav a:hover { color: #f39c12;}
   background-color: #e2dddd;
   border-radius: 10px;
 }
+
+.footer-ended{
+    width: 100%;
+    background-color: #e2dddd;
+    color: #212121;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px auto;
+ 
+}
+.footer-logo{
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 1000px;
+  align-items: center;
+  padding: 20px;
+  max-width: 25%;
+  margin-bottom: -15px;
+}
+
+.userinfo{
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1000px;
+  align-items: center;
+  padding: 20px;
+  max-width: 25%;
+}
+
+.CustomerService{
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1000px;
+  align-items: center;
+  padding: 20px;
+  max-width: 25%;
+}
+
+.company-info{
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1000px;
+  align-items: center;
+  padding: 20px;
+  max-width: 25%;
+}

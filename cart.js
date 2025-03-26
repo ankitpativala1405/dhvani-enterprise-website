@@ -54,9 +54,7 @@ function updateCart() {
   localStorage.setItem("cart", JSON.stringify(cartItems));
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateCart(); });
-
+updateCart()
   
     document.getElementById('checkout-btn').addEventListener('click', () => {
         window.open('./buynow.html');

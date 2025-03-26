@@ -1,6 +1,36 @@
 const buynow = () => { window.open('./buynow.html'); }
 
-const addtocart = () => { alert("add your cart page here") }
+const addtocart = () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let details = JSON.parse(localStorage.getItem("productDetails"));
+    
+    let product = {
+        id:details.id,
+        sku: details.sku, 
+        price: details.price,
+        quantity: 1, 
+    };
+    cart.push(product);
+
+    let existingProduct = cart.find((ele) => ele.id === product.id);
+
+    if (existingProduct) {
+        let userChoice = window.confirm("This product is already in your cart. Do you want to increase the quantity? Click 'OK' to increase or 'Cancel' to not add it again.");
+
+        if (userChoice) {
+            existingProduct.quantity += 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Product quantity has been increased!");
+        } else {
+            alert("Product not added to the cart again.");
+        }
+    } else {
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Product has been added to your cart!");
+    }
+};
+
 
  let details=JSON.parse(localStorage.getItem("productDetails"))
 

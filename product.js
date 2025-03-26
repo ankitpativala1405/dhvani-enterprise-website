@@ -95,7 +95,6 @@ const uimaker=(data)=> {
   
     let wishlist = JSON.parse(localStorage.getItem('wishlisted')) || [];
 
-    // Add the new item (data[i]) to the wishlist array if it’s not already there
     if (!wishlist.includes(data[i])) {
       wishlist.push(data[i]);
     }
