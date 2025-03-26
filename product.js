@@ -74,20 +74,8 @@ let data = [
       
 ]
 
-let subcategories = {
-  "electronics": ["smartphones", "computers", "TVs", "audio equipment", "accessories"],
-  "clothing":["gown","kurtis","kurtas","tunic","kurta set","kurti set","saree"],
-  "Fashion & Apparel": ["footwear", "accessories for men", "accessories for women", "accessories for kids","accessories for children"],
-  "Food & Beverages": ["groceries", "snacks", "drinks", "other consumables"],
-  "Home & Living & kitchenware": ["furniture", "home decor", "appliances", "other items","kitchenware"],
-  "Beauty & Personal Care": ["makeup", "skincare", "hair care","cosmetics", "personal care","body care", "fragrances","perfumes","fragrances for women", "fragrances for kids","fragrances for children","fragrances for men","fragrances for teenagers","fragrances for adults","make for women","make for men","makeup products",],
-  "Toys & Hobbies": ["toys", "games", "collectibles", "hobby-related"],
-  "Services": ["software subscriptions", "online courses", "non-physical products"],
-  "DIY and Hardware": ["tools", "home repairs", "construction"],
-  "Media": ["books", "music", "movies", "other media"]
-};
 
-
+//dispaly show detail
 const uimaker=()=> {
   document.getElementById('container').innerHTML = ''; 
 
@@ -128,66 +116,61 @@ const uimaker=()=> {
     div.setAttribute("class", "box");
     div.setAttribute("id", "box");
     div.append(Image, title, price, atcbutton, buynow);
-    // div.addEventListener("click",productdetail(data[i].id))
 
     document.getElementById('container').append(div);
   }
 }
 
 uimaker() 
+
+//buy now product
 const buyn=()=>{ 
   window.open('./buynow.html');}
+
+  //add to cart product
 
   const atc = (id) => {
     let product = data.find((ele) => ele.id === id);
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
   
-    // Check if the product is already in the cart
     let existingProduct = cart.find((ele) => ele.id === id);
   
     if (existingProduct) {
-      // Ask user if they want to increase quantity or not add it again
       let userChoice = window.confirm("This product is already in your cart. Do you want to increase the quantity? Click 'OK' to increase or 'Cancel' to not add it again.");
   
       if (userChoice) {
-        // Increase quantity (add 1 to the quantity)
         existingProduct.quantity = (existingProduct.quantity || 1) + 1;
         localStorage.setItem("cart", JSON.stringify(cart));
         alert("Product quantity has been increased!");
       } else {
         alert("Product not added to the cart again.");
       }
-    } else {
-      // If product doesn't exist in the cart, add it to the cart
-      product.quantity = 1; // Set default quantity as 1
+    }
+     else {
+      product.quantity = 1; 
       cart.push(product);
       localStorage.setItem("cart", JSON.stringify(cart));
       alert("Product has been added to your cart!");
     }
   };
   
+  //sorting 
+  //high to low
+  //low to high
 sortDropdown.addEventListener('click', function() {
   let sortValue =  document.getElementById('sortDropdown').value;
 
-  if (sortValue === "asc") {
+  if (sortValue === "lth") {
     data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));//low to high
-  } else if (sortValue === "desc") {
+  } else if (sortValue === "htl") {
     data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));//high to low
   }
   uimaker();
 });
 
-const productdetail = (id) => {
-  const product = data.find(item => item.id === id); 
-  localStorage.setItem('productDetails', JSON.stringify(product)); 
-  window.open('./productdetail.html'); 
-};
-
-let priceRange = document.getElementById('price');
-let priceValue = document.getElementById('price-value');
-
-priceRange.addEventListener('input', function() {
-    priceValue.textContent = `upto ${priceRange.value}`
+//slider of filterbar
+document.getElementById("price").addEventListener("input", function() {
+  document.getElementById("price-value").textContent = `upto ${document.getElementById("price").value}`
 });
 
 
@@ -196,106 +179,67 @@ let getvalues=(id)=>{
 }
 
 
+let categoryselect=getvalues("category")
+let allcategories=getvalues("all")  
+let electronicsselect=getvalues("electronics")
+let clothingselect=getvalues("clothing")
+let fashionselect=getvalues("Fashion & Apparel")
+let foodselect=getvalues("Food & Beverages")
+let homeselect=getvalues("Home & Living & kitchenware")
+let beautyselect=getvalues("Beauty & Personal Care")
+let toysselect=getvalues("Toys & Hobbies")
+let Servicesselect=getvalues("Services")
+let hardwareselect=getvalues("DIY and Hardware")
+let mediaselect=getvalues("Media")
 
-let categorySelect = document.getElementById("category");
-let subcategorySelect = document.getElementById("subcategory");
 
-categorySelect.addEventListener("change", function () {
-  let selectedCategory = categorySelect.value;
+categoryselect.addEventListener("change",()=>{
+  let selectedcategory = categoryselect.value;
+ 
+   electronicsselect.style.display = "none";
+   clothingselect.style.display = "none";
+   fashionselect.style.display = "none";
+   foodselect.style.display = "none";
+   homeselect.style.display = "none";
+   beautyselect.style.display = "none";
+   toysselect.style.display = "none";
+   Servicesselect.style.display = "none";
+   hardwareselect.style.display = "none";
+   mediaselect.style.display = "none";
 
-  subcategorySelect.innerHTML = '<option value="">Select Subcategory</option>';
+   if(selectedcategory == "all"){
+     uimaker();
+   }else{
 
-  if (selectedCategory) {
-      let options = subcategories[selectedCategory] || [];
-      
-      subcategorySelect.style.display = "block"; 
-
-      for (let i = 0; i < options.length; i++) {
-        let option = document.createElement("option");
-        option.value = options[i]; 
-        option.textContent = options[i]; 
-        subcategorySelect.appendChild(option);
-    }
-
-      filterByCategory(selectedCategory);
-  } else {
-      subcategorySelect.style.display = "none"; 
-      uimaker(); 
+  if(selectedcategory == "Electronics"){
+     electronicsselect.style.display = "block";
   }
-});
-
-function filterByCategory(category) {
-  let filteredData = data.filter(product => product.category === category);
-  uimaker(filteredData);
+  else if(selectedcategory == "clothing"){
+    clothingselect.style.display= "block";
+  }
+  else if(selectedcategory == "Fashion & Apparel"){
+    fashionselect.style.display= "block";
+  }
+  else if(selectedcategory == "Food & Beverages"){
+     foodselect.style.display= "block";
+  }
+  else if(selectedcategory == "Home & Living & kitchenware"){
+    homeselect.style.display= "block";
+  }
+  else if(selectedcategory == "Beauty & Personal Care"){
+    beautyselect.style.display= "block";
+  }
+  else if(selectedcategory == "Toys & Hobbies"){
+    toysselect.style.display= "block";
+  }
+  else if(selectedcategory == "Services"){
+    Servicesselect.style.display= "block";
+  }
+  else if(selectedcategory == "DIY and Hardware"){
+    hardwareselect.style.display= "block";
+  }
+  else if(selectedcategory == "Media"){
+    mediaselect.style.display= "block";
+  }
 }
-
-const filterbysubcategory = () => {
-  let selectedSubcategory = subcategorySelect.value;
-
-  if (selectedSubcategory === "") {
-      uimaker(); 
-  } else {
-      let filteredData = data.filter((ele) => ele.subcategory === selectedSubcategory);
-      uimaker(filteredData);
-  }
-};
-document.getElementById("subcategory").addEventListener("change", filterbysubcategory);
-
-
-
-const filterbyprice = () => {
-  let priceOffilteredData = parseFloat(document.getElementById("price").value); 
-
-  let filteredData = data.filter((ele) => parseFloat(ele.price) <= priceOffilteredData);
-
-  uimaker(filteredData);
-};
-priceRange.addEventListener('input', filterbyprice);
-
-
-function getSelectedFilters() {
-  let selectedRanges = [];
-  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-  checkboxes.forEach(checkbox => {
-      selectedRanges.push(checkbox.nextSibling.textContent.trim());
-  });
-  return selectedRanges;
-}
-
-document.getElementById("checkbox-submit").addEventListener('click', function () {
-  let selectedRanges = getSelectedFilters();  
-  let filteredData = data;
-
-  if (selectedRanges.length > 0) {
-    filteredData = data.filter(product => {
-      return selectedRanges.some(range => {
-        switch (range) {
-          case '0-200 ₹':
-            return parseFloat(product.price) >= 0 && parseFloat(product.price) <= 200;
-          case '201-500 ₹':
-            return parseFloat(product.price) > 200 && parseFloat(product.price) <= 500;
-          case '501-1000 ₹':
-            return parseFloat(product.price) > 500 && parseFloat(product.price) <= 1000;
-          case '1001-1500 ₹':
-            return parseFloat(product.price) > 1000 && parseFloat(product.price) <= 1500;
-          case '1501-2000 ₹':
-            return parseFloat(product.price) > 1500 && parseFloat(product.price) <= 2000;
-          case 'Above 2000 ₹':
-            return parseFloat(product.price) > 2000;
-          default:
-            return false;
-        }
-      });
-    });
-  }
-  uimaker(filteredData);
-});
-
-
-document.getElementById("checkbox-reset").addEventListener('click', function () {
-
-  let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(checkbox => checkbox.checked = false);
-
-  uimaker(data);
-});
+})

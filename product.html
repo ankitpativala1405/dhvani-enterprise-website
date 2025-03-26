@@ -65,12 +65,12 @@
         <h3>Filters</h3>
         <label for="category">Category</label>
         <select id="category">
-          <option value="all">chhose any option</option>
+          <option value="all">Choose any option</option>
           <option value="electronics">Electronics</option>
-          <option value="clothing">clothing</option>
+          <option value="clothing">Clothing</option>
           <option value="Fashion & Apparel">Fashion & Apparel</option>
           <option value="Food & Beverages">Food & Beverages</option>
-          <option value="Home & Living & kitchenware"> Home & Living & kitchenware </option>
+          <option value="Home & Living & kitchenware">Home & Living & kitchenware</option>
           <option value="Beauty & Personal Care">Beauty & Personal Care</option>
           <option value="Toys & Hobbies">Toys & Hobbies</option>
           <option value="Services">Services</option>
@@ -78,10 +78,90 @@
           <option value="Media">Media</option>
         </select>
 
+
+        
         <label for="subcategory">Sub-category</label>
-        <select id="subcategory" style="display: none">
-          <option value="">Please select a category first</option>
+        <select id="electronics" style="display: none">
+          <option value="">choose any one</option>
+          <option value="smartphones">smartphones</option>
+          <option value="computers">computers</option>
+          <option value="TVs">TVs</option>
+          <option value="audio equipment">audio equipment</option>
+          <option value="accessories">accessories</option>
         </select>
+        <select  id="clothing" style="display: none"> 
+          <option value="">choose any one</option>
+          <option value="gown">gown</option>
+          <option value="kurtis">kurtis</option>
+          <option value="kurtas">kurtas</option>
+          <option value="tunic">tunic</option>
+          <option value="kurta set">kurta set</option>
+          <option value="kurti set">kurti set</option>
+          <option value="saree">saree</option>
+        </select>
+      <select  id="Fashion & Apparel" style="display: none">
+        <option value="">choose any one</option>
+        <option value="footwear">footwear</option>
+        <option value="accessories for men">accessories for men</option>
+        <option value="accessories for women">accessories for women</option>
+        <option value="accessories for kids">accessories for kids</option>
+      </select>
+      <select  id="Food & Beverages" style="display: none">
+        <option value="">choose any one</option>
+        <option value="groceries">groceries</option>
+        <option value="snacks">snacks</option>
+        <option value="drinks">drinks</option>
+        <option value="other consumables">other consumables</option>
+      </select>
+      <select  id="Home & Living & kitchenware" style="display: none">
+        <option value="">choose any one</option>
+        <option value="furniture">furniture</option>
+        <option value="home decor">home decor</option>
+        <option value="appliances">appliances</option>
+        <option value="kitchenware">kitchenware</option>
+        <option value="other items">other items</option>
+      </select>
+      <select  id="Beauty & Personal Care" style="display: none">
+        <option value="">choose any one</option>
+        <option value="makeup">makeup</option>
+        <option value="skincare">skincare</option>
+        <option value="hair care">hair care</option>
+        <option value="cosmetics">cosmetics</option>
+        <option value="personal care">personal care</option>
+        <option value="body care">body care</option>
+        <option value="fragrances">fragrances</option>
+        <option value="perfumes">perfumes</option>
+        <option value="make for women">make for women</option>
+        <option value="make for men">make for men</option>
+        <option value="other makeup products">other makeup products</option>
+      </select>
+      <select  id="Toys & Hobbies" style="display: none">
+        <option value="">choose any one</option>
+        <option value="toys">toys</option>
+        <option value="games">games</option>
+        <option value="collectibles">collectibles</option>
+        <option value="hobby-related">hobby-related</option>
+      </select>
+      <select  id="Services" style="display: none">
+        <option value="">choose any one</option>
+        <option value="software subscriptions">software subscriptions</option>
+        <option value="online courses">online courses</option>
+        <option value="non-physical products">non-physical products</option>
+      </select>
+      <select  id="DIY and Hardware" style="display: none">
+        <option value="">choose any one</option>
+        <option value="tools">tools</option>
+        <option value="home repairs">home repairs</option>
+        <option value="construction">construction</option>
+        <option value=""></option>
+      </select>
+      <select  id="Media" style="display: none">
+        <option value="">choose any one</option>
+        <option value="books">books</option>
+        <option value="music">music</option>
+        <option value="movies">movies</option>
+        <option value="other media">other media</option>
+      </select>
 
         <label for="price">Price Slider</label>
         <input type="range" id="price" name="price" min="0" max="5000" step="10" value="5000" />
@@ -89,8 +169,8 @@
 
         <label for="sortDropdown" id="sortby">Sort By</label>
         <select id="sortDropdown">
-          <option value="asc" id="asc">Price Low to High</option>
-          <option value="desc" id="desc">Price High to Low</option>
+          <option value="lth" id="asc">Price Low to High</option>
+          <option value="htl" id="desc">Price High to Low</option>
         </select>
 
         <div class="filter-container">
