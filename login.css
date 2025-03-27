@@ -153,10 +153,10 @@ form label {
 }
 
 /* Input Fields */
-form input[type="email"],
+form input[type="text"],
 form input[type="password"] {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -202,4 +202,84 @@ form label[for="5"] {
 /* Margin adjustments for better spacing */
 form br {
   margin-top: 10px;
+}
+
+
+/* forgot password */
+
+
+
+.container {
+  background-color:#e2dddd !important;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-wrapper p {
+  text-align: center;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: -10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+#form{
+box-shadow: none;
 }

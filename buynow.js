@@ -109,13 +109,13 @@ paymentSelect.addEventListener("change", function() {
     document.getElementById("changedhomeaddress").style.display = "none";
   });
 
-const errordetail=(id,msg)=>{
-  let error = document.createElement("p");
-  error.innerHTML = msg;
+// const errordetail=(id,msg)=>{
+//   let error = document.createElement("p");
+//   error.innerHTML = msg;
   
-  document.getElementById(id).append(error);
-  return; 
-  }
+//   document.getElementById(id).append(error);
+//   return; 
+//   }
 
   const getvalue = (id) => {
   return document.getElementById(id).value;

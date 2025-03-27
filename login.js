@@ -1,44 +1,52 @@
-function validateLoginForm(event) {
-    event.preventDefault();
+let employee = JSON.parse(localStorage.getItem("userdata")) || [];
+console.log(employee);
 
-    let email = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
-  
-    if (email === "" || password === "") {
-      alert("Both email/username and password are required.");
-      return;
-    }
-  
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-  
-  }
-  
-  // Password visibility toggle functionality
-  function togglePasswordVisibility() {
-    const passwordField = document.getElementById('password');
-    const passwordIcon = document.getElementById('toggle-password-icon');
-    
-    if (passwordField.type === "password") {
-      passwordField.type = "text"; // Show the password
-      passwordIcon.src = "./PHOTO/eye-open.png"; // Change to open eye icon
+document.getElementById("loginform").addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  let data = {
+    email: document.getElementById("username").value,
+    password: document.getElementById("password").value
+  };
+
+  let userData = isExist(data.email, data.email, data.email);
+
+  console.log(userData);
+  if (userData.found) {
+ 
+    if (userData.user.password === data.password) {
+      alert("Login SuccessFully...");
     } else {
-      passwordField.type = "password"; // Hide the password
-      passwordIcon.src = "./PHOTO/eye-closed.png"; // Change to closed eye icon
+      let userChoice=window.confirm("oops!!, your password is incorrect. forgot password ??? \nClick 'OK' to Forget Password or\nClick 'Cancel' to try again");
+      if(userChoice){
+        document.getElementById("container").style.display = "block";
+      } 
     }
+  } else {
+    let userChoice=window.confirm("Sorry!!! You have not account.......!!\nClick 'OK' to create new account or\n'Cancel' to you want to add valid email or mobilenumber or username.")
+    if(userChoice){
+      window.open('./create new account.html')
+    }
+  
   }
-  
-  // Adding event listeners to the form and password icon
-  document.addEventListener('DOMContentLoaded', () => {
-    // Handle form submission
-    const form = document.querySelector('form');
-    form.addEventListener('submit', validateLoginForm);
-  
-    // Handle password visibility toggle
-    const passwordToggleIcon = document.getElementById('toggle-password-icon');
-    passwordToggleIcon.addEventListener('click', togglePasswordVisibility);
-  });
-  
+});
+
+const isExist = (contact, username, email) => {
+  let isUser = employee.find((user) => user.contact === contact || user.username === username || user.email === email);
+
+
+  if (isUser) {
+    return { found: true, user: isUser };
+  } else {
+    return { found: false, user: null };
+  }
+}
+
+const forgotdiv=(event)=>{
+  event.preventDefault();
+  document.getElementById("container").style.display = "block";
+}
+
+const loginpage=()=>{
+  document.getElementById("container").style.display = "none";
+}

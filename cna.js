@@ -161,13 +161,13 @@ document.getElementById("myForm").addEventListener("submit", function customer(e
   };
 
   if(isExist(detail.contact)){
-    let userChoice = window.confirm("Sorry!!!...   You have an already account.? Click 'OK' to login or 'Cancel' to you want to try again with onther contact number.");
+    let userChoice = window.confirm("Sorry!!!...   You have an already account....!! \nClick 'OK' to login or\n'Cancel' to try again with another contact number.");
       if(userChoice){
         window.open('./login.html')
       }
-  }else{
-
-  alert(`You have successfully submitted your data as a new employee. Your username is: ${username}`);
+  }
+  else{
+  alert(`You have successfully submitted your data as a new user. Your username is: ${username}`);
   employee.push(detail);
   localStorage.setItem("userdata", JSON.stringify(employee));
 }

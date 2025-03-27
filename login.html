@@ -56,9 +56,9 @@
     <br>
     <h1 class="signup">LOGIN</h1>
   
-    <form>
+    <form id="loginform">
       <strong><label for="username">EMAIL/USERNAME/MOBILE NUMBER</label></strong> 
-      <input type="email" id="username" required placeholder="Enter your email or username or mobile number">
+      <input type="text" id="username" required placeholder="Enter your email or username or mobile number">
       <br><!-- PASSWORD -->
       <strong><label for="password">PASSWORD</label></strong>
       <input type="password" id="password" required placeholder="Enter your password.....">
@@ -66,12 +66,31 @@
       <input type="submit" value="Login">
       <br>
       <label for="forgotpassword">Forgot password?</label>
-      <a href="" id="forgotpassword">Click here</a>
+      <a href="" id="forgotpassword" onclick="forgotdiv(event)">Click here</a>
       <br>
       <label for="createaccount">Haven't an account?</label>
       <a href="/create new account.html" id="createaccount">Create a new account</a>
     </form>
 
+<!-- forgot password -->
+
+<div class="container" style="display: none;" id="container">
+  <div class="form-wrapper">
+      <h2>Forgot Password</h2>
+      <p>Please enter your contact number to reset your password.</p>
+      <form action="/reset-password" method="POST" id="form">
+          <div class="input-group">
+              <label for="email">Email Address</label>
+              <input type="number" id="email" name="email" required placeholder="Enter your Mobile number" />
+          </div>
+          <button type="submit" class="submit-btn">Send Reset Link</button>
+      </form>
+      <p class="back-link">Remember your password? <a href="#" onclick=loginpage()>Back to Login</a></p>
+  </div>
+</div>
+
+
 </body>
 <script src="./login.js"></script>
+<script></script>
 </html>
