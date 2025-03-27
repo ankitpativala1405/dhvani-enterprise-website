@@ -237,13 +237,6 @@ input[type="reset"]:hover {
     background:  #e2dddd;;
 }
 
-.passed{
-  border: 2px solid green !important;
-}
-.failed{
-  border: 2px solid red !important;
-}
-
 #buttons{
   display: flex;
   /* align-items: center; */

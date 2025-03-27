@@ -259,6 +259,7 @@ categoryselect.addEventListener("change", () => {
       mediaselect.style.display = "block";
     }
   }
+  debugger
 });
 
 
@@ -284,7 +285,6 @@ document.getElementById("category").addEventListener("input", () => {
 
   const filterbysubcategory = (subcategory) => {
     let selectedCategory = document.getElementById('category').value;
-    
     if (subcategory === "" || subcategory === "all") {
       if (selectedCategory === "all") {
         uimaker(data); 
@@ -296,6 +296,7 @@ document.getElementById("category").addEventListener("input", () => {
       let temp = data.filter((ele) => ele.category === selectedCategory && ele.subcategory === subcategory);
       uimaker(temp);
     }
+    
   };
 
   electronicsselect.addEventListener("input", () => {
