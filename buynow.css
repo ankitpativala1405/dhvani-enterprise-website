@@ -428,3 +428,11 @@ a:hover {
   margin: 0;
 }
 
+
+/* validation */
+.passed{
+  border: 2px solid green !important;
+}
+.failed{
+  border: 2px solid red !important;
+}

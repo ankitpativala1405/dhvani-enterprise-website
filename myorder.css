@@ -122,3 +122,97 @@ display: block;
 background-color: #e2dddd;
 border-radius: 10px;
 }
+
+
+
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 20px; */
+  margin-top: 300px;
+}
+
+.search-filter input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-filter select {
+  width: 30%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-filter button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+}
+
+.search-filter button:hover {
+  background-color: #005bb5;
+}
+
+.order-list {
+  margin-top: 20px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-item .order-details {
+  width: 50%;
+}
+
+.order-item .order-details p {
+  margin: 5px 0;
+}
+
+.order-item .order-action {
+  display: flex;
+  align-items: center;
+}
+
+.order-item button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+}
+
+.order-item button:hover {
+  background-color: #005bb5;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #005bb5;
+}

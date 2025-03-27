@@ -20,6 +20,7 @@
      <div class="daddress">
       
       <h4 id="bname"></h4>
+      <h4 id="bcontact"></h4>
       <p id="bhnumber"></p>
       <p id="bsociety"></p>
       <p id="bstreet"></p>
@@ -229,9 +230,13 @@
   </div>
 
   <div id="changedhomeaddress" style="display: none;">
+    <form action="" id="myform">
     <strong><label for="adress" id="saddress">SHIPPING ADDRESS</label></strong>
     <h5><label for="buyername">name</label></h5>
     <input type="text" id="buyername" placeholder="Enter your name" /><br />
+
+    <h5><label for="contactnumber">contact number</label></h5>
+    <input type="text" id="contactnumber" placeholder="Enter your contact number" /><br />
 
    <h5><label for="homenumber">House No.\Flat no.</label></h5>
     <input type="text" id="homenumber" placeholder="enter your home number" /><br />
@@ -255,6 +260,7 @@
     <input type="text" id="pincode" placeholder="pincode" /><br />
 
     <button class="btda" id="changeadd">change address</button>
+  </form>
   </div>
 
   <div id="usethismethod" style="display: none;">

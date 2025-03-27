@@ -49,16 +49,36 @@
         <a href="" >MY ORDER</a>
         <div class="dropdown">
           <a href="/cart.html">your Cart</a>
-          <a href="/order-history.html">myOrder</a>
+          <a href="/myorder.html">myOrder</a>
         </div>
       </div>
     </nav>
 
+    <div class="search-filter">
+      <input type="text" id="search" placeholder="Search orders..." />
+      <select id="statusFilter">
+          <option value="">All Statuses</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
+      </select>
+      <button onclick="applyFilter()">Apply Filter</button>
+  </div>
+
+  <div id="orderList" class="order-list">
+      <!-- Orders will be dynamically inserted here -->
+  </div>
+
+  <div class="pagination">
+      <button onclick="changePage(-1)">Prev</button>
+      <button onclick="changePage(1)">Next</button>
+  </div>
+</div>
 
 
 
 
-
-       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dolor nemo deserunt similique ad eum quam error at quaerat numquam, repellendus ex distinctio nulla amet atque debitis eaque mollitia adipisci dolore? Repudiandae, aut veniam aliquid est eum beatae similique laborum voluptatibus placeat dolore eligendi. Eius possimus exercitationem, beatae, rerum facere, expedita corporis ipsa officia perspiciatis itaque repellat molestias! Illum, velit sunt eius iusto repellat maiores natus optio expedita fugit placeat! Consectetur labore officia laudantium atque modi, a nam quibusdam accusantium nostrum odit? Sequi repudiandae laboriosam iste praesentium minus totam nisi obcaecati. Quam, quis doloribus? Necessitatibus magni repellat aliquid beatae quibusdam hic in voluptas, fugit dicta iure cupiditate odio alias quis culpa aspernatur! Beatae vitae consequuntur maiores delectus iusto, quo similique itaque soluta cupiditate, nesciunt architecto nulla iste qui laboriosam molestias suscipit vero labore aut laudantium! Ratione placeat, quos amet perspiciatis sapiente optio voluptates magni nam assumenda, architecto ipsum repellat esse laudantium veniam blanditiis sequi nobis qui porro consectetur, ipsa itaque quisquam saepe rem ea? Iusto quia ipsam, alias, dolores dignissimos ex aut, perferendis porro amet quo numquam quibusdam sunt quidem tempora eaque soluta atque doloremque! Nulla illum quisquam mollitia tempora quam, non error molestiae saepe sed nam culpa praesentium quas illo. Reiciendis impedit aspernatur explicabo voluptatum repellat, rerum cumque dignissimos laborum numquam commodi minus veritatis maiores delectus iste nihil dolore fugit maxime sequi. Dignissimos dolore asperiores provident quasi dolorem voluptatibus minus perferendis accusamus. Doloremque, nesciunt? Harum quidem minus sequi officia perferendis quae quis sunt rem dolore, veritatis ea ratione consectetur commodi. Cum illo neque eos? Quod incidunt fugit distinctio obcaecati amet labore dolorem numquam autem, eaque iure quibusdam unde vitae ullam, sapiente ducimus nihil possimus magni sit repudiandae voluptatum, at minus. Ut, nisi dolorem ad sunt consequatur sequi expedita, nesciunt dolore, quis optio quibusdam et pariatur similique at ullam accusantium reiciendis quo rerum in doloremque! Necessitatibus nihil quaerat iusto aperiam eveniet recusandae odit porro, saepe exercitationem assumenda deleniti tempora fugiat non quisquam! Consequatur quae, ut enim veritatis quibusdam, eum officia nemo exercitationem tenetur totam iste dolore suscipit nulla placeat. Odio magni magnam nisi ipsam et fugit vitae cum quas! Ex doloribus reiciendis rerum debitis voluptate fugiat dolorum. Obcaecati culpa reprehenderit distinctio expedita assumenda dolor blanditiis sint voluptatibus quos magni reiciendis autem excepturi repellendus quam nemo tempora sit ab qui aliquam provident, unde eveniet, nostrum odio? Ipsum eum sequi minima possimus nostrum blanditiis assumenda dignissimos hic? Iure officia quasi aperiam eos dicta facilis, rerum sed, deleniti aut ullam sint sit, sapiente dolorem expedita? Exercitationem eveniet dicta obcaecati, alias at corporis unde? Cum animi quae, blanditiis ipsa perferendis minus beatae deserunt aliquam illum doloremque quam eveniet consequatur sapiente debitis suscipit veniam! Illo, veniam eum. Et corrupti placeat tempora error animi modi quos voluptatum ipsa, repellendus assumenda accusantium recusandae dolor neque nihil deserunt beatae blanditiis. Architecto sint quo atque obcaecati cupiditate. Ducimus id harum atque sapiente ipsa doloremque distinctio molestias voluptas accusamus, laborum optio obcaecati beatae ratione minima eaque modi quia eum a corporis? Illo, fuga rem atque doloribus rerum distinctio minus porro.</p>
+       
 </body>
+<script src="./myorder.js"></script>
 </html>
