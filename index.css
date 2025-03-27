@@ -1,8 +1,18 @@
 body,html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;}
-
+    font-family: Arial, sans-serif;
+  }
+.conteiner{
+  width:1320px;
+  margin:auto;
+}
+.row{
+  display: flex;
+}
+ul,ol{
+  list-style: none;
+}
 .index {
     position: fixed;
     top: -15px;
@@ -103,7 +113,7 @@ nav a:hover { color: #f39c12;}
   /* background-color: #f1f1f1; */
   min-width: 160px;
   z-index: 1;
-  top: 100%; /* Position dropdown below the link */
+  top: 100%; 
   left: 0;
 }
 
@@ -123,62 +133,147 @@ nav a:hover { color: #f39c12;}
   border-radius: 10px;
 }
 
-/* .footer-ended{
-    width: 100%;
-    background-color: #e2dddd;
-    color: #212121;
-    font-size: 18px;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-} */
+footer {
+  margin-top: 1000px;
+  background-color: #e2dddd;
+  color: #333;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  border-radius: 20px;
+  margin-bottom: 60px;
+  width: 100%;
+}
 
-/* footer{
+.footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 50px auto;
- 
-}
-.footer-logo{
-  background-color: #ececec;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  margin-top: 1000px;
-  align-items: center;
-  padding: 20px;
-  max-width: 25%;
-  margin-bottom: -15px;
 }
 
-.userinfo{
-  background-color: #ececec;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1000px;
-  align-items: center;
-  padding: 20px;
-  max-width: 25%;
+.footer-logo h1 {
+  font-size: 24px;
 }
 
-.CustomerService{
-  background-color: #ececec;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1000px;
-  align-items: center;
-  padding: 20px;
-  max-width: 25%;
+.footer-logo p {
+  margin: 5px 0;
 }
 
-.company-info{
-  background-color: #ececec;
+.footer-links {
+  margin: 0 20px;
+}
+
+.footer-links h2 {
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.whatsapp-button {
+  background-color: #25D366; 
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  width: 99%;
+  border-radius: 20px;
+  margin-top:22px;
+  margin-left: -20px;
+  /* margin-bottom: -100px; */
+}
+
+
+
+#slider {
+  position: relative;
+  width: 100%;
+  max-width: 1800px; /* Adjust as per your container size */
+  margin: 0 auto;
+  overflow: hidden; /* Hide images outside the container */
+}
+
+.slider-container {
   display: flex;
-  flex-direction: column;
-  margin-top: 1000px;
+  transition: transform 0.5s ease;
+  margin-top: 200px;
+}
+
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slide {
+  min-width: 33.33%; /* Each slide takes up 1/3 of the container */
+  height: 400px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  max-width: 25%;
-} */
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  margin-top: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  height: 100px;
+  width: 100px;
+  border-radius: 30px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Optional styling for the buttons */
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
