@@ -31,3 +31,4 @@ document.getElementsByClassName('prev')[0].addEventListener('click', () => {
 document.getElementsByClassName('next')[0].addEventListener('click', () => {
   showSlide(currentIndex + 1); 
 });
+

@@ -6,14 +6,14 @@ let data = [
     "category":"Home & Living & kitchenware",
     "subcategory":"kitchenware",
     "sku":"usb sealer machine",
-    "image1": "./PHOTO/product photo/0/1.jpg",
-    "image2": "./PHOTO/product photo/0/2.jpg", 
-    "image3": "./PHOTO/product photo/0/3.jpg", 
-    "image4": "./PHOTO/product photo/0/4.jpg",
-    "image5": "./PHOTO/product photo/0/5.jpg", 
-    "image6": "./PHOTO/product photo/0/6.jpg",
-    "image7": "./PHOTO/product photo/0/7.jpg", 
-    "image8": "./PHOTO/product photo/0/8.jpg", 
+    "image1": "../PHOTO/product photo/0/1.jpg",
+    "image2": "../PHOTO/product photo/0/2.jpg", 
+    "image3": "../PHOTO/product photo/0/3.jpg", 
+    "image4": "../PHOTO/product photo/0/4.jpg",
+    "image5": "../PHOTO/product photo/0/5.jpg", 
+    "image6": "../PHOTO/product photo/0/6.jpg",
+    "image7": "../PHOTO/product photo/0/7.jpg", 
+    "image8": "../PHOTO/product photo/0/8.jpg", 
     "bullet1": "💖 This mini bag sealer is a heat bag sealer, and also a bag opener. You can seal bags easily and keep your food fresh, also with the built-in sharp stainless steel blade to open the bags conveniently. 2-in-1 machine. Enjoy your fresh and crispy snacks.",
     "bullet2": "💖 built-in With a 400mAh battery, the rechargeable hot bond bag sealer comes with a micro USB cable(included), so there is no need to buy extra AA batteries for this chip sealer, save your money and protect the environment.",
     "bullet3": "💖 This food bag sealer is suitable for packages of chips, cookies, salad, pet foods, etc., as well as for packages of salad and vacuum bags, a must-have in daily life and kitchen cooking scenarios. Not for cling films, cellophane bags, kraft paper bags, or pure aluminum bags.",
@@ -43,14 +43,14 @@ let data = [
     "category": "clothing", 
     "subcategory": "gown", 
     "sku":"Anarkali gown(parrot green)",
-    "image1": "./PHOTO/product photo/1/1.jpg", 
-    "image2": "./PHOTO/product photo/1/2.jpg", 
-    "image3": "./PHOTO/product photo/1/3.jpg", 
-    "image4": "./PHOTO/product photo/1/4.jpg", 
-    "image5": "./PHOTO/product photo/1/5.jpg", 
-    "image6": "./PHOTO/product photo/1/6.jpg", 
-    "image7": "./PHOTO/product photo/1/7.jpg", 
-    "image8": "./PHOTO/product photo/1/8.jpg", 
+    "image1": "../PHOTO/product photo/1/1.jpg", 
+    "image2": "../PHOTO/product photo/1/2.jpg", 
+    "image3": "../PHOTO/product photo/1/3.jpg", 
+    "image4": "../PHOTO/product photo/1/4.jpg", 
+    "image5": "../PHOTO/product photo/1/5.jpg", 
+    "image6": "../PHOTO/product photo/1/6.jpg", 
+    "image7": "../PHOTO/product photo/1/7.jpg", 
+    "image8": "../PHOTO/product photo/1/8.jpg", 
     "bullet1": "💖 Top: Heavy Faux Georgette With Embroidered Work With Stone, Size: Max Up To 48 Inches Length: Max Up To 52 Inches", 
     "bullet2": "💖 Bottom: Heavy Santoon, Length: 2 MTR, Type: Unstitched", 
     "bullet3": "💖 Dupatta: Heavy Butterfly Net With Embroidery Work With Latkan, Size: 2.20 MTR, Sleeve; Faux Georgette With Embroidered Work", 
@@ -77,16 +77,6 @@ let data = [
 ]
 
 
-window.onload = () => {
-  if (!localStorage.getItem("data")) {
-      console.log("Setting data in localStorage..."); // Log to confirm this step
-      localStorage.setItem("data", JSON.stringify(data));
-  }
-
-  let storedData = JSON.parse(localStorage.getItem("data")) || data;
-  console.log(storedData); // Log to check if the data is retrieved correctly
-  uimaker(storedData);
-};
 
 //dispaly show detail
 const uimaker=(data)=> {
@@ -98,11 +88,11 @@ const uimaker=(data)=> {
     Image.setAttribute("class", "img");  
 
     let icon = document.createElement("img");
-    icon.src = "./PHOTO/wishlist.png";
+    icon.src = "../PHOTO/wishlist.png";
     icon.setAttribute("class", "icon");
     icon.addEventListener("click", (event) => {
         event.stopPropagation();
-     icon.src = "./PHOTO/wishlist-swaping.png"; 
+     icon.src = "../PHOTO/wishlist-swaping.png"; 
 
   if (data && data[i]) {
   
@@ -142,7 +132,7 @@ const uimaker=(data)=> {
     buynow.setAttribute("class", "buy-now");
     buynow.addEventListener('click', () => {
       localStorage.setItem('buyNowProduct', JSON.stringify(data[i])); 
-      window.location.href = './buynow.html';  
+      window.location.href = '../pages/buynow.html';  
     });
 
     let div2=document.createElement("div")
@@ -155,7 +145,7 @@ const uimaker=(data)=> {
     div.append(Image, title, price, div2,icon);
   div.addEventListener("click", ()=>{
     localStorage.setItem('productDetails', JSON.stringify(data[i])); 
-    window.open('./productdetail.html'); 
+    window.open('../pages/productdetail.html'); 
   })
 
     document.getElementById('container').append(div);
@@ -163,10 +153,6 @@ const uimaker=(data)=> {
 }
 
 uimaker(data) 
-
-//buy now product
-const buyn=()=>{ 
-  window.open('./buynow.html');}
 
   //add to cart product
 

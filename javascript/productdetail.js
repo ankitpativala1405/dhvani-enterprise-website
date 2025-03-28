@@ -1,4 +1,4 @@
-const buynow = () => { window.open('./buynow.html'); }
+const buynow = () => { window.open('../buynow.html'); }
 
 const addtocart = () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
