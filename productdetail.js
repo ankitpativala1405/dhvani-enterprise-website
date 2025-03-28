@@ -10,7 +10,6 @@ const addtocart = () => {
         price: details.price,
         quantity: 1, 
     };
-    cart.push(product);
 
     let existingProduct = cart.find((ele) => ele.id === product.id);
 

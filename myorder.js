@@ -13,34 +13,44 @@ function renderOrders() {
     const filteredOrders = getFilteredOrders();
 
     orderList.innerHTML = '';
-    filteredOrders.forEach(order => {
-        const orderDiv = document.createElement('div');
-        orderDiv.classList.add('order-item');
-        orderDiv.innerHTML = `
-            <div class="order-details">
-                <p><strong>Order #${order.id}</strong></p>
-                <p>Date: ${order.date}</p>
-                <p>Status: ${order.status}</p>
-                <p>Total: ${order.total}</p>
-                <p>Payment: ${order.payment}</p>
-            </div>
-            <div class="order-action">
-                <button onclick="viewOrder(${order.id})">View Details</button>
-                <button onclick="reorder(${order.id})">Reorder</button>
+
+    let orderHTML = '';
+
+    for (let i = 0; i < filteredOrders.length; i++) {
+
+        orderHTML += `
+            <div class="order-item">
+                <div class="order-details">
+                    <p><strong>Order #${filteredOrders[i].id}</strong></p>
+                    <p>Date: ${filteredOrders[i].date}</p>
+                    <p>Status: ${filteredOrders[i].status}</p>
+                    <p>Total: ${filteredOrders[i].price}</p>
+                    <p>Payment: ${filteredOrders[i].payment}</p>
+                </div>
+                <div class="order-action">
+                    <button onclick="viewOrder(${filteredOrders[i].id})">View Details</button>
+                    <button onclick="reorder(${filteredOrders[i].id})">Reorder</button>
+                </div>
             </div>
         `;
-        orderList.appendChild(orderDiv);
-    });
+    }
+
+    orderList.innerHTML = orderHTML;
+}
+
+const uimaker=()=>{
+    let orderList = document.getElementById('orderList');
+    let filteredOrders = getFilteredOrders();
 }
 
 function getFilteredOrders() {
-    const searchQuery = document.getElementById('search').value.toLowerCase();
-    const statusFilter = document.getElementById('statusFilter').value;
+    let searchQuery = document.getElementById('search').value.toLowerCase();
+    let statusFilter = document.getElementById('statusFilter').value;
     
-    return orders.filter(order => {
-        const matchesSearch = order.id.toString().includes(searchQuery) || order.status.toLowerCase().includes(searchQuery);
-        const matchesStatus = !statusFilter || order.status === statusFilter;
-        return matchesSearch && matchesStatus;
+    return orders.filter((order) => {
+        let Search = order.id.toString().includes(searchQuery) || order.status.toLowerCase().includes(searchQuery);
+        let Status = !statusFilter || order.status === statusFilter;
+        return Search && Status;
     });
 }
 
@@ -62,3 +72,4 @@ function reorder(orderId) {
 }
 
 renderOrders(); // Initial render
+
