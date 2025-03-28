@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product You Want to Buy</title>
+    <link rel="stylesheet" href="../style/product.css" />
+    <style></style>
+  </head>
+
+  <body>
+   <!-- Welcome Message -->
+   <p class="index">
+    <strong>Welcome to our online store !! <span>Express delivery</span></strong>
+  </p>
+
+  <!-- Company Logo, Contact & Search Section -->
+  <div>
+    <div id="clogo">
+      <!-- Company Contact Info -->
+      <div id="companycontact">
+        <div id="callphoto">
+          <img src="../PHOTO/contact-us.png" alt="" height="30px" />
+          <h3>Call Us</h3>
+        </div>
+        <p>+91 9723665181</p>
+      </div>
+      <!-- Company Logo -->
+      <div id="companylogo">
+        <img
+          src="../PHOTO/logo5-removebg-preview.png"
+          alt="DHVANI ENTERPRISE LOGO"
+          class="companylogo"
+        />
+      </div>
+      <!-- Search Bar -->
+      <div id="searchbar">
+        <img src="../PHOTO/searchicon.png" alt="" height="30px" width="30px" />
+        <input type="search" id="search" placeholder="Search..." />
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="../index.html" target="_blank">HOME</a>
+    <a href="./product.html" target="_blank">PRODUCT</a>
+    <a href="./create new account.html" target="_blank">SIGN UP</a>
+    <a href="./login.html" target="_blank">LOGIN</a>
+    <div class="order-link">
+      <a href="" >MY ORDER</a>
+      <div class="dropdown">
+        <a href="./cart.html">your Cart</a>
+        <a href="./myorder.html">myOrder</a>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Main Container with Filter Bar -->
+    <div id="main-container">
+      <!-- Filter Bar -->
+      <div id="filterbar">
+        <h3>Filters</h3>
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="all" id="All">All category</option>
+          <option value="electronics" id="electronics">Electronics</option>
+          <option value="clothing" id="clothig">Clothing</option>
+          <option value="Fashion & Apparel" id="fashion">Fashion & Apparel</option>
+          <option value="Food & Beverages" id="food">Food & Beverages</option>
+          <option value="Home & Living & kitchenware" id="home">Home & Living & kitchenware</option>
+          <option value="Beauty & Personal Care" id="beauty">Beauty & Personal Care</option>
+          <option value="Toys & Hobbies" id="toys">Toys & Hobbies</option>
+          <option value="Services" id="Services">Services</option>
+          <option value="DIY and Hardware" id="hardware">DIY and Hardware</option>
+          <option value="Media" id="media">media</option>
+        </select>
+
+        <label for="subcategory">Sub-category</label>
+        <select id="electronics" style="display: none" class="subcategory">
+          <option value="">choose any one</option>
+          <option value="smartphones">smartphones</option>
+          <option value="computers">computers</option>
+          <option value="TVs">TVs</option>
+          <option value="audio equipment">audio equipment</option>
+          <option value="accessories">accessories</option>
+        </select>
+        <select  id="clothing" style="display: none" class="subcategory"> 
+          <option value="">choose any one</option>
+          <option value="gown">gown</option>
+          <option value="kurtis">kurtis</option>
+          <option value="kurtas">kurtas</option>
+          <option value="tunic">tunic</option>
+          <option value="kurta set">kurta set</option>
+          <option value="kurti set">kurti set</option>
+          <option value="saree">saree</option>
+        </select>
+      <select  id="Fashion & Apparel" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="footwear">footwear</option>
+        <option value="accessories for men">accessories for men</option>
+        <option value="accessories for women">accessories for women</option>
+        <option value="accessories for kids">accessories for kids</option>
+      </select>
+      <select  id="Food & Beverages" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="groceries">groceries</option>
+        <option value="snacks">snacks</option>
+        <option value="drinks">drinks</option>
+        <option value="other consumables">other consumables</option>
+      </select>
+      <select  id="Home & Living & kitchenware" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="furniture">furniture</option>
+        <option value="home decor">home decor</option>
+        <option value="appliances">appliances</option>
+        <option value="kitchenware">kitchenware</option>
+        <option value="other items">other items</option>
+      </select>
+      <select  id="Beauty & Personal Care" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="makeup">makeup</option>
+        <option value="skincare">skincare</option>
+        <option value="hair care">hair care</option>
+        <option value="cosmetics">cosmetics</option>
+        <option value="personal care">personal care</option>
+        <option value="body care">body care</option>
+        <option value="fragrances">fragrances</option>
+        <option value="perfumes">perfumes</option>
+        <option value="make for women">make for women</option>
+        <option value="make for men">make for men</option>
+        <option value="other makeup products">other makeup products</option>
+      </select>
+      <select  id="Toys & Hobbies" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="toys">toys</option>
+        <option value="games">games</option>
+        <option value="collectibles">collectibles</option>
+        <option value="hobby-related">hobby-related</option>
+      </select>
+      <select  id="Services" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="software subscriptions">software subscriptions</option>
+        <option value="online courses">online courses</option>
+        <option value="non-physical products">non-physical products</option>
+      </select>
+      <select  id="DIY and Hardware" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="tools">tools</option>
+        <option value="home repairs">home repairs</option>
+        <option value="construction">construction</option>
+        <option value=""></option>
+      </select>
+      <select  id="Media" style="display: none" class="subcategory">
+        <option value="">choose any one</option>
+        <option value="books">books</option>
+        <option value="music">music</option>
+        <option value="movies">movies</option>
+        <option value="other media">other media</option>
+      </select>
+
+        <label for="price">Price Slider</label>
+        <input type="range" id="price" name="price" min="0" max="5000" step="10" value="5000" />
+        <span id="price-value">upto 5000</span>
+
+        <label for="sortDropdown" id="sortby">Sort By</label>
+        <select id="sortDropdown">
+          <option value="lth" id="asc">Price Low to High</option>
+          <option value="htl" id="desc">Price High to Low</option>
+        </select>
+
+        <div class="filter-container">
+          <label for="">Price Range</label><br>
+         <input type="checkbox" id="price-0-200"> 0-200 ₹<br>
+         <input type="checkbox" id="price-201-500"> 201-500 ₹<br>
+         <input type="checkbox" id="price-501-1000"> 501-1000 ₹<br>
+         <input type="checkbox" id="price-1001-1500"> 1001-1500 ₹<br>
+         <input type="checkbox" id="price-1501-2000"> 1501-2000 ₹<br>
+         <input type="checkbox" id="price-above-2000"> Above 2000 ₹<br>
+
+  
+          <div id="srofcheckbox">
+              <input type="submit" value="Apply Filters" id="checkbox-submit">
+              <input type="reset" value="Reset" id="checkbox-reset">
+          </div>
+          
+          <div id="selected-filters"></div>
+      </div>
+
+        
+      </div>
+      <div id="container">
+        <!-- Products will go here -->
+      </div>
+      
+    </div>
+  </body>
+  <script src="../javascript/product.js"></script>
+  <script></script>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create new account</title>
+    <link rel="stylesheet" href="../style/cna.css" />
+    <style>
+      input.failed {
+      border: 2px solid red;
+    }
+    input.passed {
+      border: 2px solid green;
+    }
+    </style>
+  </head>
+
+  <body>
+  <!-- Welcome Message -->
+  <p class="index">
+    <strong>Welcome to our online store !! <span>Express delivery</span></strong>
+  </p>
+
+  <!-- Company Logo, Contact & Search Section -->
+  <div>
+    <div id="clogo">
+      <!-- Company Contact Info -->
+      <div id="companycontact">
+        <div id="callphoto">
+          <img src="../PHOTO/contact-us.png" alt="" height="30px" />
+          <h3>Call Us</h3>
+        </div>
+        <p>+91 9723665181</p>
+      </div>
+      <!-- Company Logo -->
+      <div id="companylogo">
+        <img
+          src="../PHOTO/logo5-removebg-preview.png"
+          alt="DHVANI ENTERPRISE LOGO"
+          class="companylogo"
+        />
+      </div>
+      <!-- Search Bar -->
+      <div id="searchbar">
+        <img src="../PHOTO/searchicon.png" alt="" height="30px" width="30px" />
+        <input type="search" id="search" placeholder="Search..." />
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="../index.html" target="_blank">HOME</a>
+    <a href="./product.html" target="_blank">PRODUCT</a>
+    <a href="./create new account.html" target="_blank">SIGN UP</a>
+    <a href="./login.html" target="_blank">LOGIN</a>
+    <div class="order-link">
+      <a href="" >MY ORDER</a>
+      <div class="dropdown">
+        <a href="./cart.html">your Cart</a>
+        <a href="./myorder.html">myOrder</a>
+      </div>
+    </div>
+  </nav>
+
+    <br>
+    <h1 class="signup">Sign up</h1>
+    <div id="cnewa" class="ahalp">
+      <body>
+        <form action="" class="signupform" id="myForm">
+          <div id="errorname">
+            <strong><label for="name"> FIRSTNAME:</label></strong>
+            <input type="text" id="name" placeholder=" NAME" />
+          </div>
+          <br />
+          <div id="errorsurname">
+            <strong><label for="surname"> LAST NAME:</label></strong>
+            <input type="text" id="surname" placeholder="SURNAME" />
+          </div>
+          <br />
+          <div id="errorcontact">
+            <strong><label for="mobile number">CONTACT NO:</label></strong>
+            <input type="number" id="mobile number" placeholder=" NUMBER" />
+          </div>
+          <br />
+          <div id="erroralternative">
+            <strong><label for="alternative number">ALTERNATIVE CONTACT NO:</label></strong>
+              <input  type="number"  id="alternative number" placeholder="ALTERNATIVE NUMBER"/>
+          </div>
+          <br />
+          <div id="erroremail">
+            <strong><label for="email">EMAIL</label></strong>
+            <input type="email" id="email" placeholder="email" />
+          </div>
+          <br />
+          <div>
+            <strong><label for="adress" id="saddress">SHIPPING ADDRESS</label></strong>
+            <input type="text" id="adress1" placeholder="line 1" /><br />
+            <input type="text" id="adress2" placeholder="line 2" /><br />
+            <input type="text" id="adress3" placeholder="line 3" /><br />
+            <br />
+          </div>
+    
+          <div>
+            <strong><label for="landmark">LANDMARK</label></strong>
+            <input type="text" id="landmark" />
+          </div>
+          <br />
+          <div id="errorpincode">
+            <strong><label for="pincode">PINCODE</label></strong>
+            <input type="number" id="pincode" />
+          </div>
+          <br />
+    
+          <div id="errorcity">
+            <strong><label for="city">CITY</label></strong>
+            <input type="text" id="city" />
+          </div>
+          <br />
+          <div id="errorstate">
+            <strong><label for="state">STATE</label></strong>
+            <input type="text" id="state" />
+          </div>
+          <br />
+          <div id="errorpassword">
+            <strong><label for="password">CREATE YOUR PASSWORD</label></strong>
+            <input type="password" id="password" placeholder="PASSWORD" />
+          </div>
+          <br />
+          <div id="errorretype">
+            <strong><label for="rpassword">RETYPE YOUR PASSWORD</label></strong>
+            <input  type="password"  id="rpassword"  placeholder="RETYPE YOUR PASSWORD"/>
+          </div>
+          <br />
+          <div id="buttons">
+            <input type="reset" value="reset" />
+            <input type="submit" value="submit" id="downloadBtn"/>
+          </div>
+        </form>
+    <!-- </div>
+    <div class="ahalp"> -->
+      <br>
+      <label for="1">ALREADY HAVE AN ACCOUNT</label>
+      <a href="/login.html" id="1">login</a>
+    </div>
+  </body>
+  <script src="../javascript/cna.js"></script>
+</html>
