@@ -1,7 +1,5 @@
 let slides = document.getElementsByClassName('slide'); 
 
-// console.log(slides);
-
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -24,10 +22,10 @@ function showSlide(index) {
 
 showSlide(currentIndex);
 
-// document.getElementsByClassName('prev')[0].addEventListener('click', () => {
-//   showSlide(currentIndex - 1); 
-// });
+document.getElementsByClassName('prev')[0].addEventListener('click', () => {
+  showSlide(currentIndex - 1); 
+});
 
-// document.getElementsByClassName('next')[0].addEventListener('click', () => {
-//   showSlide(currentIndex + 1); 
-// });
+document.getElementsByClassName('next')[0].addEventListener('click', () => {
+  showSlide(currentIndex + 1); 
+});
