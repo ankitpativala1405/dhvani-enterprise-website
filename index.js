@@ -1,8 +1,10 @@
+let data =JSON.parse(localStorage.getItem("data"))
 let slides = document.getElementsByClassName('slide'); 
+
 
 let currentIndex = 0;
 
-function showSlide(index) {
+const showSlide=(index)=> {
     if (index < 0) {
       currentIndex = slides.length - 1; 
     } else if (index >= slides.length) {

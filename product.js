@@ -77,6 +77,9 @@ let data = [
 ]
 
 
+window.onload(
+  localStorage.setItem("data",JSON.stringify(data))
+)
 //dispaly show detail
 const uimaker=(data)=> {
   document.getElementById('container').innerHTML = ''; 
