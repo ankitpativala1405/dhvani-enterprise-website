@@ -404,3 +404,4 @@ document.getElementById("search").addEventListener("input", () => {
   let value = document.getElementById("search").value;
   search(value);
 });
+

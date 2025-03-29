@@ -59,7 +59,6 @@
           <button class="bcaddress" id="changeaddress">change address</button>
            </h3>
      <div class="daddress">
-      
       <h4 id="bname"></h4>
       <h4 id="bcontact"></h4>
       <p id="bhnumber"></p>
@@ -273,33 +272,42 @@
   <div id="changedhomeaddress" style="display: none;">
     <form action="" id="myform">
     <strong><label for="adress" id="saddress">SHIPPING ADDRESS</label></strong>
+    <div id="errorname">
     <h5><label for="buyername">name</label></h5>
-    <input type="text" id="buyername" placeholder="Enter your name" /><br />
-
+    <input type="text" id="buyername" placeholder="Enter your name" required/><br />
+  </div>
+<div id="errorcontactnumber">
     <h5><label for="contactnumber">contact number</label></h5>
-    <input type="text" id="contactnumber" placeholder="Enter your contact number" /><br />
-
+    <input type="text" id="contactnumber" placeholder="Enter your contact number" required/><br />
+  </div>
+    <div id="errornumber">
    <h5><label for="homenumber">House No.\Flat no.</label></h5>
-    <input type="text" id="homenumber" placeholder="enter your home number" /><br />
-
+    <input type="text" id="homenumber" placeholder="enter your home number" required/><br />
+  </div>
+    <div id="errorsociety">
     <h5><label for="societyname">society/apartment/tenament name</label></h5>
-    <input type="text" id="societyname" placeholder="society/apartment/tenament name" /><br />
-
+    <input type="text" id="societyname" placeholder="society/apartment/tenament name" required/><br />
+  </div>
+    <div id="errorstreet">
     <h5><label for="streetname">street name</label></h5>
-    <input type="text" id="streetname" placeholder="street name" /><br />
-
+    <input type="text" id="streetname" placeholder="street name" required/><br />
+  </div>
+    <div id="errorlandmark">
     <h5><label for="landmark">landmark</label></h5>
     <input type="text" id="landmark" placeholder="landmark" /><br />
-
+  </div>
+    <div id="errorcityname">
     <h5><label for="cityname">city name</label></h5>
-    <input type="text" id="cityname" placeholder="city" /><br />
-
+    <input type="text" id="cityname" placeholder="city" required/><br />
+  </div>
+    <div id="errorstate">
     <h5><label for="statename">state name</label></h5>
-    <input type="text" id="statename" placeholder="state" /><br />
-
+    <input type="text" id="statename" placeholder="state" required/><br />
+  </div>
+    <div id="errorpincode">
     <h5><label for="pincode">pincode</label></h5>
-    <input type="text" id="pincode" placeholder="pincode" /><br />
-
+    <input type="text" id="pincode" placeholder="pincode" required/><br />
+  </div>
     <button class="btda" id="changeadd">change address</button>
   </form>
   </div>
@@ -329,8 +337,10 @@
     </p>
     <button id="placeorderbutton">PLACE ORDER</button>
   </div>
-  <script src="../javascript/buynow.js"></script>
+
+  
   </body>
+  <script src="../javascript/buynow.js"></script>
 
   <script></script>
 </html>
