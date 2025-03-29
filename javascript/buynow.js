@@ -83,7 +83,7 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
       hour12: true,
     }),
     status: "pending",
-    total: `₹${price}`,
+    total: `₹${parseFloat(price) + 100}`,
     payment:pay,
     sku:sku
   };
@@ -91,6 +91,8 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
   localStorage.setItem("order", JSON.stringify(orderd));
   alert("Thank you for submitting place order.");
 });
+
+
 
 document
   .getElementById("changeadd")
