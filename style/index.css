@@ -1,8 +1,8 @@
 body,html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 .conteiner{
   width:1320px;
   margin:auto;
@@ -218,67 +218,74 @@ footer {
 
 
  
+
+/* Slider Container */
 .slider-container {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
-  margin: auto;
-  border: 2px solid #ddd; 
-  border-radius: 10px; 
 }
 
+/* Slider */
 .slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
+/* Slide */
 .slide {
-  min-width: 100%;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slide-content {
-  position: relative;
-}
-
-.slide img {
-  width: 80%;
-  height: auto;
-  border-radius: 10px; 
   display: flex;
-  margin: auto;
-  margin-top: 170px !important;
+  width: 100%;
 }
 
+/* Slide Content (Image Container) */
+.slide-content {
+  display: flex;
+  width: 100%;
+}
+
+/* Images in the slide */
+.slide-content img {
+  margin-top:200px;
+  height: 50vh;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Controls (Prev & Next Buttons) */
 .controls {
   position: absolute;
-  top: 50%;
+  top: 65%;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translateY(-50%);
 }
 
-button {
-  background-color:#e2dddd;
+.controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  border-radius: 20px;
   padding: 10px;
-  font-size: 18px;
-  height: 80px ;
-  width: 50px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
-button:hover {
-  background-color: #f39c12;
+
+.controls button:hover {
+  background-color: #f39c12;;
 }
-button:focus {
+
+.controls button:focus {
   outline: none;
 }
 
 
-
 .shopbycategory {
   text-align: center;
-  margin-top: -10px;
+  margin-top: 20px !important;
   margin: auto;
   width: 100%;
   background-color: #e2dddd;
@@ -305,8 +312,8 @@ button:focus {
 }
 
 .category img {
-  width: 150px; 
-  height: auto;
+  width: 125px; 
+  height: 115px;
   margin: auto;
   margin-left: -20px;
 }
@@ -342,6 +349,7 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
+  border: 3px solid black;
 }
 
 .card img {
@@ -385,9 +393,9 @@ button {
 }
 
 .feature {
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   padding: 20px;
   text-align: center;
   flex: 1 1 200px;
