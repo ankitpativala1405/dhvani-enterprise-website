@@ -140,7 +140,7 @@ body {
 }
 
 footer {
-  margin-top: 1000px;
+  margin-top: 20px;
   background-color: #e2dddd;
   color: #333;
   padding: 20px;
@@ -217,33 +217,31 @@ footer {
 
 
  
-
-/* Slider Container */
 .slider-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-/* Slider */
+
 .slider {
   display: flex;
   transition: transform 0.5s ease;
 }
 
-/* Slide */
+
 .slide {
   display: flex;
   width: 100%;
 }
 
-/* Slide Content (Image Container) */
+
 .slide-content {
   display: flex;
   width: 100%;
 }
 
-/* Images in the slide */
+
 .slide-content img {
   margin-top:200px;
   height: 50vh;
@@ -252,7 +250,7 @@ footer {
   border-radius: 20px;
 }
 
-/* Controls (Prev & Next Buttons) */
+
 .controls {
   position: absolute;
   top: 65%;
@@ -419,16 +417,18 @@ p {
 
 
 #showsrarch {
-  display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   padding: 20px;
   margin-top: 175px;
   margin-bottom: -200px;
+  display: flex;
+  flex: wrap;
 }
 
 .product {
+ 
   background-color: #e2dddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -480,4 +480,80 @@ button {
 
 button:hover {
   background-color: #ff4500;
+}
+
+
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #e2dddd;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.product-card p span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+button {
+  background-color: #20c997;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #17a2b8;
+}
+
+.see-all {
+  display: inline-block;
+  margin-top: 20px;
+  color: #20c997;
+  text-decoration: none;
+  font-weight: bold;
 }

@@ -72,33 +72,36 @@ let data = [
     "Descrip11": "", 
     "Descrip12": "",
     "status":"pending" 
-    }
-      
+    },
+     
 ]
 
 //search
 const search = (value) => {
-  let temp = data.filter((ele) =>
-    ele.title.toLowerCase().includes(value.toLowerCase())
-  );
-  uimaker(temp);
+  if (value === "") {
+    document.getElementById("showsrarch").style.display = "none"; 
+  } else {
+    let temp = data.filter((ele) =>
+      ele.title.toLowerCase().includes(value.toLowerCase()))
+    uimaker(temp); 
+  }
 };
 
 document.getElementById("search").addEventListener("input", () => {
-  document.getElementById("showsrarch").style.display = "block";
+  document.getElementById("showsrarch").style.display = "flex";
   let value = document.getElementById("search").value;
   search(value);
 });
 
 const uimaker = (data) => {
-  document.getElementById("showsrarch").innerHTML = ""; 
+  document.getElementById("showsrarch").innerHTML = ""
 
   if (data.length === 0) {
     document.getElementById("showsrarch").innerHTML = "No products found."; 
     return;
   }
 
-  const productHTML = data.map((item) => {
+  document.getElementById("showsrarch").innerHTML = data.map((item) => {
     return `
       <div class="product">
         <h2>${item.title}</h2>
@@ -111,12 +114,9 @@ const uimaker = (data) => {
       </div>
     `;
   }); 
-
-  document.getElementById("showsrarch").innerHTML = productHTML; 
 };
 
-
-// let data =JSON.parse(localStorage.getItem("data"))
+//slider
 
 let slides = document.getElementsByClassName('slide'); 
 
