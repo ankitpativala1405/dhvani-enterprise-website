@@ -1,5 +1,5 @@
 let data = [
-  { "id": 0,
+  { "ids": 0,
     "title": "DHVANI ENTERPRISE Portable Mini Sealing Machine, Handheld Packet Sealer for Food, Snacks, Chips, Fresh Storage, Plastic Bags Sealing Machine,(MULTICOLOR)",
     "price": "199",
     "MRP": "406",
@@ -36,7 +36,7 @@ let data = [
     "Descrip12": "",
      "status":"pending" },
     { 
-    "id": 1, 
+    "ids": 1, 
     "title": "DHVANI ENTERPRISE Women's Faux Georgette Stitched Top With Unstitched Santoon Bottom and Dupatta Full Sleeve Embroidered Anarkali Gown", 
     "price": "599", 
     "MRP": "2199", 
@@ -163,7 +163,7 @@ uimaker(data)
     let existingProduct = cart.find((ele) => ele.id === id);
   
     if (existingProduct) {
-      let userChoice = window.confirm("This product is already in your cart. Do you want to increase the quantity? Click 'OK' to increase or 'Cancel' to not add it again.");
+      let userChoice = window.confirm("This product is already in your cart. Do you want to increase the quantity?\n Click 'OK' to increase or \n'Cancel' to not add it again.");
   
       if (userChoice) {
         existingProduct.quantity = (existingProduct.quantity || 1) + 1;
@@ -182,7 +182,6 @@ uimaker(data)
   };
 
   //sorting 
-  //high to low & low to high
 sortDropdown.addEventListener('click', function() {
   let sortValue =  document.getElementById('sortDropdown').value;
 
@@ -357,6 +356,7 @@ document.getElementById("price").addEventListener("input", function() {
 });
 
 
+//fliter by check box
 const filterBycheckbox = () => {
   let filteredData = data; 
 
@@ -392,6 +392,22 @@ const filterBycheckbox = () => {
 
 document.getElementById("checkbox-submit").addEventListener("click", filterBycheckbox);
 
+//reset check box
+
+document.getElementById("checkbox-reset").addEventListener("click",()=>{
+  document.getElementById("price-0-200").checked = false;
+  document.getElementById("price-201-500").checked = false;
+  document.getElementById("price-501-1000").checked = false;
+  document.getElementById("price-1001-1500").checked = false;
+  document.getElementById("price-1501-2000").checked = false;
+  document.getElementById("price-above-2000").checked = false;
+
+  uimaker(data);
+
+})
+
+
+//search
 
 const search = (value) => {
   let temp = data.filter((ele) =>

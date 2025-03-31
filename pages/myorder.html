@@ -54,19 +54,26 @@
     </div>
   </nav>
 
-    <div class="search-filter">
-      <input type="text" id="search" placeholder="Search orders..." />
-      <select id="statusFilter">
-          <option value="">All Statuses</option>
-          <option value="Pending">Pending</option>
-          <option value="shipped">shipped</option>
-          <option value="Delivered">Delivered</option>
-          <option value="Cancelled">Cancelled</option>
-      </select>
-      <button onclick="applyFilter()">Apply Filter</button>
+  <div class="search-filter">
+    <input type="text" id="orderSearch" placeholder="Search orders... search by order id or sku" />
+    <select id="statusfilter">
+        <option value="all">All Statuses</option>
+        <option value="Pending">Pending</option>
+        <option value="shipped">shipped</option>
+        <option value="Delivered">Delivered</option>
+        <option value="Cancelled">Cancelled</option>
+    </select>
+    <select id="paymentmethod">
+      <option value="all">All methods</option>
+      <option value="cash on delivery">cash on delivery</option>
+      <option value="debit card">debit card</option>
+      <option value="credit card">credit card</option>
+      <option value="upi">upi</option>
+      <option value="net banking">net banking</option>
+      <option value="dhvani enterprise wallet">dhvani enterprise wallet</option>
+    </select>
   </div>
-
-  <div id="orderList" class="order-list">
+  <div id="orderlist" class="order-list">
       <!-- Orders will be dynamically inserted here -->
   </div>
 
@@ -75,11 +82,54 @@
       <button onclick="changePage(1)">Next</button>
   </div>
 </div>
+<footer>
+  <div class="footer-container">
+      <div class="footer-logo">
+          <!-- <h1>DHVANI <span>ENTERPRISE</span></h1> -->
+          <img src="./PHOTO/logo5-removebg-preview.png" alt="">
+          <p>A-80,madhavpark society,near singanpore char rasta,ved road,surat-395004</p>
+          <p>Email: <a href="#">dhvanienterprise95@gmail.com</a></p>
+          <p>Phone: <a href="tel:+919723665181">+91 9723665181</a></p>
+          <button class="whatsapp-button">Join Our Community</button>
+      </div>
 
+      <div class="footer-links">
+          <h2>My Account</h2>
+          <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Register</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">View Order</a></li>
+              <li><a href="#">Track Your Shipment</a></li>
+          </ul>
+      </div>
 
+      <div class="footer-links">
+          <h2>Customer Service</h2>
+          <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Return And Refund Policy</a></li>
+          </ul>
+      </div>
 
+      <div class="footer-links">
+          <h2>Information</h2>
+          <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">E Commerce Product Supplier</a></li>
+          </ul>
+      </div>
+  </div>
 
-       
+  <div class="footer-bottom">
+      <p>&copy; 2025 DHVANI ENTERPRISE . All Rights Reserved.</p>
+  </div>
+</footer>
+
 </body>
-<script src="../javascript/myorder.js"></script>
+<script src="../javascript/myorder.js" defer></script>   
+
 </html>

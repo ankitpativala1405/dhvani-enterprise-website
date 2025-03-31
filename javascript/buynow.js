@@ -91,7 +91,7 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
     payment:pay,
     sku:sku
   };
-  orderd.push({...date,detai});
+  orderd.push({...date,...detai});
   localStorage.setItem("order", JSON.stringify(orderd));
   alert("Thank you for submitting place order.");
 });

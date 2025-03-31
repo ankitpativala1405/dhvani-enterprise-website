@@ -25,7 +25,7 @@ document.getElementById("loginform").addEventListener('submit', (event) => {
   } else {
     let userChoice=window.confirm("Sorry!!! You have not account.......!!\nClick 'OK' to create new account or\n'Cancel' to you want to add valid email or mobilenumber or username.")
     if(userChoice){
-      window.open('./create new account.html')
+      window.open('../pages/create new account.html')
     }
   
   }
