@@ -417,6 +417,7 @@ p {
 
 
 #showsrarch {
+  grid-template-columns: repeat(5,1fr);
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;

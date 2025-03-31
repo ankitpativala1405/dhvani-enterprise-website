@@ -16,7 +16,7 @@ const uimaker=(orders)=> {
         divimage.setAttribute("class","divimage")
 
         let  id=document.createElement("h4")
-        id.innerHTML = `Order ID #${orders[i].id}`
+        id.innerHTML = `Order ID #${orders[i].ids}`
 
         let sku=document.createElement("p")
         sku.innerHTML = `SKU: ${orders[i].sku}`
@@ -46,6 +46,10 @@ const uimaker=(orders)=> {
 
        let orderbutton=document.createElement("button")
        orderbutton.innerHTML = "Reorder"
+       orderbutton.addEventListener("click",()=>{
+        alert(`reorder creating for \nSKU: ${orders[i].sku} and \n payment is ${orders[i].total}`)
+        localStorage.setItem("reorder",JSON.stringify(orders[i]))
+       })
 
        let buttons=document.createElement("div")
        buttons.append(viewbutton,orderbutton)
@@ -80,9 +84,11 @@ const search = (value) => {
 
 //filter by status
 
+
 document.getElementById("statusfilter").addEventListener("input", () => { 
   let filter = document.getElementById("statusfilter").value;
   console.log(filter);
+ 
 
     if (filter === "all") {
       uimaker(orders); 
@@ -98,6 +104,8 @@ document.getElementById("statusfilter").addEventListener("input", () => {
 
     document.getElementById("paymentmethod").addEventListener("input", () => { 
     let filter = document.getElementById("paymentmethod").value;
+    console.log(orders);
+    
     if (filter === "all") {
       uimaker(orders); 
     } else {

@@ -81,12 +81,12 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
   let orderd = JSON.parse(localStorage.getItem("order")) || [];
 
   let date = {
-    id: Date.now(),
+    ids: Date.now(),
     now: new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
       hour12: true,
     }),
-    status: "pending",
+    status:"pending",
     total: `₹${parseFloat(price) + 100}`,
     payment:pay,
     sku:sku
