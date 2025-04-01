@@ -288,6 +288,7 @@ const uimaker=(data)=> {
     }
     
     localStorage.setItem('wishlisted', JSON.stringify(wishlist));
+    alert("your product has been added to wishlist")
   } 
 });
 
@@ -401,6 +402,7 @@ let mediaselect=getvalues("Media")
 
 categoryselect.addEventListener("change", () => {
   let selectedcategory = categoryselect.value;
+  console.log("value",selectedcategory);
   
 
   electronicsselect.style.display = "none";
@@ -417,12 +419,15 @@ categoryselect.addEventListener("change", () => {
   
   if (selectedcategory == "all") {
     uimaker(data); 
-  } else {
+  } 
+  else {
     if (selectedcategory == "electronics") {
       electronicsselect.style.display = "block";
-    } else if (selectedcategory == "clothing") {
+    }
+    else if (selectedcategory == "clothing") {
       clothingselect.style.display = "block";
-    } else if (selectedcategory == "Fashion & Apparel") {
+    } 
+    else if (selectedcategory == "Fashion & Apparel") {
       fashionselect.style.display = "block";
     } else if (selectedcategory == "Food & Beverages") {
       foodselect.style.display = "block";
@@ -440,7 +445,7 @@ categoryselect.addEventListener("change", () => {
       mediaselect.style.display = "block";
     }
   }
-  debugger
+
 });
 
 
