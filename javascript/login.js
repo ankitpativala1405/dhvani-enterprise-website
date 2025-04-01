@@ -1,3 +1,5 @@
+let data=JSON.parse(localStorage.getItem("allproducts"))
+
 
 const uimaker = (data) => {
   document.getElementById("showsrarch").innerHTML = ""
@@ -21,11 +23,6 @@ const uimaker = (data) => {
     `;
   }); 
 };
-
-
-
-
-
 
 
 let employee = JSON.parse(localStorage.getItem("userdata")) || [];
@@ -80,3 +77,48 @@ const forgotdiv=(event)=>{
 const loginpage=()=>{
   document.getElementById("container").style.display = "none";
 }
+
+
+
+
+  //search
+
+  const search = (value) => {
+    if (value === "") {
+      document.getElementById("showsrarch").style.display = "none"; 
+    } else {
+      let temp = data.filter((ele) =>
+        ele.title.toLowerCase().includes(value.toLowerCase()))
+      searchvalue(temp); 
+    }
+  };
+  
+  document.getElementById("search").addEventListener("input", () => {
+    document.getElementById("showsrarch").style.display = "grid";
+    let value = document.getElementById("search").value;
+    search(value);
+  });
+  
+  
+  const searchvalue = (data) => {
+    document.getElementById("showsrarch").innerHTML = ""
+  
+    if (data.length === 0) {
+      document.getElementById("showsrarch").innerHTML = "No products found."; 
+      return;
+    }
+  
+    document.getElementById("showsrarch").innerHTML = data.map((item) => {
+      return `
+        <div class="product">
+          <h2>${item.title}</h2>
+          <p>Price: ₹${item.price}</p>
+          <p>MRP: ₹${item.MRP}</p>
+          <p>Category: ${item.category}</p>
+          <p>Subcategory: ${item.subcategory}</p>
+          <img src="${item.images[0]}" alt="${item.title}" />
+          <button>Buy Now</button>
+        </div>
+      `;
+    }); 
+  };

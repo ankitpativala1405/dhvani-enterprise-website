@@ -9,7 +9,7 @@ const uimaker=(orders)=> {
 
 
         let image=document.createElement("img");
-        image.src = orders[i].image1;
+        image.src = orders[i].images[0];
 
         let divimage=document.createElement("div")
         divimage.append(image)

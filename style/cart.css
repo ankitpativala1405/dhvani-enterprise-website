@@ -148,7 +148,7 @@ h2 {
 
 #cart-table {
     width: 70%;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     border-radius: 10PX;
 }
 
@@ -162,6 +162,7 @@ h2 {
 #cart-table th {
     background-color: #f4f4f4;
 }
+
 
 .cart-summary {
     width: 25%;

@@ -6,6 +6,7 @@ function updateCart() {
   let subtotal = 0;
 
   for (let i = 0; i < cartItems.length; i++) {
+
     let product = document.createElement("td");
     product.innerHTML = cartItems[i].sku;
 
@@ -27,7 +28,7 @@ function updateCart() {
     });
 
     let tr = document.createElement("tr");
-    tr.append(product, price, quantity, total, remove);
+    tr.append( product, price, quantity, total, remove);
 
     document.getElementById("cart-body").append(tr);
 
@@ -61,3 +62,47 @@ updateCart()
     });
 
   
+
+    let data=JSON.parse(localStorage.getItem("allproducts"))
+
+      //search
+
+const search = (value) => {
+  if (value === "") {
+    document.getElementById("showsrarch").style.display = "none"; 
+  } else {
+    let temp = data.filter((ele) =>
+      ele.title.toLowerCase().includes(value.toLowerCase()))
+    searchvalue(temp); 
+  }
+};
+
+document.getElementById("search").addEventListener("input", () => {
+  document.getElementById("showsrarch").style.display = "grid";
+  let value = document.getElementById("search").value;
+  search(value);
+});
+
+
+const searchvalue = (data) => {
+  document.getElementById("showsrarch").innerHTML = ""
+
+  if (data.length === 0) {
+    document.getElementById("showsrarch").innerHTML = "No products found."; 
+    return;
+  }
+
+  document.getElementById("showsrarch").innerHTML = data.map((item) => {
+    return `
+      <div class="product">
+        <h2>${item.title}</h2>
+        <p>Price: ₹${item.price}</p>
+        <p>MRP: ₹${item.MRP}</p>
+        <p>Category: ${item.category}</p>
+        <p>Subcategory: ${item.subcategory}</p>
+        <img src="${item.images[0]}" alt="${item.title}" />
+        <button>Buy Now</button>
+      </div>
+    `;
+  }); 
+};
