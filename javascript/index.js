@@ -335,3 +335,8 @@ document.getElementsByClassName('next')[0].addEventListener('click', () => {
   slider(index + 1); 
 });
 
+
+const category = (msg) => {
+  localStorage.setItem("clicked_category", JSON.stringify(msg));
+  window.location.href = "../pages/homecategory.html";
+};

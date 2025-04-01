@@ -87,18 +87,15 @@ const search = (value) => {
 
 document.getElementById("statusfilter").addEventListener("input", () => { 
   let filter = document.getElementById("statusfilter").value;
-  console.log(filter);
- 
 
     if (filter === "all") {
       uimaker(orders); 
     } else {
-      let temp = orders.filter((ele) => ele.status.toString() === filter.toString());
-      console.log(temp);
-      
+      let temp = orders.filter((ele) => ele.status.toString() === filter.toString());  
       uimaker(temp)
     }
 });
+
 
 //filter by payment method
 
