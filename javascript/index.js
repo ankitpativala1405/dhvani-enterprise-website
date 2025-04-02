@@ -29,11 +29,82 @@ document.getElementsByClassName('next')[0].addEventListener('click', () => {
   slider(index + 1); 
 });
 
+
 const category = (msg) => {
   localStorage.setItem("clicked_category", JSON.stringify(msg));
   window.location.href = "../pages/homecategory.html";
 };
 
+
+//search
+
+const search = (value) => {
+  if (value === "") {
+    document.getElementById("showsrarch").style.display = "none"; 
+  } else {
+    let temp = data.filter((ele) =>
+      ele.title.toLowerCase().includes(value.toLowerCase()))
+    uimaker(temp); 
+  }
+};
+
+document.getElementById("search").addEventListener("input", () => {
+  document.getElementById("showsrarch").style.display = "flex";
+  let value = document.getElementById("search").value;
+  search(value);
+});
+
+
+const uimaker = (data) => {
+  document.getElementById("showsrarch").innerHTML = ""
+
+  if (data.length === 0) {
+    document.getElementById("showsrarch").innerHTML = "No products found."; 
+    return;
+  }
+
+  document.getElementById("showsrarch").innerHTML = data.map((item) => {
+    return `
+      <div class="product">
+        <h2>${item.title}</h2>
+        <p>Price: ₹${item.price}</p>
+        <p>MRP: ₹${item.MRP}</p>
+        <p>Category: ${item.category}</p>
+        <p>Subcategory: ${item.subcategory}</p>
+        <img src="${item.images[0]}" alt="${item.title}" />
+        <button>Buy Now</button>
+      </div>
+    `;
+  }); 
+};
+
+//cart
+const atc = (id) => {
+  let product = data.find((ele) => ele.id === id);
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let existingProduct = cart.find((ele) => ele.id === id);
+
+  if (existingProduct) {
+    let userChoice = window.confirm("This product is already in your cart. Do you want to increase the quantity?\n Click 'OK' to increase or \n'Cancel' to not add it again.");
+
+    if (userChoice) {
+      existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Product quantity has been increased!");
+    } else {
+      alert("Product not added to the cart again.");
+    }
+  }
+   else {
+    product.quantity = 1; 
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product has been added to your cart!");
+  }
+};
+
+//   // //   // // // // // // // // // // // // // // // //
 window.onload=()=>{
   localStorage.setItem("allproducts", JSON.stringify(data))
 }
@@ -281,45 +352,3 @@ let data = [
     ]
   },      
 ]
-
-//search
-
-const search = (value) => {
-  if (value === "") {
-    document.getElementById("showsrarch").style.display = "none"; 
-  } else {
-    let temp = data.filter((ele) =>
-      ele.title.toLowerCase().includes(value.toLowerCase()))
-    uimaker(temp); 
-  }
-};
-
-document.getElementById("search").addEventListener("input", () => {
-  document.getElementById("showsrarch").style.display = "grid";
-  let value = document.getElementById("search").value;
-  search(value);
-});
-
-
-const uimaker = (data) => {
-  document.getElementById("showsrarch").innerHTML = ""
-
-  if (data.length === 0) {
-    document.getElementById("showsrarch").innerHTML = "No products found."; 
-    return;
-  }
-
-  document.getElementById("showsrarch").innerHTML = data.map((item) => {
-    return `
-      <div class="product">
-        <h2>${item.title}</h2>
-        <p>Price: ₹${item.price}</p>
-        <p>MRP: ₹${item.MRP}</p>
-        <p>Category: ${item.category}</p>
-        <p>Subcategory: ${item.subcategory}</p>
-        <img src="${item.images[0]}" alt="${item.title}" />
-        <button>Buy Now</button>
-      </div>
-    `;
-  }); 
-};

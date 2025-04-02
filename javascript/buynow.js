@@ -9,15 +9,27 @@ document.getElementById("changeaddress").addEventListener("click", function () {
 });
 
 document.getElementById("deliver-btn").addEventListener("click", function () {
-  if(document.getElementById("bname").value=="" || document.getElementById("bcontact").value=="" || document.getElementById("bhnumber").value=="" || document.getElementById("bsociety").value=="" || document.getElementById("bstreet").value=="" || document.getElementById("bcity").value=="" || document.getElementById("bstate").value=="" || document.getElementById("bspincode").value==""){
-    alert("Please fill all the address fields.Remember that  name,contact number,home number,street name,society name,city name,state name and pincode must be required")
-    return false;
-  }else{
-  document.getElementById("paymentoptiondiv").style.display = "block";
-  alert(
-    "Thank you for submitting address.now please select your payment option"
-  )}
+
+  let name = document.getElementById("bname").value;
+  let contact = document.getElementById("bcontact").value;
+  let home = document.getElementById("bhnumber").value;
+  let society = document.getElementById("bsociety").value;
+  let street= document.getElementById("bstreet").value;
+  let city = document.getElementById("bcity").value;
+  let state = document.getElementById("bstate").value;
+  let pincode = document.getElementById("bspincode").value;
+
+  if (!name || !contact || !home || !society || !street || !city || !state || !pincode ) {
+    let user=window.confirm("Please enter the address.\nif you want to enter your address \nClick 'ok' to enter Address")
+    if(user){
+      document.getElementById("changedhomeaddress").style.display = "block";
+    }
+  } else {
+    document.getElementById("paymentoptiondiv").style.display = "block";
+    alert("Thank you for submitting the address. Now please select your payment option.");
+  }
 });
+
 
 document.getElementById("gotoorder").addEventListener("click", () => {
   document.getElementById("placeorder").style.display = "block";
@@ -98,6 +110,11 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
 
 
 const errordetail=(id,msg)=>{
+
+  let iserror = document.getElementById(id).querySelector('p');
+  if (iserror) {
+    iserror.remove(); 
+  }
   let error = document.createElement("p");
   error.innerHTML = msg;
 
@@ -217,4 +234,50 @@ document
 
 const getvalue = (id) => {
   return document.getElementById(id).value;
+};
+
+
+
+let data=JSON.parse(localStorage.getItem("allproducts"))
+
+//search
+
+const search = (value) => {
+if (value === "") {
+document.getElementById("showsrarch").style.display = "none"; 
+} else {
+let temp = data.filter((ele) =>
+ele.title.toLowerCase().includes(value.toLowerCase()))
+searchvalue(temp); 
+}
+};
+
+document.getElementById("search").addEventListener("input", () => {
+document.getElementById("showsrarch").style.display = "flex";
+let value = document.getElementById("search").value;
+search(value);
+});
+
+
+const searchvalue = (data) => {
+document.getElementById("showsrarch").innerHTML = ""
+
+if (data.length === 0) {
+document.getElementById("showsrarch").innerHTML = "No products found."; 
+return;
+}
+
+document.getElementById("showsrarch").innerHTML = data.map((item) => {
+return `
+<div class="product">
+  <h2>${item.title}</h2>
+  <p>Price: ₹${item.price}</p>
+  <p>MRP: ₹${item.MRP}</p>
+  <p>Category: ${item.category}</p>
+  <p>Subcategory: ${item.subcategory}</p>
+  <img src="${item.images[0]}" alt="${item.title}" />
+  <button>Buy Now</button>
+</div>
+`;
+}); 
 };

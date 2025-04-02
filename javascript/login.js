@@ -94,7 +94,7 @@ const loginpage=()=>{
   };
   
   document.getElementById("search").addEventListener("input", () => {
-    document.getElementById("showsrarch").style.display = "grid";
+    document.getElementById("showsrarch").style.display = "flex";
     let value = document.getElementById("search").value;
     search(value);
   });

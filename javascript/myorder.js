@@ -112,3 +112,50 @@ document.getElementById("statusfilter").addEventListener("input", () => {
       uimaker(temp)
     }
   });
+
+
+  
+  //search
+
+
+  let data=JSON.parse(localStorage.getItem("allproducts"))
+
+  const searchv = (value) => {
+    if (value === "") {
+      document.getElementById("showsrarch").style.display = "none"; 
+    } else {
+      let temp = data.filter((ele) =>
+        ele.title.toLowerCase().includes(value.toLowerCase()))
+      searchvalue(temp); 
+    }
+  };
+  
+  document.getElementById("search").addEventListener("input", () => {
+    document.getElementById("showsrarch").style.display = "flex";
+    let value = document.getElementById("search").value;
+    searchv(value);
+  });
+  
+  
+  const searchvalue = (data) => {
+    document.getElementById("showsrarch").innerHTML = ""
+  
+    if (data.length === 0) {
+      document.getElementById("showsrarch").innerHTML = "No products found."; 
+      return;
+    }
+  
+    document.getElementById("showsrarch").innerHTML = data.map((item) => {
+      return `
+        <div class="product">
+          <h2>${item.title}</h2>
+          <p>Price: ₹${item.price}</p>
+          <p>MRP: ₹${item.MRP}</p>
+          <p>Category: ${item.category}</p>
+          <p>Subcategory: ${item.subcategory}</p>
+          <img src="${item.images[0]}" alt="${item.title}" />
+          <button>Buy Now</button>
+        </div>
+      `;
+    }); 
+  };

@@ -469,7 +469,7 @@ p {
 }
 
 button {
-  background-color: #ff6347;
+  /* background-color: #ff6347; */
   color: white;
   padding: 10px 20px;
   border: none;

@@ -1,8 +1,6 @@
 let data=JSON.parse(localStorage.getItem("allproducts"))
 
   let clickedcategory=JSON.parse(localStorage.getItem('clicked_category'))
-  console.log("clicked category",clickedcategory);
-  
 
   // let products = data.find(ele => ele.category == clickedcategory);
 
@@ -84,6 +82,7 @@ let data=JSON.parse(localStorage.getItem("allproducts"))
       document.getElementById("main-container").append(div);
     }
   }
+  
  
   if(products.length === 0){
     document.getElementById("main-container").innerHTML = `<h4>Not Found Product Youe Selected category &rarr; <h2>${clickedcategory}</h2></h4>`;

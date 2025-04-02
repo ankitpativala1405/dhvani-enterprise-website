@@ -74,11 +74,12 @@ const search = (value) => {
     let temp = data.filter((ele) =>
       ele.title.toLowerCase().includes(value.toLowerCase()))
     searchvalue(temp); 
+    // document.getElementById("cart-container").style.marginTop="250px !important";
   }
 };
 
 document.getElementById("search").addEventListener("input", () => {
-  document.getElementById("showsrarch").style.display = "grid";
+  document.getElementById("showsrarch").style.display = "flex";
   let value = document.getElementById("search").value;
   search(value);
 });
