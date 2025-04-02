@@ -58,6 +58,8 @@ function updateCart() {
 updateCart()
   
     document.getElementById('checkout-btn').addEventListener('click', () => {
+     
+      
         window.open('./buynow.html');
     });
 
