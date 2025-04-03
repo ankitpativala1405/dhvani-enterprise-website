@@ -119,6 +119,7 @@ let data = [
     "subcategory": "kitchenware",
     "sku": "usb sealer machine",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/0/1.jpg",
       "../PHOTO/product photo/0/2.jpg",
@@ -155,6 +156,7 @@ let data = [
     "subcategory": "gown",
     "sku": "Anarkali gown(parrot green)",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/1/1.jpg",
       "../PHOTO/product photo/1/2.jpg",
@@ -191,6 +193,7 @@ let data = [
     "subcategory": "Manicure kit",
     "sku": "Manicure kit",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/3/1.jpg",
       "../PHOTO/product photo/3/2.jpg",
@@ -225,6 +228,7 @@ let data = [
     "subcategory": "personal care",
     "sku": "Sun Mini UV LED Nail Dryer Lamp",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/4/1.jpg",
       "../PHOTO/product photo/4/2.jpg",
@@ -262,6 +266,7 @@ let data = [
     "subcategory": "personal care",
     "sku": "Electric heating belt",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/5/1.jpg",
       "../PHOTO/product photo/5/2.jpg",
@@ -293,6 +298,7 @@ let data = [
     "subcategory": "kitchenware",
     "sku": "Apple Peeler",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/6/1.jpg",
       "../PHOTO/product photo/6/2.jpg",
@@ -330,6 +336,7 @@ let data = [
     "subcategory": "kurtis",
     "sku": "Wine Sequence Collar Kurti",
     "status": "pending",
+    "quantity":"1",
     "images": [
       "../PHOTO/product photo/7/1.jpg",
       "../PHOTO/product photo/7/2.jpg",

@@ -57,8 +57,10 @@ const uimaker=(data)=> {
     let buynow = document.createElement("button");
     buynow.innerHTML = "Buy Now";
     buynow.setAttribute("class", "buy-now");
-    buynow.addEventListener('click', () => {
-      localStorage.setItem('buyNowProduct', JSON.stringify(data[i])); 
+    buynow.addEventListener('click', () => { 
+    let buyproduct = JSON.parse(localStorage.getItem('buyNowProduct')) || [];
+    buyproduct.push(data[i]);
+    localStorage.setItem('buyNowProduct', JSON.stringify(buyproduct));
       window.location.href = '../pages/buynow.html';  
     });
 

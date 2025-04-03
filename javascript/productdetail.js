@@ -1,8 +1,10 @@
 let data=JSON.parse(localStorage.getItem("allproducts"))
     
 const buynow = () => { 
-  localStorage.setItem('buyNowProduct', JSON.stringify(details)); 
-      window.location.href = '../pages/buynow.html';  
+  let buyproduct = JSON.parse(localStorage.getItem('cart')) || [];
+  buyproduct.push(data[i]);
+  localStorage.setItem('buyNowProduct', JSON.stringify(buyproduct));
+    window.location.href = '../pages/buynow.html';  
  }
 
 const addtocart = () => {

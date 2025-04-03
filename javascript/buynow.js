@@ -1,8 +1,35 @@
 let detai = JSON.parse(localStorage.getItem("buyNowProduct"));
 let sku=detai.sku
 let price = Number(detai.price);
-document.getElementById("productprice").innerHTML = `₹${price}`;
-document.getElementById("product-total-price").innerHTML = `₹${price + 100}`;
+
+const uimaker = (detai) => {
+  let subtotal = 0;
+
+  for (let i = 0; i < detai.length; i++) {
+    let quantity = document.createElement("p");
+    quantity.innerHTML = `${detai[i].quantity}&times;`;
+
+    let sku = document.createElement("p");
+    sku.innerHTML = detai[i].sku;
+
+    let prise = document.createElement("p");
+    prise.innerHTML = (detai[i].price) * (detai[i].quantity); 
+    subtotal += (detai[i].price) * (detai[i].quantity);
+
+    document.getElementById("showquantity").append(quantity);
+    document.getElementById("showsku").append(sku);
+    document.getElementById("showprice").append(prise);
+  }
+
+  let total= document.createElement("p");
+  total.innerHTML = ` ₹${subtotal}`; 
+  document.getElementById("productprice").append(total);
+
+  let grandtotal = document.createElement("p");
+  grandtotal.innerHTML = `₹${subtotal + 100}`;
+  document.getElementById("product-total-price").append(grandtotal);
+}
+uimaker(detai)
 
 document.getElementById("changeaddress").addEventListener("click", function () {
   document.getElementById("changedhomeaddress").style.display = "block";
@@ -18,15 +45,17 @@ document.getElementById("deliver-btn").addEventListener("click", function () {
   let state = document.getElementById("bstate").innerHTML;
   let pincode = document.getElementById("bspincode").innerHTML;
 
-  if (!name || !contact || !home || !society || !street || !city || !state || !pincode) {
-    let user = window.confirm("Shipping address is compulsory. Without an address, we cannot ship your products. Would you like to enter your address now?");
-    if (user) {
-      document.getElementById("changedhomeaddress").style.display = "block"; 
-    }
-  } else {
-    document.getElementById("paymentoptiondiv").style.display = "block";
+  // if (!name || !contact || !home || !society || !street || !city || !state || !pincode) {
+  //   let user = window.confirm("Shipping address is compulsory. Without an address, we cannot ship your products. Would you like to enter your address now?");
+  //   if (user) {
+  //     document.getElementById("changedhomeaddress").style.display = "block"; 
+  //   }
+  // } else {
+  //   document.getElementById("paymentoptiondiv").style.display = "block";
+  //   alert("Thank you for submitting the address. Now please select your payment option.");
+  // }
+  document.getElementById("paymentoptiondiv").style.display = "block";
     alert("Thank you for submitting the address. Now please select your payment option.");
-  }
 });
 
 document.getElementById("gotoorder").addEventListener("click", () => {
@@ -104,6 +133,7 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
   orderd.push({...date,...detai});
   localStorage.setItem("order", JSON.stringify(orderd));
   alert("Thank you for submitting place order.");
+  localStorage.removeItem("buyNowProduct")
 });
 
 

@@ -513,6 +513,10 @@ button.btda {
   margin-bottom: 15px;
 }
 
+.showorder{
+  display: flex;
+  gap: 30px;
+}
 .itemprise, .shipping.fee, .totalprice{
   display: flex;
   justify-content: space-between;
