@@ -119,22 +119,32 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
 
   let orderd = JSON.parse(localStorage.getItem("order")) || [];
 
-  let date = {
-    ids: Date.now(),
-    now: new Date().toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata",
-      hour12: true,
-    }),
-    status:"pending",
-    total: `₹${parseFloat(price) + 100}`,
-    payment:pay,
-    sku:sku
-  };
-  orderd.push({...date,...detai});
+  let items = JSON.parse(localStorage.getItem("buyNowProduct")) || []; 
+  let pay = 0; 
+
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+
+    let orderdata = {
+      ids: Date.now(),
+      now: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", hour12: true }),
+      status: "pending",
+      payment: pay, 
+      sku: item.sku,
+      quantity: item.quantity,
+      total: item.price * item.quantity, 
+    };
+
+    orderd.push(orderdata);
+  }
   localStorage.setItem("order", JSON.stringify(orderd));
-  alert("Thank you for submitting place order.");
-  localStorage.removeItem("buyNowProduct")
+
+  alert("Thank you for submitting your order.");
+
+  // localStorage.removeItem("buyNowProduct");
+
 });
+
 
 
 const errordetail=(id,msg)=>{

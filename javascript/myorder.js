@@ -1,6 +1,6 @@
 let orders = JSON.parse(localStorage.getItem("order")) || [];
 
-// console.log(orders);
+console.log(orders[0]);
 
 const uimaker=(orders)=> {
     document.getElementById("orderlist").innerHTML = ''; 
