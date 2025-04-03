@@ -70,7 +70,7 @@ let creditdiv = document.getElementById("creditdiv");
 let debitdiv = document.getElementById("debitdiv");
 let cashdiv = document.getElementById("cashdiv");
 
-let pay=""
+let pay="";
 
 paymentSelect.addEventListener("change", function () {
   let selectedPaymentOption = paymentSelect.value;
@@ -120,19 +120,19 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
   let orderd = JSON.parse(localStorage.getItem("order")) || [];
 
   let items = JSON.parse(localStorage.getItem("buyNowProduct")) || []; 
-  let pay = 0; 
 
   for (let i = 0; i < items.length; i++) {
-    let item = items[i];
-
+   
     let orderdata = {
       ids: Date.now(),
       now: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", hour12: true }),
       status: "pending",
-      payment: pay, 
-      sku: item.sku,
-      quantity: item.quantity,
-      total: item.price * item.quantity, 
+      payment:pay, 
+      sku:  items[i].sku,
+      price:items[i].price,
+      quantity:  items[i].quantity,
+      total:  items[i].price *  items[i].quantity, 
+      images: items[i].images[0],
     };
 
     orderd.push(orderdata);
@@ -141,7 +141,7 @@ document.getElementById("placeorderbutton").addEventListener("click", () => {
 
   alert("Thank you for submitting your order.");
 
-  // localStorage.removeItem("buyNowProduct");
+  localStorage.removeItem("buyNowProduct");
 
 });
 

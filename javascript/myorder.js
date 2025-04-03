@@ -1,6 +1,6 @@
 let orders = JSON.parse(localStorage.getItem("order")) || [];
 
-console.log(orders[0]);
+// console.log(orders[0]);
 
 const uimaker=(orders)=> {
     document.getElementById("orderlist").innerHTML = ''; 
@@ -9,7 +9,7 @@ const uimaker=(orders)=> {
 
 
         let image=document.createElement("img");
-        image.src = orders[i].images[0];
+        image.src = orders[i].images;
 
         let divimage=document.createElement("div")
         divimage.append(image)
@@ -28,13 +28,19 @@ const uimaker=(orders)=> {
         status.innerHTML = `Status: ${orders[i].status}`
 
         let total=document.createElement("p")
-        total.innerHTML = `Total: ${orders[i].total}`
+        total.innerHTML = `total: ${orders[i].total}`
+
+        let price=document.createElement("p")
+        price.innerHTML = `Price: ${orders[i].price}`
+
+        let quantity=document.createElement("p")
+        quantity.innerHTML = `Quantity: ${orders[i].quantity}`
 
         let payment=document.createElement("p")
         payment.innerHTML = `Payment: ${orders[i].payment}`
 
         let divdetail=document.createElement("div")
-        divdetail.append(id,sku,date,status,total,payment)
+        divdetail.append(id,sku,date,status,price,quantity,total,payment)
 
 
        let divinfo=document.createElement("div")
@@ -69,21 +75,33 @@ uimaker(orders);
 
 //SEARCH BY SKU AND ORDERID
 const search = (value) => {
-    let temp = orders.filter((ele) =>
-      ele.sku.toLowerCase().includes(value.toLowerCase())  || ele.id.toString().includes(value)
-    
-);
+  let orders = JSON.parse(localStorage.getItem("order")) || [];  
+  for(let i=0;i<orders.length;i++){
+    let temp = orders.filter((ele) => ele.ids.toString().includes(value) || ele.sku.toLowerCase().includes(value.toLowerCase())); 
     uimaker(temp);
-  };
+  }
+}
  
-  document.getElementById("orderSearch").addEventListener("input", () => {
-    let value = document.getElementById("orderSearch").value;
-    search(value);
-  });
+  document.querySelector("#orderSearch").addEventListener("input", (e) => {
+   let valuesearch= e.target.value 
+   console.log(valuesearch);
+   
+   search(valuesearch)
+  })
 
-
+  //sorting by date and time
+  document.getElementById("sortby").addEventListener("input", () => { 
+    let sort = document.getElementById("sortby").value;
+    console.log(sort);
+    if (sort === "Latest") {
+      orders.sort((a, b) => b.now - a.now);
+    } 
+    if (sort === "Oldest") {
+      orders.sort((a, b) => a.now - b.now);
+    }
+    uimaker(orders);
+  })
 //filter by status
-
 
 document.getElementById("statusfilter").addEventListener("input", () => { 
   let filter = document.getElementById("statusfilter").value;
