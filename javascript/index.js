@@ -105,9 +105,7 @@ const atc = (id) => {
 };
 
 //   // //   // // // // // // // // // // // // // // // //
-window.onload=()=>{
-  localStorage.setItem("allproducts", JSON.stringify(data))
-}
+window.onload=()=>{ localStorage.setItem("allproducts", JSON.stringify(data)) }
 
 let data = [
   {

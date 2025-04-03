@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="../style/myaccount.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Account</h2>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#orders">Order History</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#cart">Cart Items</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <section id="profile">
+                <h2>Profile Details</h2>
+                <div id="showpersonal" style="display: block;">                    
+                </div>
+                <form id="profileForm" style="display: none;">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter Your Name" required>
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" placeholder="Enter Your Surname" required>
+                    <label for="number">Contact Number:</label>
+                    <input type="number" id="number" placeholder="Enter Your Contact Number" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                    <label for="homenumber">House No.\Flat no.</label>
+                    <input type="text" id="homenumber" placeholder="enter your home number" required/>
+                    <label for="societyname">society/apartment/tenament name</label>
+                    <input type="text" id="societyname" placeholder="society/apartment/tenament name" required/>
+                    <label for="streetname">street name</label>
+                    <input type="text" id="streetname" placeholder="street name" required/>
+                    <label for="landmark">landmark</label></h5>
+                    <input type="text" id="landmark" placeholder="landmark" />
+                    <label for="cityname">city name</label></h5>
+                    <input type="text" id="cityname" placeholder="city" required/>
+                    <label for="statename">state name</label></h5>
+                    <input type="text" id="statename" placeholder="state" required/>
+                    <label for="pincode">pincode</label></h5>
+                    <input type="text" id="pincode" placeholder="pincode" required/>                       
+                    <button type="submit">Save Changes</button>
+                </form>
+            </section>
+            
+            <section id="settings">
+                <h2>Account Settings</h2>
+                <form id="settingsForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username">
+                    <label for="password">New Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Update Password</button>
+                </form>
+            </section>
+
+            <section id="orders">
+                <h2>Order History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Sku</th>
+                            <th>Date</th>
+                            <th>price</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Payment method</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody">
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="cart">
+                <h2>Cart Items</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+
+        </div>
+    </div>
+</body>
+<script src="../javascript/myaccount.js"></script>
+</html>

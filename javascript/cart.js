@@ -49,8 +49,8 @@ function updateCart() {
 
   }
 
-  document.getElementById("subtotal").innerHTML = `₹${subtotal}`;
-  document.getElementById("total").innerHTML = `₹${Number(subtotal) + 100}`;
+  document.getElementById("subtotal").innerHTML = `₹${subtotal.toFixed(2)}`;
+  document.getElementById("total").innerHTML = `₹${(Number(subtotal) + 100).toFixed(2)}`;
 
   localStorage.setItem("cart", JSON.stringify(cartItems));
 }

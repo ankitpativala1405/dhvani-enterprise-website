@@ -56,10 +56,9 @@ document.getElementById("myForm").addEventListener("submit", function customer(e
   let city = getvalue("city");
   let state = getvalue("state");
   let password = getvalue("password");
-  let ad1 = getvalue("adress1");
-  let ad2 = getvalue("adress2");
-  let ad3 = getvalue("adress3");
-  let address = { ad1, ad2, ad3 };
+  let homenumber = getvalue("adress1");
+  let societyname = getvalue("adress2");
+  let statename = getvalue("adress3");
   let rpassword = getvalue("rpassword");
 
   let username = name.substring(0, 3).toLowerCase() + surname.substring(0, 3).toLowerCase() + contact.substring(contact.length - 4);
@@ -180,7 +179,9 @@ document.getElementById("myForm").addEventListener("submit", function customer(e
     contact: contact,
     acontact: acontact,
     email: email,
-    address: address,
+    homenumber:homenumber,
+    societyname:societyname,
+    statename:statename,
     landmark: landmark,
     pincode: pincode,
     city: city,

@@ -154,7 +154,7 @@ h2 {
 
 #cart-table th, #cart-table td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border: 1px solid #ddd;
     word-spacing: normal;
 }
@@ -171,6 +171,7 @@ h2 {
     background-color: #f9f9f9;
     border-radius: 10px;
     height: 145px;
+    text-align: center;
 }
 
 .cart-summary p {
