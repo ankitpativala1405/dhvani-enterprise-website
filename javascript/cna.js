@@ -58,7 +58,7 @@ document.getElementById("myForm").addEventListener("submit", function customer(e
   let password = getvalue("password");
   let homenumber = getvalue("adress1");
   let societyname = getvalue("adress2");
-  let statename = getvalue("adress3");
+  let streetname = getvalue("adress3");
   let rpassword = getvalue("rpassword");
 
   let username = name.substring(0, 3).toLowerCase() + surname.substring(0, 3).toLowerCase() + contact.substring(contact.length - 4);
@@ -176,22 +176,22 @@ document.getElementById("myForm").addEventListener("submit", function customer(e
   let detail = {
     name: name,
     surname: surname,
-    contact: contact,
+    number: contact,
     acontact: acontact,
     email: email,
     homenumber:homenumber,
     societyname:societyname,
-    statename:statename,
+    streetname:streetname,
     landmark: landmark,
     pincode: pincode,
-    city: city,
-    state: state,
+    cityname: city,
+    statename: state,
     password: password,
     passwordtype: passwordtype,
     username: username
   };
 
-  if(isExist(detail.contact)){
+  if(isExist(detail.number)){
     let userChoice = window.confirm("Sorry!!!...   You have an already account....!! \nClick 'OK' to login or\n'Cancel' to try again with another contact number.");
       if(userChoice){
         window.open('./login.html')
