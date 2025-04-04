@@ -1,11 +1,13 @@
 window.onload = function() {
   let orders = JSON.parse(localStorage.getItem("order")) || [];
   let userdata = JSON.parse(localStorage.getItem("userdata")) || [];
+  let cart=JSON.parse(localStorage.getItem("cart"))
+  cartshow(cart)
   uimaker(orders);
   displaypersonal(userdata);
 }
 
-// Function to render the order table
+// show order items
 const uimaker = (orders) => {
   document.getElementById("tablebody").innerHTML = '';
 
@@ -38,6 +40,31 @@ const uimaker = (orders) => {
   });
 };
 
+//show cart items
+
+//product prose quantity
+
+const cartshow=(cart)=>{
+  document.getElementById("cartbody").innerHTML = '';
+
+  cart.map((ele)=>{
+
+    let td1=document.createElement("td")
+    let td2=document.createElement("td")
+    let td3=document.createElement("td")
+    td1.innerHTML=ele.sku
+    td2.innerHTML=ele.price
+    td3.innerHTML=ele.quantity
+
+    let tr=document.createElement("tr")
+    tr.append(td1,td2,td3)
+
+    document.getElementById("cartbody").append(tr)
+
+  })
+
+}
+
 const displaypersonal = (userdata) => {
   if (userdata && (userdata[0] || userdata[1])) {
       let personal = `
@@ -55,9 +82,13 @@ const displaypersonal = (userdata) => {
       `;
       document.getElementById("showpersonal").innerHTML = personal;
   } else {
-      document.getElementById("showpersonal").innerHTML = "<p>No personal details available.</p>";
+      document.getElementById("showpersonal").innerHTML = `<p>No personal details available.<br> add information <br><button onclick="changeinfo()"> add information</button></p>`;
   }
 };
+
+const changeinfo=()=>{
+  window.location.href="../pages/create new account.html"
+}
 
 const changepersonal = () => {
   document.getElementById("showpersonal").style.display = "none"; 
