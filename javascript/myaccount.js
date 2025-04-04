@@ -5,6 +5,7 @@ window.onload = function() {
   cartshow(cart)
   uimaker(orders);
   displaypersonal(userdata);
+  displaysettings(userdata)
 }
 
 // show order items
@@ -65,6 +66,8 @@ const cartshow=(cart)=>{
 
 }
 
+
+//personal data
 const displaypersonal = (userdata) => {
   if (userdata && (userdata[0] || userdata[1])) {
       let personal = `
@@ -85,6 +88,29 @@ const displaypersonal = (userdata) => {
       document.getElementById("showpersonal").innerHTML = `<p>No personal details available.<br> add information <br><button onclick="changeinfo()"> add information</button></p>`;
   }
 };
+
+//settings data
+
+const displaysettings = (userdata) => {
+  if (userdata && (userdata[0] || userdata[1])) {
+      let personal = `
+          <h4>Username : ${(userdata[2].username || userdata[0].username)}</h4>
+          <h4>Password : ${(userdata[2].password || userdata[0].password)}</h4>
+          <button onclick="idpassword()">Change Detail</button>
+      `;
+      document.getElementById("showsetting").innerHTML = personal;
+  } else {
+      document.getElementById("showsetting").innerHTML = `<p>No personal details available.<br> add information <br><button onclick="changeinfo()"> add information</button></p>`;
+  }
+};
+
+const idpassword = () => {
+  document.getElementById("showsetting").style.display = "none"; 
+  document.getElementById("settingsForm").style.display = "block";  
+};
+
+
+//
 
 const changeinfo=()=>{
   window.location.href="../pages/create new account.html"
@@ -146,9 +172,51 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
       pincode: pincode
   };
 
-  information[1] = info; 
+  if (information[1]) {
+    information[1] = info;
+  } else {
+    information.push(info);
+  }
+
   localStorage.setItem("userdata", JSON.stringify(information));
 
   document.getElementById("profileForm").style.display = "none";
   location.reload(); 
 });
+
+
+document.getElementById("settingsForm").addEventListener("submit",(event)=>{
+  event.preventDefault();
+
+  let username=getvalue("username")
+  let password=getvalue("password")
+
+  // let settingdata=`
+  //     <h4>Full name : ${username} </h4>
+  //     <h4>Contact Number : ${password}</h4>
+  //     <button onclick="idpassword()">Change Detail</button>
+  // `;
+
+  document.getElementById("showsetting").innerHTML=settingdata;
+
+  let information = JSON.parse(localStorage.getItem("userdata")) || [];
+
+  let info = {
+    username:username,
+    password:password
+  };
+
+  // if (information[2]) {
+  //   information[2] = info;
+  // } else {
+  //   information.push(info);
+  // }
+
+  information[2]=info;
+
+  localStorage.setItem("userdata", JSON.stringify(information));
+
+  document.getElementById("profileForm").style.display = "none";
+  location.reload(); 
+
+})
