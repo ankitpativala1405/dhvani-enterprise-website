@@ -162,7 +162,8 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
 
   let information = JSON.parse(localStorage.getItem("userdata")) || [];
 
-  let info = {
+  // Create a new object with the updated values
+  let updatedInfo = {
       name: name,
       surname: surname,
       number: number,
@@ -176,10 +177,18 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
       pincode: pincode
   };
 
-  if (information[1]) {
-    information[1] = info;
+  // Find the index of the existing user by email (or any unique identifier)
+  const index = information.findIndex(user => user.email === email);
+
+  if (index !== -1) {
+      // If the user exists, update only the fields that are provided
+      information[index] = {
+          ...information[index], // Spread the existing object
+          ...updatedInfo // Spread the updated values
+      };
   } else {
-    information.push(info);
+      // If the user does not exist, push the new object
+      information.push(updatedInfo);
   }
 
   localStorage.setItem("userdata", JSON.stringify(information));
@@ -189,11 +198,11 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
 });
 
 
-document.getElementById("settingsForm").addEventListener("submit",(event)=>{
-  event.preventDefault();
+// document.getElementById("settingsForm").addEventListener("submit",(event)=>{
+//   event.preventDefault();
 
-  let username=getvalue("username")
-  let password=getvalue("password")
+//   let username=getvalue("username")
+//   let password=getvalue("password")
 
   // let settingdata=`
   //     <h4>Full name : ${username} </h4>
@@ -203,12 +212,12 @@ document.getElementById("settingsForm").addEventListener("submit",(event)=>{
 
   // document.getElementById("showsetting").innerHTML=settingdata;
 
-  let information = JSON.parse(localStorage.getItem("userdata")) || [];
+  // let information = JSON.parse(localStorage.getItem("userdata")) || [];
 
-  let info = {
-    username:username,
-    password:password
-  };
+  // let info = {
+  //   username:username,
+  //   password:password
+  // };
 
   // if (information[2]) {
   //   information[2] = info;
@@ -216,11 +225,11 @@ document.getElementById("settingsForm").addEventListener("submit",(event)=>{
   //   information.push(info);
   // }
 
-  information[2]=info;
+//   information[2]=info;
 
-  localStorage.setItem("userdata", JSON.stringify(information));
+//   localStorage.setItem("userdata", JSON.stringify(information));
 
-  document.getElementById("profileForm").style.display = "none";
-  location.reload(); 
+//   document.getElementById("profileForm").style.display = "none";
+//   location.reload(); 
 
-})
+// })
