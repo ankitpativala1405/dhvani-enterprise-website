@@ -59,6 +59,7 @@ updateCart()
   
     document.getElementById('checkout-btn').addEventListener('click', () => {
      
+      localStorage.removeItem("buyNowProduct")
       localStorage.setItem("buyNowProduct",JSON.stringify(cartItems))
       
         window.open('./buynow.html');

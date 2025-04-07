@@ -92,17 +92,21 @@ const displaypersonal = (userdata) => {
 //settings data
 
 const displaysettings = (userdata) => {
-  if (userdata && (userdata[0] || userdata[1])) {
+
+  if (userdata && (userdata[0] || userdata[2])) {
       let personal = `
-          <h4>Username : ${(userdata[2].username || userdata[0].username)}</h4>
-          <h4>Password : ${(userdata[2].password || userdata[0].password)}</h4>
+          <h4>Username : ${(userdata[2]?.username || userdata[0]?.username)}</h4>
+          <h4>Password : ${(userdata[2]?.password || userdata[0]?.password)}</h4>
           <button onclick="idpassword()">Change Detail</button>
       `;
       document.getElementById("showsetting").innerHTML = personal;
   } else {
-      document.getElementById("showsetting").innerHTML = `<p>No personal details available.<br> add information <br><button onclick="changeinfo()"> add information</button></p>`;
+      document.getElementById("showsetting").innerHTML = `
+          <p>No personal details available.<br> add information <br><button onclick="changeinfo()"> add information</button></p>
+      `;
   }
 };
+
 
 const idpassword = () => {
   document.getElementById("showsetting").style.display = "none"; 
@@ -197,7 +201,7 @@ document.getElementById("settingsForm").addEventListener("submit",(event)=>{
   //     <button onclick="idpassword()">Change Detail</button>
   // `;
 
-  document.getElementById("showsetting").innerHTML=settingdata;
+  // document.getElementById("showsetting").innerHTML=settingdata;
 
   let information = JSON.parse(localStorage.getItem("userdata")) || [];
 

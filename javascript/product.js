@@ -3,36 +3,31 @@ let data=JSON.parse(localStorage.getItem("allproducts"))
 //dispaly show detail
 const uimaker=(data)=> {
   document.getElementById('container').innerHTML = ''; 
+  let wishlist = JSON.parse(localStorage.getItem('wishlisted')) || [];
 
   for (let i = 0; i < data.length; i++) {
     let Image = document.createElement("img");
     Image.src = data[i].images[0];
     Image.setAttribute("class", "img");  
 
+    let productExists = wishlist.find(item => item.id === data[i].id);
+
     let icon = document.createElement("img");
-    icon.src = "../PHOTO/wishlist.png";
+    icon.src =  icon.src = productExists ? "../PHOTO/wishlist-swaping.png" : "../PHOTO/wishlist.png";
     icon.setAttribute("class", "icon");
     icon.addEventListener("click", (event) => {
         event.stopPropagation();
-     icon.src = "../PHOTO/wishlist-swaping.png"; 
+        if (productExists) {
+          alert("This product is already in your wishlist.");
+        } else {
+          icon.src = "../PHOTO/wishlist-swaping.png";
+          addToWishlist(data[i]);
+        }});
 
-     function addToWishlist(product) {
-      let wishlist = JSON.parse(localStorage.getItem('wishlisted')) || [];
-      let productExists = wishlist.find(item => item.id === product.id);
-      if (productExists) {
-        alert("This product is already in your wishlist.");
-        return;
-      }
-      wishlist.push(product);
-      localStorage.setItem('wishlisted', JSON.stringify(wishlist));
-      alert("Your product has been added to the wishlist.");
-    }
-
-    if (data && data[i]) {
-      addToWishlist(data[i]); 
-    }
-});
-
+    const addToWishlist=(product)=>{
+     wishlist.push(product);
+     localStorage.setItem('wishlisted', JSON.stringify(wishlist));
+     alert("Your product has been added to the wishlist.")}
 
     let title = document.createElement("h3"); 
     title.innerHTML = data[i].title;
@@ -58,8 +53,10 @@ const uimaker=(data)=> {
     buynow.innerHTML = "Buy Now";
     buynow.setAttribute("class", "buy-now");
     buynow.addEventListener('click', () => { 
+      localStorage.removeItem("buyNowProduct")
     let buyproduct = JSON.parse(localStorage.getItem('buyNowProduct')) || [];
     buyproduct.push(data[i]);
+    
     localStorage.setItem('buyNowProduct', JSON.stringify(buyproduct));
       window.location.href = '../pages/buynow.html';  
     });

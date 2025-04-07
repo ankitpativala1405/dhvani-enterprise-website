@@ -93,14 +93,22 @@ const search = (value) => {
   document.getElementById("sortby").addEventListener("input", () => { 
     let sort = document.getElementById("sortby").value;
     console.log(sort);
+  
     if (sort === "Latest") {
-      orders.sort((a, b) => b.now - a.now);
+      orders.sort((a, b) => {
+        return new Date(b.now) - new Date(a.now);
+      });
     } 
+  
     if (sort === "Oldest") {
-      orders.sort((a, b) => a.now - b.now);
+      orders.sort((a, b) => {
+        return new Date(a.now) - new Date(b.now); 
+      });
     }
-    uimaker(orders);
-  })
+  
+    uimaker(orders); 
+  });
+  
 //filter by status
 
 document.getElementById("statusfilter").addEventListener("input", () => { 
