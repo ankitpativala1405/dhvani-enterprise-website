@@ -43,8 +43,6 @@ const uimaker = (orders) => {
 
 //show cart items
 
-//product prose quantity
-
 const cartshow=(cart)=>{
   document.getElementById("cartbody").innerHTML = '';
 
@@ -66,21 +64,22 @@ const cartshow=(cart)=>{
 
 }
 
-
 //personal data
 const displaypersonal = (userdata) => {
-  if (userdata && (userdata[0] || userdata[1])) {
+  console.log("userdata",userdata);
+  
+  if (userdata) {
       let personal = `
-          <h4>Full name : ${(userdata[1]?.name || userdata[0]?.name)} ${(userdata[1]?.surname || userdata[0]?.surname)}</h4>
-          <h4>Contact Number : ${(userdata[1]?.number || userdata[0]?.number)}</h4>
-          <p>Email : ${(userdata[1]?.email || userdata[0]?.email)}</p>
-          <p>Home Number : ${(userdata[1]?.homenumber || userdata[0]?.homenumber)}</p>
-          <p>Society Name : ${(userdata[1]?.societyname || userdata[0]?.societyname)}</p>
-          <p>Street Name : ${(userdata[1]?.streetname || userdata[0]?.streetname)}</p>
-          <p>Landmark : ${(userdata[1]?.landmark || userdata[0]?.landmark)}</p>
-          <p>City : ${(userdata[1]?.cityname || userdata[0]?.cityname)}</p>
-          <p>State : ${(userdata[1]?.statename || userdata[0]?.statename)}</p>
-          <p>Pincode : ${(userdata[1]?.pincode || userdata[0]?.pincode)}</p>
+          <h4>Full name : ${(userdata[0].name)} ${(userdata[0].surname)}</h4>
+          <h4>Contact Number : ${ userdata[0].number}</h4>
+          <p>Email : ${userdata[0].email}</p>
+          <p>Home Number : ${ userdata[0].homenumber}</p>
+          <p>Society Name : ${userdata[0].societyname}</p>
+          <p>Street Name : ${userdata[0].streetname}</p>
+          <p>Landmark : ${userdata[0].landmark}</p>
+          <p>City : ${userdata[0].cityname}</p>
+          <p>State : ${userdata[0].statename}</p>
+          <p>Pincode : ${userdata[0].pincode}</p>
           <button onclick="changepersonal()">Change Detail</button>
       `;
       document.getElementById("showpersonal").innerHTML = personal;
@@ -93,10 +92,10 @@ const displaypersonal = (userdata) => {
 
 const displaysettings = (userdata) => {
 
-  if (userdata && (userdata[0] || userdata[2])) {
+  if (userdata) {
       let personal = `
-          <h4>Username : ${(userdata[2]?.username || userdata[0]?.username)}</h4>
-          <h4>Password : ${(userdata[2]?.password || userdata[0]?.password)}</h4>
+          <h4>Username : ${userdata[0].username}</h4>
+          <h4>Password : ${userdata[0].password}</h4>
           <button onclick="idpassword()">Change Detail</button>
       `;
       document.getElementById("showsetting").innerHTML = personal;
@@ -112,9 +111,6 @@ const idpassword = () => {
   document.getElementById("showsetting").style.display = "none"; 
   document.getElementById("settingsForm").style.display = "block";  
 };
-
-
-//
 
 const changeinfo=()=>{
   window.location.href="../pages/create new account.html"
@@ -162,8 +158,7 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
 
   let information = JSON.parse(localStorage.getItem("userdata")) || [];
 
-  // Create a new object with the updated values
-  let updatedInfo = {
+  let updated = {
       name: name,
       surname: surname,
       number: number,
@@ -177,18 +172,12 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
       pincode: pincode
   };
 
-  // Find the index of the existing user by email (or any unique identifier)
-  const index = information.findIndex(user => user.email === email);
+  let index = information.findIndex(user => user.email === email);
 
   if (index !== -1) {
-      // If the user exists, update only the fields that are provided
-      information[index] = {
-          ...information[index], // Spread the existing object
-          ...updatedInfo // Spread the updated values
-      };
+      information[index] = {...information[index], ...updated };
   } else {
-      // If the user does not exist, push the new object
-      information.push(updatedInfo);
+      information.push(updated);
   }
 
   localStorage.setItem("userdata", JSON.stringify(information));
@@ -197,39 +186,41 @@ document.getElementById("profileForm").addEventListener("submit", (event) => {
   location.reload(); 
 });
 
+document.getElementById("settingsForm").addEventListener("submit",(event)=>{
+  event.preventDefault();
 
-// document.getElementById("settingsForm").addEventListener("submit",(event)=>{
-//   event.preventDefault();
+  let username=getvalue("username")
+  let password=getvalue("password")
 
-//   let username=getvalue("username")
-//   let password=getvalue("password")
+  let settingdata=`
+      <h4>Full name : ${username} </h4>
+      <h4>Contact Number : ${password}</h4>
+      <button onclick="idpassword()">Change Detail</button>
+  `;
 
-  // let settingdata=`
-  //     <h4>Full name : ${username} </h4>
-  //     <h4>Contact Number : ${password}</h4>
-  //     <button onclick="idpassword()">Change Detail</button>
-  // `;
+  document.getElementById("showsetting").innerHTML=settingdata;
 
-  // document.getElementById("showsetting").innerHTML=settingdata;
+  let information = JSON.parse(localStorage.getItem("userdata")) || [];
 
-  // let information = JSON.parse(localStorage.getItem("userdata")) || [];
+  let updated = {
+    username:username,
+    password:password
+  };
 
-  // let info = {
-  //   username:username,
-  //   password:password
-  // };
+  let index = information.findIndex(user => user.email === email);
 
-  // if (information[2]) {
-  //   information[2] = info;
-  // } else {
-  //   information.push(info);
-  // }
+  if (index !== -1) {
+      information[index] = {
+          ...information[index], 
+          ...updated 
+      };
+  } else {
+      information.push(updated);
+  }
 
-//   information[2]=info;
+  localStorage.setItem("userdata", JSON.stringify(information));
 
-//   localStorage.setItem("userdata", JSON.stringify(information));
+  document.getElementById("settingsForm").style.display = "none";
+  location.reload(); 
 
-//   document.getElementById("profileForm").style.display = "none";
-//   location.reload(); 
-
-// })
+})
