@@ -45,20 +45,20 @@ document.getElementById("deliver-btn").addEventListener("click", function () {
   let state = document.getElementById("bstate").innerHTML;
   let pincode = document.getElementById("bspincode").innerHTML;
 
-  // if (!name || !contact || !home || !society || !street || !city || !state || !pincode) {
-  //   let user = window.confirm("Shipping address is compulsory. Without an address, we cannot ship your products. Would you like to enter your address now?");
-  //   if (user) {
-  //     document.getElementById("changedhomeaddress").style.display = "block"; 
-  //   }
-  // } else {
-  //   document.getElementById("paymentoptiondiv").style.display = "block";
-  //   alert("Thank you for submitting the address. Now please select your payment option.");
-  // }
+  if (!name || !contact || !home || !society || !street || !city || !state || !pincode) {
+    let user = window.confirm("Shipping address is compulsory. Without an address, we cannot ship your products. Would you like to enter your address now?");
+    if (user) {
+      document.getElementById("changedhomeaddress").style.display = "block"; 
+    }
+  } else {
+    document.getElementById("paymentoptiondiv").style.display = "block";
+    alert("Thank you for submitting the address. Now please select your payment option.");
+  }
   document.getElementById("paymentoptiondiv").style.display = "block";
     alert("Thank you for submitting the address. Now please select your payment option.");
 });
 
-document.getElementById("gotoorder").addEventListener("click", () => {
+document.getElementById("gotoorder").addEventListener("click", () => { 
   document.getElementById("placeorder").style.display = "block";
 });
 
