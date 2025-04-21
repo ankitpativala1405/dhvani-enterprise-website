@@ -36,14 +36,14 @@ document.getElementById("changeaddress").addEventListener("click", function () {
 });
 
 document.getElementById("deliver-btn").addEventListener("click", function () {
-  let name = document.getElementById("bname").innerHTML;
-  let contact = document.getElementById("bcontact").innerHTML;
-  let home = document.getElementById("bhnumber").innerHTML;
-  let society = document.getElementById("bsociety").innerHTML;
-  let street = document.getElementById("bstreet").innerHTML;
-  let city = document.getElementById("bcity").innerHTML;
-  let state = document.getElementById("bstate").innerHTML;
-  let pincode = document.getElementById("bspincode").innerHTML;
+  let name = document.getElementById("bname").value;
+  let contact = document.getElementById("bcontact").value;
+  let home = document.getElementById("bhnumber").value;
+  let society = document.getElementById("bsociety").value;
+  let street = document.getElementById("bstreet").value;
+  let city = document.getElementById("bcity").value;
+  let state = document.getElementById("bstate").value;
+  let pincode = document.getElementById("bspincode").value;
 
   if (!name || !contact || !home || !society || !street || !city || !state || !pincode) {
     let user = window.confirm("Shipping address is compulsory. Without an address, we cannot ship your products. Would you like to enter your address now?");
