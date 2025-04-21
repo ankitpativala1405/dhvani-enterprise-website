@@ -54,8 +54,8 @@ document.getElementById("deliver-btn").addEventListener("click", function () {
     document.getElementById("paymentoptiondiv").style.display = "block";
     alert("Thank you for submitting the address. Now please select your payment option.");
   }
-  document.getElementById("paymentoptiondiv").style.display = "block";
-    alert("Thank you for submitting the address. Now please select your payment option.");
+  // document.getElementById("paymentoptiondiv").style.display = "block";
+  //   alert("Thank you for submitting the address. Now please select your payment option.");
 });
 
 document.getElementById("gotoorder").addEventListener("click", () => { 
