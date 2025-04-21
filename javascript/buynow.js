@@ -49,8 +49,10 @@ document.getElementById("deliver-btn").addEventListener("click", function () {
     let user = window.confirm("Shipping address is compulsory. Without an address, we cannot ship your products. Would you like to enter your address now?");
     if (user) {
       document.getElementById("changedhomeaddress").style.display = "block"; 
+      document.getElementById("paymentoptiondiv").style.display = "none";
     }
-  } else {
+  }
+   else {
     document.getElementById("paymentoptiondiv").style.display = "block";
     alert("Thank you for submitting the address. Now please select your payment option.");
   }
