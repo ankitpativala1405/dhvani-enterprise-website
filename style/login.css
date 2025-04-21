@@ -1,0 +1,369 @@
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+  .index {
+    position: fixed;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    background-color: #e2dddd;
+    color: #212121;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.index span { color: #d32f2f;}
+
+#clogo {
+  position: fixed;
+  background-color: white;
+  top: 37px;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+}
+
+#companycontact {
+margin-left: 200px;
+display: flex;
+align-items: center;}
+
+#companycontact img { margin-right: 10px;}
+
+#companycontact h3 {
+font-size: 18px;
+margin-left: 50px;
+margin-top: -30px;}
+
+#companycontact p {
+font-size: 16px;
+margin-left: -100px;
+margin-top: 55px;
+}
+
+#companylogo img {   height: 80px;}
+
+#searchbar {
+margin-right: 150px;
+display: flex;
+align-items: center;
+background-color: #e2dddd;
+padding: 5px 10px;
+border-radius: 10px;
+}
+
+#searchbar img { margin-right: 10px;}
+
+#searchbar input {
+padding: 8px;
+font-size: 16px;
+border-radius: 5px;
+border: 1px solid #ccc;
+width: 200px; /* Ensure the input box is not too small */}
+
+nav {
+position: fixed;
+top: 146px;
+left: 0;
+width: 100%;
+background-color: #e2dddd;
+color: #333;
+padding: 10px 0;
+text-align: center;
+z-index: 998;
+}
+
+nav a {
+color: #333;
+text-decoration: none;
+margin: 0 15px;
+font-size: 16px;
+font-weight: bold;
+}
+
+nav a:hover { color: #f39c12;}
+
+.order-link {
+position: relative;
+display: inline-block;
+}
+
+.dropdown {
+display: none;
+position: absolute;
+/* background-color: #f1f1f1; */
+min-width: 160px;
+z-index: 1;
+top: 100%; /* Position dropdown below the link */
+left: 0;
+}
+
+.order-link:hover .dropdown {
+display: block;
+}
+
+.dropdown a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown a:hover {
+background-color: #e2dddd;
+border-radius: 10px;
+}
+
+
+/* Title */
+.signup {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 175px;
+  color: #333;
+}
+
+/* Form Container */
+form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #e2dddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: -8px;
+}
+
+/* Labels */
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input Fields */
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  margin-bottom: 15px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+}
+
+/* Submit Button */
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Forgot Password and New Account Links */
+form a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+/* Forgot Password Text */
+form label[for="4"],
+form label[for="5"] {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Margin adjustments for better spacing */
+form br {
+  margin-top: 10px;
+}
+
+
+/* forgot password */
+
+
+
+.container {
+  background-color:#e2dddd !important;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-wrapper p {
+  text-align: center;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: -10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+#form{
+box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#showsrarch {
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 175px;
+  margin-bottom: -200px;
+  display: flex;
+  flex: wrap;
+}
+
+.product {
+ 
+  background-color: #e2dddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.product p:last-of-type {
+  font-weight: bold;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4500;
+}
